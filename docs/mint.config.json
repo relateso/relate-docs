@@ -14,13 +14,13 @@
   },
   "topbarLinks": [
     {
-      "name": "Go to Relate",
-      "url": "https://www.relate.so"
+      "name": "Blog",
+      "url": "https://www.relate.so/blog"
     }
   ],
   "topbarCtaButton": {
     "name": "Get Early Access",
-    "url": "https://relateso.typeform.com/to/gpV4Ge0z"
+    "url": "https://relateso.typeform.com/relate"
   },
   "anchors": [
     {
@@ -32,6 +32,11 @@
       "name": "Changelog",
       "icon": "list",
       "url": "https://changelog.relate.so"
+    }
+  ],
+  "topAnchorName": [
+    {
+    "name": "Product Guide"
     }
   ],
   "navigation": [
@@ -69,7 +74,6 @@
   "footerSocials": {
     "facebook": "https://www.facebook.com/relate.so",
     "linkedin": "https://www.linkedin.com/company/relatecrm/",
-    "twitter": "https://twitter.com/relatecrm",
-    "instagram": "https://instagram.com/relate_kr"
+    "twitter": "https://twitter.com/relatecrm"
   }
 }
