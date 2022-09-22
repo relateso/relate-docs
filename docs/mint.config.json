@@ -22,6 +22,9 @@
     "name": "Get Early Access",
     "url": "https://relateso.typeform.com/relate"
   },
+  "topAnchorName": {
+    "name": "Product Guide"
+  },
   "anchors": [
     {
       "name": "Blog",
@@ -32,11 +35,6 @@
       "name": "Changelog",
       "icon": "list",
       "url": "https://changelog.relate.so"
-    }
-  ],
-  "topAnchorName": [
-    {
-    "name": "Product Guide"
     }
   ],
   "navigation": [
