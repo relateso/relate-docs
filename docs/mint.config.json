@@ -27,14 +27,19 @@
   },
   "anchors": [
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://www.relate.so/blog"
+      "name": "Integrations",
+      "icon": "link",
+      "url": "integrations"
+    },
+    {
+      "name": "Playbook",
+      "icon": "book",
+      "url": "playbook"
     },
     {
       "name": "Changelog",
       "icon": "list",
-      "url": "https://changelog.relate.so"
+      "url": "changelog"
     }
   ],
   "navigation": [
