@@ -1,8 +1,9 @@
 {
   "name": "Relate",
+  "basePath": "/docs",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/docs/logo/light.svg",
+    "dark": "/docs/logo/dark.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
