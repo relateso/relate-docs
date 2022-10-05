@@ -115,20 +115,8 @@
             "changelog/2022/100122",
             "changelog/2022/090222",
             "changelog/2022/072122",
-            "changelog/2022/061022",
-            "changelog/2022/050222",
-            "changelog/2022/032922",
-            "changelog/2022/032222",
-            "changelog/2022/022022",
-            "changelog/2022/012222",
-            "changelog/2022/010622"
+            "changelog/2022/061022"
           ]
-        },
-        {
-          "group": "2021",
-          "pages": [
-            "changelog/2021/122721", 
-            "changelog/2021/112321"]
         }
       ]
     }

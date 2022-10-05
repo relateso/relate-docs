@@ -1,59 +1,62 @@
 ---
 title: "Faster & Better List View"
-description: "People과 Organization 리스트 뷰 UX 개선"
+description: "Improved People and Organization List View"
 sidebarTitle: "October 01"
 "og:title": "Faster & Better List View | Relate Changelog"
-"og:description": "People과 Organization 리스트 뷰 UX 개선"
-"og:url": "https://docs.relate.kr/changelog/2022/100122"
-"og:image": "https://docs.relate.kr/docs/images/changelog/100122-changelog-1.png"
+"og:description": "Improved People and Organization List View"
+"og:url": "https://relate.so/docs/changelog/2022/100122"
+"og:image": "https://www.relate.so/docs/images/changelog/100122-changelog-1.png"
 "article:tag": "Changelog"
-"twitter:title": "UI 개선 및 레이아웃 업데이트 | Relate Changelog"
-"twitter:description": "Relate의 전반적인 UI 업데이트가 있었습니다."
-"twitter:url": "https://docs.relate.kr/changelog/2022/100122"
-"twitter:image": "https://docs.relate.kr/docs/images/changelog/100122-changelog-1.png"
+"twitter:title": "Faster & Better List View | Relate Changelog"
+"twitter:description": "RImproved People and Organization List View"
+"twitter:url": "https://www.relate.so/docs/changelog/2022/100122"
+"twitter:image": "https://www.relate.so/docs/images/changelog/100122-changelog-1.png"
 "og:image:width": "2240"
 "og:image:height": "1260"
 ---
 
 ![100122-changelog-1](/docs/images/changelog/100122-changelog-1.png)
 
-## Relate내 Leads/Contacts 이름 변경 → Organizations/People
+## Leads and Contacts are now Organizations and People.
 
-Relate내 고객사와 고객사 연락처를 지칭하는 Leads와 Contacts를 좀더 직관적이고 이해하기 쉬운 용어인 Organizations와 People로 변경했습니다.
+We changed our terminology for Leads and Contacts to Organizations and People.
+
+For a few reasons:
+- It's easier to understand.
+- It's a small change, but we hope that this will make you feel you know your customers more personally.
 
 ## Better & Faster List View
 
-이제 Organizations와 People 리스트 뷰가 더 빠르게 로딩되고, 일부 데이터는 수정도 가능합니다.
-
 ![100122-changelog-2](/docs/images/changelog/100122-changelog-2.png)
 
-현재 수정 가능한 항목은 다음과 같습니다.
+Organizations and People list views load much faster now. And you can edit a few data fields directly from the list view.
 
-- Organization 리스트에서 Organization 이름
-- People 리스트에서 Person 이름
-- People 리스트에서 Title
+For now, here are fields you can edit directly from the list view:
 
-이후 업데이트에서 다른 항목들도 수정이 가능할 수 있도록 개선할 예정입니다.
+- Organization name on the Organization list view
+- Person name on the People list view
+- Title on the People list view
 
-수정하는 법을 공유드립니다.
+We'll add more editable data fields shortly.
 
-- `E` 혹은 `Ctrl+E`, 또는 `Command+E`를 눌러서 수정 모드 진입
-- `Ctrl+Enter` 혹은 `Command+Return`을 눌러서 바로 디테일 페이지로 진입할 수 있습니다. 물론, 클릭으로도 여전히 디테일 페이지 진입이 가능합니다.
-- Arrow Keys (`←`,`↑`,`→`,`↓`)를 이용해 셀 이동
+Here's how you can edit data fields directly from your list view:
 
-추가로 List View에서 각 row 셀렉트를 할 수 있고, 멀티 셀렉트 및 전체 셀렉트도 가능합니다. 단, 셀렉션만 가능하고 그 이후 가능한 액션은 아직은 존재하지 않습니다. 이후 업데이트를 통해 다양한 액션을 지원할 계획입니다.
+- Hit `E` or `Ctrl+E`, (`Command+E`) to edit
+- Hit `Ctrl+Enter` (`Command+Return`) to access detail page. You can always click each Organization or Person using your mouse.
+- Use Arrow Keys (`←`,`↑`,`→`,`↓`) to navigate
+
+You can also grab each row (or multiple rows) by selecting the checkbox on the left. Note that there isn't any available actions beyond just selections. We'll be adding more features around this.
 
 ## Fixes & Improvements
-
-- 데이터 수정 이후 스크롤 리셋되면 입력 및 수정된 데이터 값이 보이지 않는 이슈 해결
-- 이메일 수정 취소시 화면이 새로고침되는 현상 해결
-- Deal 추가시 Lead list 로드가 안되는 이슈 해결
-- Inbox Zero 상태에서 Empty State 아이콘 깨지는 이슈 해결
-- Filter, Sort, Column Order 상태 저장 Fix
-- Organization이 없는 Person 허용 (Org-less person)
-- Zoho 연동시 발생하는 에러 해결
-- Guest invite 시 Member로 등록되는 이슈 해결
-- Windows에서 Ctrl+Enter 단축키 작동하지 않는 이슈 해결
+- Fixed a bug where edited data doesn't get saved when scroll gets reset.
+- Fixed an error where the app refreshes whenever an email draft gets canceled.
+- Fixed an error where when a deal gets added, Organization list fails to load.
+- Fixed an error where empty state icon for Inbox (inbox zero state) does not load.
+- Improved filter, sort, column order UX
+- Allowed org-less person (persons without an organization)
+- Fixed an error where the user is not able to connect Zoho mail
+- Fixed an error where a guest is invited, that guest gets invited as a member.
+- Fixed an error where `Ctrl+Enter` shortcut doesn't work in Windows.
 
 ---
 
