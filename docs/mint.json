@@ -1,4 +1,9 @@
 {
+  "analytics": {
+    "fathom": {
+      "siteId": "SRKXSPWK"
+    }
+  },
   "name": "Relate",
   "basePath": "/docs",
   "logo": {
@@ -13,10 +18,32 @@
     "ultraLight": "#EBF3FE",
     "ultraDark": "#00298B"
   },
+  "metadata": {
+    "charset": "utf-8",
+    "description": "Proven playbooks on running a successful B2B startup and guide on how to use a CRM.",
+    "og:site_name": "Relate | B2B Playbook & CRM Guide",
+    "og:type": "website",
+    "og:title": "Relate B2B Playbook & CRM Guide",
+    "og:description": "Proven playbooks on running a successful B2B startup and guide on how to use a CRM.",
+    "og:url": "https://www.relate.so/docs/",
+    "og:image": "https://github.com/relateso/relate-docs-kr/blob/main/docs/images/og-image-docs.png",
+    "article:publisher": "https://www.facebook.com/groups/relatecrm/",
+    "twitter:title": "Relate | B2B Playbook & CRM Guide",
+    "twitter:description": "Proven playbooks on running a successful B2B startup and guide on how to use a CRM.",
+    "twitter:url": "https://www.relate.so/docs/",
+    "twitter:image": "https://github.com/relateso/relate-docs-kr/blob/main/docs/images/og-image-docs.png",
+    "twitter:site": "@relate_so",
+    "og:image:width": "2000",
+    "og:image:height": "1050"
+  },
   "topbarLinks": [
     {
       "name": "Blog",
-      "url": "https://www.relate.so/blog"
+      "url": "https://www.relate.so/blog/"
+    },
+    {
+      "name": "Go to Relate",
+      "url": "https://www.relate.so/"
     }
   ],
   "topbarCtaButton": {
@@ -34,8 +61,13 @@
     },
     {
       "name": "Playbook",
-      "icon": "book",
+      "icon": "map",
       "url": "playbook"
+    },
+    {
+      "name": "Startup Wiki",
+      "icon": "book",
+      "url": "wiki"
     },
     {
       "name": "Changelog",
@@ -72,6 +104,32 @@
           ]
         },
         "setup/register-google-api-allowlist"
+      ]
+    },
+    {
+      "group": "Changelog",
+      "pages": [
+        {
+          "group": "2022",
+          "pages": [
+            "changelog/2022/100122",
+            "changelog/2022/090222",
+            "changelog/2022/072122",
+            "changelog/2022/061022",
+            "changelog/2022/050222",
+            "changelog/2022/032922",
+            "changelog/2022/032222",
+            "changelog/2022/022022",
+            "changelog/2022/012222",
+            "changelog/2022/010622"
+          ]
+        },
+        {
+          "group": "2021",
+          "pages": [
+            "changelog/2021/122721", 
+            "changelog/2021/112321"]
+        }
       ]
     }
   ],

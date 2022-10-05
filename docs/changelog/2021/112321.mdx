@@ -1,0 +1,72 @@
+---
+title: "커스텀 필드 & 마크다운 문법"
+description: "Relate 0.1.9 업데이트 노트"
+sidebarTitle: "November 23"
+"og:title": "커스텀 필드 & 마크다운 문법 | Relate Changelog"
+"og:description": "Relate 0.1.9 업데이트 노트"
+"og:url": "https://docs.relate.kr/changelog/2022/112321"
+"og:image": "https://docs.relate.kr/docs/images/changelog/112321-changelog-1"
+"article:tag": "Changelog"
+"twitter:title": "커스텀 필드 & 마크다운 문법 | Relate Changelog"
+"twitter:description": "Relate 0.1.9 업데이트 노트"
+"twitter:url": "https://docs.relate.kr/changelog/2022/112321"
+"twitter:image": "https://docs.relate.kr/docs/images/changelog/112321-changelog-1.png"
+"og:image:width": "2240"
+"og:image:height": "1260"
+---
+
+안녕하세요, Relate 팀 공동창업자 Chris 입니다.
+
+이제 Relate에서 커스텀 필드(custom field)를 생성하고 마크다운을 활용해 노트를 작성할 수 있습니다.
+
+0.1.9 버전으로 업데이트하시면 바로 새롭게 추가된 기능과 개선 사항을 사용해보실 수 있습니다.
+
+## Custom Fields
+
+![112321-changelog-1](/docs/images/changelog/112321-changelog-1.png)
+
+Lead, Contact, 그리고 Deal 에 추가할 수 있는 Custom Fields 기능이 1차로 추가 되었습니다.
+
+1차 업데이트에는 위 스크린샷과 같이 텍스트 정보를 입력할 수 있는 field 를 생성할 수
+있습니다.
+
+예를 들어 고객사의 사업자 등록번호나 주소 등과 같은 정보를 입력할 수 있습니다.
+
+향후 노션처럼 숫자(integer), 전화번호, 셀렉트/멀티셀렉트, URL 등의 custom field 를 생성하고 관리하실 수 있도록 순차적으로 추가할 예정입니다.
+
+## Custom Fields 추가하는 방법
+
+현재는 `https://app.relate.so/workspaces/여기에 워크스페이스 이름을 넣어주세요/custom_fields` 링크로 들어가셔서 custom field를 생성할 수 있습니다.
+
+추후 기존 [워크스페이스 세팅 페이지](https://app.relate.so/workspaces)에서 생성 및 관리할 수 있도록 추가할 예정입니다.
+
+## 노트 마크다운 지원
+
+![112321-changelog-2](/docs/images/changelog/112321-changelog-2.png)
+
+이제 노트에서 마크다운 문법을 사용할 수 있습니다. 마크다운이란 일반 텍스트 문서의 양식을 쉽고 간편하게 편집하는 문법입니다.
+
+슬랙을 사용해보셨다면 슬랙에서 텍스트에 볼드나 이탤릭처리를 하는 방법과 같습니다. 이제 같은 방법으로 Relate 에서도 노트를 업데이트 하실 수 있습니다.마크다운에 대해서는 [이 글](https://theorydb.github.io/envops/2019/05/22/envops-blog-how-to-use-md/)을 참고하시면 도움이 될 것 같습니다.
+
+## UX 및 UI 개선
+
+서비스 전체적으로 속도 향상과 불편한 UX를 개선했고, 조금 더 서비스내 정보를 보시기 편하도록 UI를 개선하였습니다.
+
+1. **Contact 디테일 페이지 (고객사별 화면)**
+   Lead 삭제 이후 전체 리스트로 다시 redirect 할 수 있도록 변경.
+2. **Inbox 개선**
+
+- `ESC` 를 눌러 선택된 아이템에서 벗어날 수 있게 변경.
+- 마지막 Inbox 아이템을 아카이브했을 때, 선택 해제되게 변경.
+- 이메일과 노트 인터페이스를 동일하게 맞추고 변경.
+
+3. **노트 개선**
+
+- 노트 스크롤링 개선과 마크다운 문법 지원 적용.
+
+4. **딜 생성시 금액 자릿수 자동 포맷 (10000 -> 10,000)**
+5. **모달, 폼 진입시 첫 input field에 focus 주도록 변경.**
+
+---
+
+Last updated: November 23rd, 2021
