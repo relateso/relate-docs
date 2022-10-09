@@ -107,6 +107,12 @@
       ]
     },
     {
+      "group": "Startup Wiki",
+      "pages": [
+        "wiki/SaaS/ARR"
+      ]
+    },
+    {
       "group": "Changelog",
       "pages": [
         {
