@@ -109,7 +109,12 @@
     {
       "group": "Startup Wiki",
       "pages": [
-        "wiki/SaaS/ARR"
+          {
+            "group": "SaaS",
+            "pages": [
+              "wiki/SaaS/ARR"
+            ]
+          }
       ]
     },
     {
