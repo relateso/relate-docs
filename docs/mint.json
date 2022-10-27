@@ -107,6 +107,12 @@
       ]
     },
     {
+      "group": "Integrations",
+      "pages": [
+          "integrations/Apollo.io"
+      ]
+    },
+    {
       "group": "Startup Wiki",
       "pages": [
           {
