@@ -81,12 +81,45 @@
       "pages": ["introduction"]
     },
     {
-      "group": "📚 Fundamentals",
+      "group": "Onboarding",
       "pages": [
-        "fundamentals/leads-and-contacts",
-        "fundamentals/deal-pipeline",
-        "fundamentals/customer-communication",
-        "fundamentals/shortcuts"
+        {
+          "group": "Get Started",
+          "pages": [
+              "setup/getting-started",
+              {
+                "group": "Connect your email",
+                "pages": [
+                  "setup/register-google-api-allowlist",
+                  "setup/email-integration/google-outlook-etc",
+                  "setup/email-integration/naverworks-lineworks"
+                ]
+              },
+              "setup/import"
+          ]
+        },
+        {
+          "group": "Learn Relate",
+          "pages": [
+            "features/organizations",
+            "features/people",
+            "features/deal-pipeline",
+            "features/custom-fields",
+            "features/filtering-views",
+            "features/inbox",
+            "features/reporting",
+            "features/shortcuts"
+          ]
+        }
+      ]
+    },    
+    {
+      "group": "📚 Features",
+      "pages": [
+        "features/leads-and-contacts",
+        "features/deal-pipeline",
+        "features/customer-communication",
+        "features/shortcuts"
       ]
     },
     {
