@@ -91,15 +91,14 @@
                 "group": "Connect your email",
                 "pages": [
                   "setup/register-google-api-allowlist",
-                  "setup/email-integration/google-outlook-etc",
-                  "setup/email-integration/naverworks-lineworks"
+                  "setup/email-integration/google-outlook-etc"
                 ]
               },
               "setup/import"
           ]
         },
         {
-          "group": "Learn Relate",
+          "group": "Learn how to use Relate",
           "pages": [
             "features/organizations",
             "features/people",

@@ -1,0 +1,61 @@
+---
+title: "How to import data into Relate"
+description: "Learn how to import data into Relate"
+sidebarTitle: "How to import data into Relate"
+"og:title": "How to import data into Relate | Relate Product Guide"
+"og:description": "Learn how to import data into Relate"
+"article:tag": "Setup"
+"twitter:title": "How to import data into Relate | Relate Product Guide"
+"twitter:description": "Learn how to import data into Relate"
+---
+
+## Overview
+
+This guide teaches you how to import .CSV or .XSLX file into Relate.
+
+## Download the import template
+
+Go to the Relate [admin page](https://app.relate.so) and choose `Import Data` on the left menu, and download the import template file as shown in below screenshot.
+
+There are two different import templates:
+
+- Organization/People (Lead/Contacts)
+- Deals
+
+Use the correct one to import!
+
+![Download leads](/docs/images/setup/lead-contact-deal-import/download-leads.png)
+
+## Prepare for import
+
+![Prepare imports](/docs/images/setup/lead-contact-deal-import/prepare-imports.png)
+
+Use the example row (row 3) as a guidance for mapping your data.
+
+## Upload the file and import
+
+Once you're ready to import, go back to the [admin page](https://app.relate.so/) and `Import Data` menu, and upload the file you want to import.
+
+![Import 하기](/docs/images/setup/lead-contact-deal-import/import.png)
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+	<Accordion title="Do I have to create custom fields before importing?">
+
+No. When you import, Relate will automatically create a new custom field that maps your importing data.
+
+Note that in this case, Relate will use text format (string). If you need to use any other formats (e.g., select/multi-select), then you'll need to create custom fields before importing.
+
+</Accordion>
+
+<Accordion title="Can I change a custom field's data format when importing?">
+
+We currently support Text, Multi-line text, Select, and Resources:Users data formats when directly creating a custom field while importing.
+
+If you want to use a different data format other than the above, you must create the custom field before importing.
+
+For Resources:Users, you must use the user's email address (e.g., john@doe.com) instead of their name.
+
+</Accordion>
+</AccordionGroup>
