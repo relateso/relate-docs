@@ -117,7 +117,7 @@
       "pages": [
         "features/leads-and-contacts",
         "features/deal-pipeline",
-        "features/customer-communication",
+        "features/inbox",
         "features/shortcuts"
       ]
     },
