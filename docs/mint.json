@@ -168,8 +168,15 @@
       "group": "Changelog",
       "pages": [
         {
+          "group": "2023",
+          "pages": [
+            "changelog/2023/010123"
+          ]
+        },
+        {
           "group": "2022",
           "pages": [
+            "changelog/2022/122822",
             "changelog/2022/120822",
             "changelog/2022/111822",
             "changelog/2022/100122",
