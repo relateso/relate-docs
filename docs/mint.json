@@ -4,6 +4,9 @@
       "siteId": "SRKXSPWK"
     }
   },
+    "integrations": {
+    "intercom": "e0ne5yt8"
+  },
   "name": "Relate",
   "basePath": "/docs",
   "logo": {
