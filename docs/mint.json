@@ -155,7 +155,10 @@
             "pages": [
               "wiki/SaaS/ARR",
               "wiki/SaaS/MRR",
-              "wiki/acv"
+              "wiki/acv",
+              "wiki/cac",
+              "wiki/ltv",
+              "wiki/nrr"
             ]
           },
           {
@@ -173,6 +176,8 @@
         {
           "group": "2023",
           "pages": [
+            "changelog/2023/070623",
+            "changelog/2023/062223",
             "changelog/2023/050723",
             "changelog/2023/040323",
             "changelog/2023/032323",
