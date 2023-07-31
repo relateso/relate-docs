@@ -1,3 +1,5 @@
+<script type="module" src="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js"></script>
+<link rel="stylesheet" href="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css"/>
 ---
 title: "Apollo.io + Relate"
 description: "How to use Apollo.io and Relate together"
@@ -8,81 +10,103 @@ sidebarTitle: "Apollo.io"
 "twitter:title": "Apollo.io + Relate Integration | Relate Startup Wiki"
 "twitter:description": "How to use Apollo.io and Relate together"
 ---
-<script type="module" src="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js"></script>
-<link rel="stylesheet" href="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css"/>
 
 You can integrate Apollo.io and Relate to prospect and manage potential customers. 
 
-**Use Relate + Apollo Zapier Template**
+# Overview
+Apollo is a lead generation and email sequencing software for B2B companies. It offers a free tier so you can get started with Apollo right away.
 
-<zapier-zap-templates
-  ids="1123407"
-  limit="5"
-  link-target="new-tab"
-  presentation="row"
-  use-this-zap="show"
-  theme="auto"
-></zapier-zap-templates>
+## Use Apollo with Relate CRM
+Apollo has some great features on the lead generation and outbound email side of things.
 
-## 1. Connect Apollo + Relate
+Here are our team's favorite ways to integrate Apollo with Relate:
+- Add Linkedin profiles to Relate
+- Automatically sync your Apollo lead lists with Relate
+- Sync any emails sent/received through Apollo
 
-First, find [Apollo](https://apollo.io) and [Relate](https://www.relae.so/) from the first page you see after logging into Zapier. In the second row, choose **“New Contact”** from Apollo and **“Generate Lead & Contact”** from Relate. 
+## Connect Apollo and Relate through Zapier
+
+### 1. Create a Zap linking Apollo and Relate
+First, you'd need a Zapier account and a Zap linking between Relate and Apollo.
+
+Find Apollo and Relate from the first page you see after logging into Zapier. In the second row, choose “New Contact” from Apollo and “Generate Lead & Contact” from Relate.
 
 With this integration, saving a new contact in Apollo will automatically create a new lead and contact in Relate. 
 
-Click the “Try it” button to continue.
+Click the “Try it!” button to continue.
 
-![apollo_1](/docs/images/integrations/apollo_1.png)
+![apollo1](/docs/images/integrations/apollo1.png)
 
-## 2. API Key Input
+### 2. Find your API keys
 
+To authenticate yourself, you'll need to provide API keys for both Apollo and Relate.
 
-### Find your Apollo API Key
+![apollo2](/docs/images/integrations/apollo2.png)
+
+#### Get your Apollo API key
+
+Click to Choose an Account with Apollo.
+
+![apollo4](/docs/images/integrations/apollo4.png)
+
+Below screen will show up as the next step. **You can paste the Apollo API Key in the first box**. 
 
 ![apollo_2](/docs/images/integrations/apollo_2.png)
 
-This screen will show up as the next step. You can paste the Apollo API Key in the first box. You can find Apollo API Key on your [Apollo developer settings page](https://developer.apollo.io/keys/).
+You can find Apollo API Key on your [Apollo developer settings page](https://developer.apollo.io/keys/).
 
-In the second box, type in your Apollo Account name. (Ex: Won’s Apollo Integration)
+In the second box, type in your Apollo Account name. (Ex: Won’s Apollo Integration).
 
-### Find your Relate API Key
+Once you authenticate, you'll go back to the Zap edit page.
 
-![apollo_3](/docs/images/integrations/apollo_3.png)
+#### Get your Relate API key
+Next, you need to type in the Relate API Key. Just like you did it with Apollo API key, choose an Account with Relate.
 
-Next, you need to type in the Relate API Key. You can find Relate API Key from the [Relate Admin Page](https://app.relate.so/) → Integrations → Zapier.
+![apollo5](/docs/images/integrations/apollo5.png)
 
-![apollo_4](/docs/images/integrations/apollo_4.png)
+You can generate a new Relate API Key from the [Relate Admin Page](https://app.relate.so/) → Integrations → Zapier → API Keys tab.
 
-![apollo_5](/docs/images/integrations/apollo_5.png)
+Click `Generate a new API Key`.
 
-Click `Generate API Key` to generate a new API Key. You won’t be able to see the generated API Key for security purposes. Copy the API Key and click “**I stored this key**” to save.
+![apollo_zapier1](/docs/images/integrations/apollo_zapier1.png)
 
-## 3. Set up Zapier Trigger and Action
+Note that we do not reveal the key after you use it for security purposes. Make sure to copy the key and click `I stored this key` to save.
+
+### Set up Zapier Trigger and Action
 
 ![apollo_6](/docs/images/integrations/apollo_6.png)
 
-After connecting APIs, you can set up on the Edit page. In the Trigger section, click the “Test trigger” button to test Apollo account connection. If the test is successful, move on to the Action section. 
+Once you add your API keys to Zapier, it will take you to next steps -- Trigger and Action.
+
+In the Trigger section, click the “Test trigger” button to test Apollo account connection. 
+
+**Note that you'll need to have at least one contact added to Apollo.**
+
+If the test is successful, move on to the Action section.
 
 ![apollo_7](/docs/images/integrations/apollo_7.png)
 
 In the Action section, test Relate connection first. Then, go to the “Set up action” and match customer information with data fields in Relate.
 
-There are required data fields. 
+There are three required data fields. 
 - Company Name
 - Contact Name
 - Contact Email
 
-If some of the customer information doesn’t match the data field in Relate, you can add them in the Note section. This will create a note in Relate with the customer information you choose.
+If some of the customer information don’t match the data field in Relate, you can add them in the **Note** section. This will create a note in Relate with the customer information you choose.
 
-You can also find this note in your Inbox, so you can use it as a reminder that a new contact has been created.  
+If you're using Note section, Relate will also send a notification in your Inbox whenever there's a new contact added to Relate. You can then use it as a reminder that a new contact has been created.  
 
-If you leave the Deal section blank, it won’t create a new deal. To create a new deal, you need to add information in the Deal section. (Ex: Deal Assignee, Deal Status, etc.)
+#### Automatically create a new deal
+To automatically create a new corresponding deal, you need to add information in the Deal section. (e.g., Deal Assignee, Deal Status, etc.)
 
 ![apollo_8](/docs/images/integrations/apollo_8.png)
 
-Lastly, click the “Test action” button to test, and publish the Zap. You can change the name of the Zap in the top left corner.
+If you leave the Deal section blank, it won’t create a new deal. 
 
----
+
+### Publish the Zap
+Lastly, click the “Test action” button to test, and publish the Zap. You can change the name of the Zap in the top left corner.
 
 ### Popular Relate integrations via Zapier
 
@@ -93,3 +117,6 @@ Lastly, click the “Test action” button to test, and publish the Zap. You can
   use-this-zap="show"
   theme="light"
 ></zapier-zap-templates>
+
+---
+Last updated: July 31, 2023
