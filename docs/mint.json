@@ -162,10 +162,22 @@
             ]
           },
           {
+            "group": "Go-to-Market",
+            "pages": [
+              "wiki/icp"
+            ]
+          },
+          {
             "group": "Sales",
             "pages": [
               "wiki/Sales/Lead-Qualification",
-              "wiki/Sales/Inbound-Sales"
+              "wiki/Sales/Inbound-Sales",
+              "wiki/BANT",
+              "wiki/sales-roles",
+              "wiki/upsell-cross-sell",
+              "wiki/mql",
+              "wiki/pql",
+              "wiki/sql"
             ]
           }
       ]
