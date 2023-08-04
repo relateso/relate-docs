@@ -162,14 +162,9 @@
             ]
           },
           {
-            "group": "Go-to-Market",
-            "pages": [
-              "wiki/icp"
-            ]
-          },
-          {
             "group": "Sales",
             "pages": [
+              "wiki/icp",
               "wiki/Lead-Qualification",
               "wiki/Inbound-Sales",
               "wiki/BANT",
