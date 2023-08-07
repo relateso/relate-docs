@@ -75,7 +75,7 @@
     {
       "name": "Changelog",
       "icon": "list",
-      "url": "changelog"
+      "url": "https://www.relate.so/changelog/"
     }
   ],
   "navigation": [
@@ -175,35 +175,6 @@
               "wiki/sql"
             ]
           }
-      ]
-    },
-    {
-      "group": "Changelog",
-      "pages": [
-        {
-          "group": "2023",
-          "pages": [
-            "changelog/2023/070623",
-            "changelog/2023/062223",
-            "changelog/2023/050723",
-            "changelog/2023/040323",
-            "changelog/2023/032323",
-            "changelog/2023/022723",
-            "changelog/2023/013023"
-          ]
-        },
-        {
-          "group": "2022",
-          "pages": [
-            "changelog/2022/122822",
-            "changelog/2022/120822",
-            "changelog/2022/111822",
-            "changelog/2022/100122",
-            "changelog/2022/090222",
-            "changelog/2022/072122",
-            "changelog/2022/061022"
-          ]
-        }
       ]
     }
   ],
