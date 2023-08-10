@@ -13,49 +13,85 @@ sidebarTitle: "How to import data into Relate"
 
 This guide teaches you how to import .CSV or .XSLX file into Relate.
 
-## Download the import template
+## What you need to know before importing customer data
 
-Go to the Relate [admin page](https://app.relate.so) and choose `Import Data` on the left menu, and download the import template file as shown in below screenshot.
+### Organization, Person, Deal
 
-There are two different import templates:
+There are three types of customer data in Relate.
+- Organization
+- Person
+- Deal
 
-- Organization/People
-- Deals
+![Relate Data](/docs/images/setup/org_person_deal.png)
 
-Use the correct one to import!
+You must have an Organization before adding a Person and a Deal because both Person and Deal are under Organization. 
 
-![Download leads](/docs/images/setup/download-leads.png)
+### Default Data Field
 
-## Prepare for import
+The default data fields for Organization, Person, and Deal are the following. 
 
-![Prepare imports](/docs/images/setup/prepare-imports.png)
+Organization:
+- **Organization Name (Required)**
+- Website
+- Description
+- Assignee
 
-Use the example row (row 3) as a guidance for mapping your data.
+Person:
+- **Person Name (Required)**
+- Title
+- Email
+- Phone
 
-## Upload the file and import
+Deal:
+- **Organization (Required)**
+- Person
+- Value
+- Prospect Status
+- Pipeline (Only if you have more than 2 pipelines)
+- Pipeline Stage
+- Assignee
+- Notes
 
-Once you're ready to import, go back to the [admin page](https://app.relate.so/) and `Import Data` menu, and upload the file you want to import.
+### How to import with custom fields
 
-![Import 하기](/docs/images/setup/import.png)
+To import with custom fields, you must add [Custom Fields](https://www.relate.so/docs/features/custom-fields) before you import.
 
-## Frequently Asked Questions
+![Relate Data](/docs/images/setup/custom_field_menu.png)
 
-<AccordionGroup>
-	<Accordion title="Do I have to create custom fields before importing?">
+## Importing Customer Data
 
-No. When you import, Relate will automatically create a new custom field that maps your importing data.
+Go to the [Admin Page](https://app.relate.so/), select Import Data from the left menu bar, and then click Import Organizations or Import Deals.
 
-Note that in this case, Relate will use text format (string). If you need to use any other formats (e.g., select/multi-select), then you'll need to create custom fields before importing.
+![Relate Data](/docs/images/setup/import_menu1.png)
 
-</Accordion>
+When importing customer information into Relate, you can import organizations and people from Import Organizations and deals from Import Deals.
 
-<Accordion title="Can I change a custom field's data format when importing?">
+### Import Menu
 
-We currently support Text, Multi-line text, Select, and Resources:Users data formats when directly creating a custom field while importing.
+![Relate Data](/docs/images/setup/import_menu2.png)
 
-If you want to use a different data format other than the above, you must create the custom field before importing.
+Pressing the Import Organizations or Import Deals button will take you to a screen like the one above.
 
-For Resources:Users, you must use the user's email address (e.g., john@doe.com) instead of their name.
+You can download a sample file by clicking Download example in the top right corner.
 
-</Accordion>
-</AccordionGroup>
+If you already have a file ready to import, you can click Next Step on the bottom right.
+
+![Relate Data](/docs/images/setup/import_menu3.png)
+
+On the next screen, press the button in the center or drag and drop to add the files you want to import.
+
+![Relate Data](/docs/images/setup/import_menu4.png)
+
+Once the files have been added successfully, press Next Step at the bottom to move to the next screen.
+
+![Relate Data](/docs/images/setup/import_menu5.png)
+
+On the next screen, you can match the columns in your CSV or XLSX file with the data fields in Relate, if necessary. After matching, press Next Step at the bottom right to move to the next screen.
+
+If anything goes wrong during the import process, it will be colored red.
+
+![Relate Data](/docs/images/setup/import_menu6.png)
+
+After a successful import, you should see the screen below.
+
+![Relate Data](/docs/images/setup/import_menu7.png)
