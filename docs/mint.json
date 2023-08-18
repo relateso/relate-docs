@@ -105,7 +105,6 @@
           "pages": [
             "features/organizations",
             "features/people",
-            "features/how-to-manage-prospect-status",
             "features/how-to-manage-deal-assignee",
             "features/how-to-manage-expected-close-date",
             "features/deal-pipeline",
@@ -122,6 +121,13 @@
     {
       "group": "📚 Features",
       "pages": [
+        {
+          "group": "Prospect",
+          "pages": [
+              "features/prospect",
+              "features/prospect-status"
+          ]
+        },
         "features/leads-and-contacts",
         "features/deal-pipeline",
         "features/inbox",
