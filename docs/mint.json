@@ -13,6 +13,9 @@
     "light": "/docs/logo/light.svg",
     "dark": "/docs/logo/dark.svg"
   },
+  "modeToggle": {
+    "default": "dark"
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#145AFF",
