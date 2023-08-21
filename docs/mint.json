@@ -1,25 +1,26 @@
 {
+  "$schema": "https://mintlify.com/schema.json",
   "analytics": {
     "fathom": {
       "siteId": "SRKXSPWK"
     }
   },
-    "integrations": {
+  "integrations": {
     "intercom": "e0ne5yt8"
   },
   "name": "Relate",
-  "basePath": "/docs",
   "logo": {
     "light": "/docs/logo/light.svg",
     "dark": "/docs/logo/dark.svg"
+  },
+  "modeToggle": {
+    "default": "dark"
   },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#145AFF",
     "light": "#1890FF",
-    "dark": "#003ED0",
-    "ultraLight": "#EBF3FE",
-    "ultraDark": "#00298B"
+    "dark": "#003ED0"
   },
   "metadata": {
     "charset": "utf-8",
