@@ -129,6 +129,12 @@
               "features/prospect-status"
           ]
         },
+        {
+          "group": "Reporting",
+          "pages": [
+              "features/reporting"
+          ]
+        },
         "features/leads-and-contacts",
         "features/deal-pipeline",
         "features/inbox",
