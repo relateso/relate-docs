@@ -82,46 +82,14 @@
   "navigation": [
     {
       "group": "Home",
-      "pages": ["introduction"]
-    },
-    {
-      "group": "Onboarding",
-      "pages": [
-        {
-          "group": "Get Started",
-          "pages": [
-              "setup/getting-started",
-              {
-                "group": "Connect your email",
-                "pages": [
-                  "setup/register-google-api-allowlist",
-                  "setup/email-integration/google-outlook-etc"
-                ]
-              },
-              "setup/import"
-          ]
-        },
-        {
-          "group": "Learn how to use Relate",
-          "pages": [
-            "features/organizations",
-            "features/people",
-            "features/how-to-manage-deal-assignee",
-            "features/how-to-manage-expected-close-date",
-            "features/deal-pipeline",
-            "features/custom-fields",
-            "features/filtering-views",
-            "features/inbox",
-            "features/tasks",
-            "features/reporting",
-            "features/shortcuts"
-          ]
-        }
-      ]
+      "pages": ["intro", "onboarding"]
     },    
     {
       "group": "📚 Features",
       "pages": [
+        "features/organizations",
+        "features/people",
+        "features/deals",
         {
           "group": "Prospect",
           "pages": [
@@ -135,17 +103,22 @@
               "features/reporting"
           ]
         },
-        "features/leads-and-contacts",
-        "features/deal-pipeline",
         "features/inbox",
-        "features/shortcuts"
+        "features/shortcuts",
+        "features/custom-fields",
+        "features/filtering-views",
+        "features/inbox",
+        "features/tasks",
+        "features/shortcuts",
+        "features/how-to-manage-deal-assignee",
+        "features/how-to-manage-expected-close-date"
       ]
     },
     {
       "group": "💻 Setup",
       "pages": [
         "setup/workspace-setting",
-        "setup/lead-contact-deal-import",
+        "setup/import",
         "setup/email-integration-google-outlook-etc",
         {
           "group": "Zapier Integration",
@@ -175,7 +148,7 @@
               "wiki/acv",
               "wiki/cac",
               "wiki/ltv",
-              "wiki/nrr"
+              "wiki/net-revenue-retention"
             ]
           },
           {
@@ -193,6 +166,16 @@
             ]
           }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/introduction/",
+      "destination": "/intro/"
+    },
+    {
+      "source": "/features/deal-pipeline",
+      "destination": "/features/deals/"
     }
   ],
   "footerSocials": {
