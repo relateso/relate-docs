@@ -1,23 +1,26 @@
 ---
-title: "How to import data into Relate"
+title: "Import data"
 description: "Learn how to import data into Relate"
-sidebarTitle: "How to import data into Relate"
-"og:title": "How to import data into Relate | Relate Product Guide"
+sidebarTitle: "Import"
+"og:title": "How to import data into Relate | Relate Documentation"
 "og:description": "Learn how to import data into Relate"
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
 "article:tag": "Setup"
-"twitter:title": "How to import data into Relate | Relate Product Guide"
+"twitter:title": "How to import data into Relate | Relate Documentation"
 "twitter:description": "Learn how to import data into Relate"
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
 ---
 
-## Overview
+![import1](/images/setup/import.png)
 
-This guide teaches you how to import .CSV or .XSLX file into Relate.
+## Overview
+Learn how to import .CSV data into Relate.
 
 <Check>
 
-**1-point guide**
+**TL;DR**
 
-Go to the [Admin Page](https://admin.relate.so/), select Import Data from the left menu bar, and then click Import Organizations or Import Deals.
+Go to the [Admin Page](https://admin.relate.so/), select `Import Data` from the left menu bar, and then click `Import Organizations` or `Import Deals`.
 
 ![Relate Data](/images/setup/import_menu1.png)
 
@@ -27,13 +30,13 @@ When importing customer information into Relate, you can import organizations an
 
 ## What you need to know before importing customer data
 
-### Organization, Person, Deal
+### Customer data types
 
 There are three types of customer data in Relate.
 
-- [Organization](https://www.relate.so/docs/features/organizations)
-- [Person](https://www.relate.so/docs/features/people)
-- [Deal](https://www.relate.so/docs/features/deal-pipeline)
+- [Organization](/features/organizations)
+- [Person](/features/people)
+- [Deal](/features/deals)
 
 ![Relate Data](/images/setup/org_person_deal.png)
 
@@ -68,46 +71,62 @@ Deal:
 - Assignee
 - Notes
 
-### How to import with custom fields
+## How to import
 
-To import with custom fields, you must add [Custom Fields](https://www.relate.so/docs/features/custom-fields) before you import.
-
-![Relate Data](/images/setup/custom_field_menu.png)
-
-## Importing Customer Data
-
-Go to the [Admin Page](https://admin.relate.so/), select Import Data from the left menu bar, and then click Import Organizations or Import Deals.
+Go to the [admin page](https://admin.relate.so/), select Import data from the left menu bar, and then click `Import Organizations` or `Import Deals`.
 
 ![Relate Data](/images/setup/import_menu1.png)
 
-When importing customer information into Relate, you can import organizations and people from Import Organizations and deals from Import Deals.
+### Step 1. Gettting started
 
-### Import Menu
+<Tip>If you already have a .CSV file ready for import, you can skip to Step 2.</Tip>
 
-![Relate Data](/images/setup/import_menu2.png)
+If you don't you can download a sample .CSV file that already has the default fields as well as sample custom fields like `Linkedin`, `Segment`, and `Tools`.
 
-Pressing the Import Organizations or Import Deals button will take you to a screen like the one above.
+<Warning>Note that sample custom fields in the sample .CSV file are just *samples*! **You'll need to create your own set of custom fields if you're planning to import additional fields.**</Warning>
 
-You can download a sample file by clicking Download example in the top right corner.
+Once you have a .CSV file ready to import, proceed to Step 2.
 
-If you already have a file ready to import, you can click Next Step on the bottom right.
+### Step 2. Upload file
 
-![Relate Data](/images/setup/import_menu3.png)
+Drag and drop a .CSV file or click to choose a file from your local computer.
 
-On the next screen, press the button in the center or drag and drop to add the files you want to import.
+![import2](/images/setup/import2.png)
 
-![Relate Data](/images/setup/import_menu4.png)
+Once the files have been added successfully, press `Next Step` at the bottom right corner to proceed.
 
-Once the files have been added successfully, press Next Step at the bottom to move to the next screen.
+<Note>Note that by default, first row is a header. If you want to treat the first row as data value, turn this mode off by switching the top left toggle button.</Note>
 
-![Relate Data](/images/setup/import_menu5.png)
+### Step 3. Match columns
 
-On the next screen, you can match the columns in your CSV or XLSX file with the data fields in Relate, if necessary. After matching, press Next Step at the bottom right to move to the next screen.
+In this step, you can match the columns in your .CSV file with the data fields in Relate.
 
-If anything goes wrong during the import process, it will be colored red.
+![import1](/images/setup/import.png)
 
-![Relate Data](/images/setup/import_menu6.png)
+Note that you can also skip any fields you do not wish to import.
 
-After a successful import, you should see the screen below.
+#### Smart fuzzy matching
+Input CSV file and destination columns are automatically mapped using smart fuzzy text matching.
 
-![Relate Data](/images/setup/import_menu7.png)
+#### Fix validation issues seamlessly
+If any fields need fixing, you can edit them as if you're editing a spreadsheet directly from the import page. No need to go back to your local Excel file.
+
+If anything goes wrong during this process, error will be displayed in red.
+
+![Relate Data Import error](/images/setup/import_menu6.png)
+
+Proceed to next step once you have matched all of the columns.
+
+### Step 4: Import data
+Once you click the `Import Data` button you should see a confirmation. Confirm the import and you should be able to see the screen below.
+
+![successful Relate Data](/images/setup/import_menu7.png)
+
+### Check whether your import is successful
+Go to your [workspace](https://web.relate.so/) and check whether your import is successful. Sometimes, you might need to revert -- while we do not have a self-revert feature, feel free to reach out to our team via messenger located on the bottom left corner of the app.
+
+## Frequently Asked Questions
+
+<Accordion title="How do I import custom fields?">
+  To import with custom fields, you must add [Custom Field](/features/custom-fields) before you import.
+</Accordion>
