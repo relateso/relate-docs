@@ -83,7 +83,7 @@
     {
       "group": "Home",
       "pages": ["intro", "onboarding"]
-    },    
+    },
     {
       "group": "📚 Features",
       "pages": [
@@ -110,7 +110,8 @@
         "features/tasks",
         "features/shortcuts",
         "features/how-to-manage-deal-assignee",
-        "features/how-to-manage-expected-close-date"
+        "features/how-to-manage-expected-close-date",
+        "features/how-to-manage-organization-assignee"
       ]
     },
     {
