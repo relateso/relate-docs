@@ -170,12 +170,12 @@
   ],
   "redirects": [
     {
-      "source": "/introduction/",
-      "destination": "/intro/"
+      "source": "/introduction",
+      "destination": "/intro"
     },
     {
       "source": "/features/deal-pipeline",
-      "destination": "/features/deals/"
+      "destination": "/features/deals"
     }
   ],
   "footerSocials": {
