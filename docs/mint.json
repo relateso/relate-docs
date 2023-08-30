@@ -82,7 +82,16 @@
   "navigation": [
     {
       "group": "Home",
-      "pages": ["intro", "onboarding"]
+      "pages": ["intro"]
+    },
+    {
+      "group": "Start guide",
+      "pages": [
+        "what-is-relate",
+        "onboarding",
+        "setup/get-the-app",
+        "learn-the-model"
+      ]
     },
     {
       "group": "📚 Features",
