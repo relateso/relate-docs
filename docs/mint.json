@@ -87,8 +87,8 @@
     {
       "group": "Start guide",
       "pages": [
-        "what-is-relate",
         "onboarding",
+        "what-is-relate",
         "setup/get-the-app",
         "learn-the-model"
       ]
