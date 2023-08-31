@@ -1,169 +1,143 @@
 ---
 title: "Deals"
 sidebarTitle: "Deals"
-description: "Deal Pipeline lets you track and manage all your sales opportunities in a single, bird-eye-view. This is where you'll track all pending deals and their owners, pending value ($), and their statuses."
-"og:title": "Deals | Relate Documentation"
-"og:description": "Deal Pipeline lets you track and manage all your sales opportunities in a single, bird-eye-view. This is where you'll track all pending deals and their owners, pending value ($), and their statuses."
+description: "Deals are the core means to track sales opportunities in Relate."
+"og:title": "Deals | Relate Guide"
+"og:description": "Deals are the core means to track sales opportunities in Relate."
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/features/deals.png"
 "article:tag": "Product Guide"
-"twitter:title": "Deals | Relate Documentation"
-"twitter:description": "Deal Pipeline lets you track and manage all your sales opportunities in a single, bird-eye-view. This is where you'll track all pending deals and their owners, pending value ($), and their statuses."
+"twitter:title": "Deals | Relate Guide"
+"twitter:description": "Deals are the core means to track sales opportunities in Relate."
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/features/deals.png"
 ---
 
-![Deal Pipeline](/images/features/deal-pipeline.png)
+![deals](/images/features/deals.png)
 
-## Pipeline Management
+## Overview
+Deals are the core means to track sales opportunities in Relate. Every other concepts such as [Organization](/features/organizations/) and [People](/features/people/) are connected to deals and they represent who you’re engaging with in a deal.
 
-![Pipeline Management](/images/features/pipeline-management.png)
+As such, each deal represents a sales opportunity. So you can have multiple deals within an organization.
 
-You can easily drag & drop each deal card to reflect updates.
+Deals consist of two sections: **(1) Prospect, and (2) Close.**
 
-### What is Pipeline?
+## Concepts
 
-The Deal Pipeline is the source of truth for your sales team's performance. You can see the number of deals and the total value of deals in each status. You can also see the owner of deals and if there are any objections/blockers.
+### Prospect
+A prospect is a deal that are "work-in-progress" before handoff to  closing.
 
-- You can see Deal Progress.
+Prospects in Relate are handled through the [Prospect](/features/prospect) feature, accompanied by the [Prospect Status](/features/prospect-status).
 
-- Sales reps can identify required actions to convert deals to the next steps.
+### Close (Pipeline)
+Once a prospect is marked as `Qualified`, the deal gets sent to a pipeline.
 
-- You can see the total value of deals in each status.
+This is when the Pipeline Stage begins.
 
-#### Deal - Lead Connection
+In the pipeline, drag and drop each deal card to update its stage accordingly.
 
-When you scroll over the upper right corner of a deal card, two buttons appear as shown below. The button on the left allows you to check the deal information in detail, and the button on the right takes you to the lead detail page linked to the deal.
+## Basics
 
-You can also come back to the Deal Pipeline page directly from the Lead Detail Page by clicking the button on the top right corner.
-
-![Go to contacts page](/images/features/deal-connection.png)
-
----
-
-## Add Deals
-
-### What is a Deal?
-
-**A deal is a sales opportunity.** Each deal is counted as a single sales opportunity.
-
-You can create and manage multiple deals for each Lead (Customers).
-
-![What is a deal](/images/features/what-is-deal.png)
-
-When you have multiple deals, it will be shown like this in the Lead Detail Page.
-
-### How to Add Deals
+### Add a new Deal
+You can add a new Deal by clicking `+ Deal` in any of the Prospect or Close menus (e.g., Potential, Working, Nurturing, and Pipelines).
 
 ![Adding a deal](/images/features/how-to-add-deals.png)
 
-There are 3 ways to add a deal.
+Alternatively, you can add a new Deal from the Organization Detail page. This allows you to link the Deal to that Organization directly. Note that deals are always tied to an organization.
 
-1. On the Deal page, click `+Deal` button on the top menu.
+Each deal has a unique ID (e.g., DEAL-1234) - this makes it easier to reference when discussing a specific deal with your team.
 
-2. You can click the `+` button on the Pipeline Status column. (You won't be able to change the status)
+#### Add information to a Deal
 
-3. On the Lead Detail page, you can click `+` button from the left menu. (You won't be able to change the company/lead)
+In a Deal, you can add information such as:
 
-In the Deal, you can add information such as:
-
-- Company: The name of the lead
-
-- Contact: Main point of contact from the company
-
+- Organization: The organization you're selling to (this is required)
+- Person: Main point of contact from the Organization
 - Value: Value of the sales opportunity
+- Prospect status (this is required)
+- Assignee: Who is leading the deal from your team
+- Notes: Short description or progress update on the deal
 
-- Status: Deal pipeline status
+## Workflows
 
-- Assignee: Deal Owner
+### Auto-create deals
+Creating a new Organization will create a new deal with the `Potential` status. This allows you to save time creating a corresponding deal for each Organization you create.
 
-- Notes: Notes regarding the sales opportunity
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "69.74664679582713%",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://player.vimeo.com/video/855838420?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    title="Relate Reporting"
+    webkitAllowFullScreen
+    mozallowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  ></iframe>
+</div>
 
-Company and Status are the only required fields, and the rest can be left empty.
+### Auto-handoffs
+Marking a deal `Qualified` status will send the deal to the Close menu -- the pipeline.
 
-<Note>
+This automates the SDR -> AE handoff process: when SDR finds a qualified opportunity, they will route the deal to an AE.
 
-If you go down to the bottom of this page, then you can find information about creating Custom Field for deal cards.
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "69.74664679582713%",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://player.vimeo.com/video/859611214?h=0ed5909ebb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    title="Relate Reporting"
+    webkitAllowFullScreen
+    mozallowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  ></iframe>
+</div>
 
-</Note>
+<Check>These features are experimental - shoot us an email at we@relate.so for any feedback or thoughts.</Check>
 
-## Manage Deal Status
+<Accordion title="What if we don't have an SDR? an AE?">
+Even if you do not have these roles per se, someone (often the founder) still needs to find new prospects and close them once they are qualified. You can use auto-handoffs feature to quickly convert prospects into qualified leads in your pipeline.
+</Accordion>
 
-You can customize deal statuses to fit your team's sales process.
+## For more information
 
-![Manage deal status](/images/features/manage-deal-status.png)
-
-To manage the Deal Status, click Workspace ellipsis (⋅⋅⋅) in the Relate app, and click `Manage deal statuses` from the menu that appears.
-
-![Manage deal statuses](/images/features/manage-deal-statuses.png)
-
-You can change the order by clicking the arrows, and you can change the name of each status by clicking `Edit`.
-
-Click `Delete` to delete the status. However, to delete the status, there must be no Deal in the status.
-
-There are 3 types of Deal Status.
-
-- Active: Active Deal
-
-- Won: Won Deal
-
-- Lost: Lost Deal
-
-<Note>
-
-To check Deal Status modifications reflected immediately, relaunch the Relate app or refresh it by pressing Ctrl+Shift+R (macOS: Cmd+Shift+R) if it is already running.
-
-</Note>
-
-## Deal Filtering
-
-By clicking the `Filter` button at the top right of the Deal Pipeline page, you can apply various filters.
-
-A good example would be to look at the deals managed by each sales rep or look at the new deals created this month. To create this list, you can create a filter as follows.
-
-- `Updated at` \+ `is after` \+ This Monday
-
-![Deal filtering](/images/features/deal-filtering.png)
-
-### Applying Multiple Filters
-
-When applying more than 1 filter, you can apply one of the two conditions: And / Or.
-
-- `And`: Deals that fulfill both Filter A and Filter B.
-
-- `Or`: Deals that fulfill at least one of the Filter A and Filter B.
-
-## Deal Custom Field
-
-![Deal custom field](/images/features/deal-custom-field.png)
-
-As shown in the screenshot above, you can add various types of custom fields on the Deal page.
-
-You can find `Manage custom fields` menu when you scroll your mouse cursor on your Workspace name. You will see Workspace ellipsis (⋅⋅⋅) in the Relate app. (See screenshot below)
-
-![Deal custom field](/images/features/manage-custom-fields.png)
-
-Below is the example of setting Custom Fields.
-
-![Deal custom field](/images/features/setting-custom-fields.png)
-
-### Types of Custom Field
-
-| Field Data Type    | Note                                                                                                                                                                                                              |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Text               | Supports plain text format. Great for leaving a short, one-line comment.                                                                                                                                          |
-| Multi-line text    | Supports more than one line of text. Perfect for leaving long comments.                                                                                                                                           |
-| Number             | Number format.                                                                                                                                                                                                    |
-| Date               | Date format.                                                                                                                                                                                                      |
-| Datetime           | Date and time format.                                                                                                                                                                                             |
-| Select             | When entering data, you can select an option from a drop-down. Data is separated by commas (,).<br /><br />If you want to select more than one option, check Accept multiple values when adding the custom field. |
-| Resource: Users    | You can select team members in your workspace.<br /><br />It is suitable for designating an owner.                                                                                                                |
-| Resource: Contacts | You can select one of the contacts within a lead (or a company).<br /><br />It is suitable for designating the main point of contact for a customer.                                                              |
-
-<Note>
-
-If you use Custom Field well, you will be able to store and manage various customer information that is essential to your team. In the future, we will add more data fields such as Deal, URL or email address.
-
-</Note>
-
-<Note>
-
-To check Custom Field modifications reflected immediately, relaunch the Relate app or refresh it by pressing Ctrl+Shift+R (macOS: Cmd+Shift+R) if the app is already running.
-
-</Note>
+<CardGroup cols={3}>
+  <Card title="How to use Prospect feature" 
+        icon="magnifying-glass-dollar" color="#3B82F6" 
+        iconType="duotone" 
+        href="/features/prospect">
+  </Card>
+  <Card title="How to manage Prospect Status" 
+        icon="circle-three-quarters-stroke" color="#3B82F6" 
+        iconType="duotone" 
+        href="/features/prospect-status">
+  </Card>
+  <Card title="How to manage pipelines" 
+        icon="handshake" color="#3B82F6" 
+        iconType="duotone" 
+        href="/features/pipelines">
+  </Card>
+</CardGroup>

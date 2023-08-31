@@ -1,127 +1,91 @@
 ---
 title: "Organizations"
-description: "Relate lets you build all your communication history for each organization you work with in one place."
+description: "Organization can be a prospect, current customer, lost customer, and/or churned customer."
 sidebarTitle: "Organizations"
-"og:title": "Organizations | Relate Product Guide"
-"og:description": "Relate lets you build all your communication history for each organization you work with in one place."
+"og:title": "Organizations | Relate Guide"
+"og:description": "Organization can be a prospect, current customer, lost customer, and/or churned customer."
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/features/orgs-main.png"
 "article:tag": "Product Guide"
-"twitter:title": "Organizations | Relate Product Guide"
-"twitter:description": "Relate lets you build all your communication history for each organization you work with in one place."
+"twitter:title": "Organizations | Relate Guide"
+"twitter:description": "Organization can be a prospect, current customer, lost customer, and/or churned customer."
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/features/orgs-main.png"
 ---
 
-## Organizations
+![org-main](/images/features/orgs-main.png)
 
-Relate lets you build all your communication history for each organization you work with in one place.
+## Overview
+Organization is one of the most important concepts in Relate. It's the entity that you're building relationships with and engaging in a deal. An Organization can be a prospect, current customer, lost customer, and/or churned customer. 
 
-The Organizations feature collects your Deals, Email history, Notes, etc. and displays them in one view.
+[People](/features/people/) and [Deal](/features/deals/) are both part of Organization. A Person can exist without being part of an Organization, but Deal cannot exist without an Organization.
 
-<Info>
+## Concepts
 
-Get to know Relate's structure
+### Organization Detail page
 
-- Organization = Companies you are selling to. They can be both prospects and customers
+![odp](/images/features/org-detail-page.png)
 
-- Person = People that work for the companies you're selling to.
-- Deal = Sales opportunity
+The Organization Detail page collects all information and data linked to the organization you're tracking.
 
-</Info>
+This includes organization data, deals, people, tasks, email history, notes, comments, and activities history.
 
-People and Deal are both part of an Organization. A Person can exist without being part of an Organization, but Deal cannot exist without an Organization.
+### Organization Grid
 
-## Adding a new Organization
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "69.74664679582713%",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://player.vimeo.com/video/859554941?h=f285908e2d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    title="Relate Reporting"
+    webkitAllowFullScreen
+    mozallowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  ></iframe>
+</div>
 
-![Add Org](/images/features/add-org.png)
+The Organization Grid is a list view of all organization in your Workspace. In the grid, you can update each field by selecting and double clicking (or hitting `Return`) the field.
 
-You can add a new Organization by clicking `+Organization` button as shown in the screenshot above.
+To access the Organization Detail, hit `Open` located on each organization.
+
+## Basics
+
+### Add a new Organization
+
+![Add Org](/images/features/add-new-org.png)
+
+You can add a new Organization by clicking `+ Organization` button as shown in the screenshot above.
 
 <Tip>
   When you're creating a new Organization, you can also create a Person. Click
-  `Add contact data` located at the bottom of the modal.
+  `Add person data` located at the bottom of the modal.
 </Tip>
 
-## Organization Detail Page
+### Edit Organization fields
+You can update an Organization field by navigating to Organization Grid or you can double click a field in the Detail page as well.
 
-The Organization detail page collects all your communication history, deal history, and contact information in one view.
+![edit](/images/features/grid-edit.png)
 
-### Organization Detail
+### Delete an Organization
+To delete an Organization, click `Delete organization` located on the bottom left in the Organization Detail.
 
-![Org detail](/images/features/org-detail.png)
+![Delete org](/images/features/delete-org.png)
 
-On the left side, you can see the Organization's information (eg., Company Name, Website, etc.). You can also check out any available deal history here.
+## Advanced
 
-At the center, you can see people contact information.
+### Add a new Organization via integration
+Connecting Relate with other apps like Typeform and Apollo lets you create a new Organization automatically via Zapier.
 
-### Organization Communication Timeline
+To learn more about integrating with other tools, see this guide: [Zapier guide](/setup/how-to-integrate-with-zapier/)
 
-![Org detail timeline](/images/features/org-detail-timeline.png)
-
-On the right side, you can see two things -- (1) notes (e.g., updates, meeting notes, etc.), (2) email history with the Organization (people).
-
-Use the commenting section to communicate internally with your teammates.
-
-![commenting](/images/features/commenting.png)
-
-## Sending a new email
-
-You can use Relate's email feature to send new emails to your customers.
-
-### 1. Send a new email
-
-Click `Compose email` button on the top right corner in your Organization detail page to create a new email draft. Once you are ready to send, click `Send` button to send.
-
-<Warning>
-  {" "}
-  Currently, new emails sent directly from Relate does NOT appear in Relate real
-  time. Rest assured, the email was sent, it just didn't appear right away. If you
-  want to double check whether your email was sent, go to your original email service
-  and check your Sent folder.{" "}
-</Warning>
-
-<Tip>
-  {" "}
-  To start sending emails, you must [connect your email](/setup/email-integration/google-outlook-etc)
-  first.{" "}
-</Tip>
-
-### 2. Forward, Reply, or Reply All
-
-![reply-email-button](/images/features/reply-email-button.png)
-
-To forward, reply, or reply all to an email, simply open the thread and find the three buttons on the top right corner.
-
-![reply-email](/images/features/reply-email.png)
-
-## Creating a note
-
-One of the best and easiest ways to improve your sales is always keeping your customer information up-to-date. This means that you should always be writing meeting notes and status updates!
-
-There are four types of Notes in Relate:
-
-- **Meeting Note**
-- **Phone Call Note**
-- **Zoom Call Note**
-- **Other Note** -- used when you have a status update and/or additional information to share with your team.
-
-The Notes feature supports Markdown syntax as well.
-
-![markdown](/images/features/markdown.png)
-
-## Sharing notes via link
-
-You can share any notes via link.
-
-![link-sharing](/images/features/link-sharing.png)
-
-Click `Share` button on the top right corner of a note, then switch the toggle on. Then, click `Copy link` to copy a shareable link.
-
-![public-note](/images/features/public-note.png)
-
-The shared note looks like this on the web (see above).
-
-### Share notes via Slack
-
-You can use [Zapier](/setup/zapier-integration/what-is-zapier) (free account) to set up an automation where Relate will share new notes via Slack.
-
-![slack](/images/features/slack-integration.png)
-
-At Relate, we have a `#log-sales` Slack channel connected to Relate. Whenever there's a new note in Relate, this channel will share that immediately.

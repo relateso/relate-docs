@@ -1,0 +1,99 @@
+---
+title: "Email integration"
+description: "Learn how to connect email service with Relate."
+sidebarTitle: "Email integration"
+"og:title": "Email integration | Relate Guide"
+"og:description": "Learn how to connect email service with Relate."
+"og:image": ""
+"article:tag": "Setup"
+"twitter:title": "Email integration | Relate Guide"
+"twitter:description": "Learn how to connect email service with Relate."
+"twitter:image": ""
+---
+
+## 1. Integrating with your email
+
+To integrate your email with Relate, go to the [Email Integration](https://admin.relate.so/services) page in the Relate Admin.
+
+![Connect email](/images/setup/connect-email.png)
+
+Click the **Connect** button, enter the email address you want to connect to, and select the email service you use (Google, Office365, Outlook Exchange, and all other services, select Other)
+
+1. If you are using Google Workspace, you will be directed to the Google email link page without selecting an email service. (see screenshot below)
+
+2. If you select Other (e.g., Yahoo, etc.), please follow the 1.1 IMAP/SMTP connection procedure.
+
+Please follow the procedure provided on each email service link page to complete. Then, just follow the **2\. Creating Connections for Each Workspace.**
+
+![Google Account](/images/setup/google-account-access.png)
+
+<Check>
+  💡 If you see a **warning message**, please check if you have registered
+  Relate in the allowlist when using Google Workspace email.
+</Check>
+
+### 1.1 IMAP/SMTP Connection
+
+<Warning>
+  If you have already connected your email through Google, Outlook, etc., skip
+  this step and go to 2\. Create a Connection for Each Workspace.
+</Warning>
+
+#### **1.1.1.** Enter your email address/password
+
+Please enter your email address and password to connect as shown below.
+
+![Sign in](/images/setup/sign-in.png)
+
+#### **1.1.2.** Entering IMAP/SMTP information
+
+IMAP and SMPT host addresses and Port/SSL numbers have unique values for each email service you use. This information is usually on the Admin page, or in the email service customer center/support article.
+
+In this guide, IMAP/SMTP information of NAVER Works is used.
+
+![IMAP/SMTP](/images/setup/imap-smtp-info.png)
+
+After entering the information, click the **Sign in** button to complete the connection.
+
+If it is changed to **Connected** as shown below on the Relate page, the email linkage is successful. Now, you need to create a Connection so that you can connect the email to each workspace. **2\. Go to Creating Connections for Each Workspace.**
+
+![Email Connect](/images/setup/email-connected.png)
+
+<Note>
+  💡 If Two-factor Authentication (2FA or MFA) is currently set in your email
+  account, temporarily disable it and complete the procedure.
+</Note>
+
+## 2. Creating Connections for Each Workspace
+
+To connect your email service to a new Workspace, select the workspace you want to connect to, and click the **Create Connection** button.
+
+![Creating Connection](/images/setup/creating-connections-workspaces.png)
+
+When a Connection is created, you can see that a Connection has been created in the **Connected users** table as shown below.
+
+![Connected Users](/images/setup/connected-users.png)
+
+Email integration is now complete. Return to the Relate app and register your customers' email address within Lead/contact, and you will see emails sent to and received from that email address.
+
+<Note>
+  If you don't see the emails right away, first press Ctrl+Shift+R (Cmd+Shift+R)
+  to refresh the Relate app. Depending on the amount of email sent and received,
+  this can take anywhere from 5 minutes to up to 8 hours.
+</Note>
+
+## 3. Things to note in Email Integration
+
+- If you change your email account password, your email connection will be disconnected. So, you just need to reconnect your email.
+
+- When Two-Factor Authentication (2FA/MFA) is set:
+  - **When connecting via MAP/SMTP:**  
+    If Two-factor Authentication (2FA/MFA) is set, temporarily disable it before connecting with Relate, and then connect again.
+  - **When using Outlook, O365, iCloud, Yahoo!**  
+     _ You can create a new App Password provided by each service separately and use it instead of an existing password.  
+     _ Microsoft  
+     _ [**Microsoft account help - Using app passwords**](https://support.microsoft.com/en-us/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944)  
+     _ Yahoo!  
+     _ [**Yahoo - Generate and manage third-party app passwords**](https://help.yahoo.com/kb/learn-generate-password-sln15241.html)  
+     _ iCloud  
+     \* [**Apple - Using app-specific passwords**](https://support.apple.com/en-us/HT204397)

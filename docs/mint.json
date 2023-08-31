@@ -55,7 +55,7 @@
     "url": "https://relateso.typeform.com/relate"
   },
   "topAnchor": {
-    "name": "Product Guide"
+    "name": "Relate Guide"
   },
   "anchors": [
     {
@@ -94,10 +94,15 @@
       ]
     },
     {
-      "group": "📚 Features",
+      "group": "Organizations & People",
       "pages": [
         "features/organizations",
-        "features/people",
+        "features/people"
+      ]
+    },
+    {
+      "group": "Deals & Pipelines",
+      "pages": [
         "features/deals",
         {
           "group": "Prospect",
@@ -107,16 +112,56 @@
           ]
         },
         {
-          "group": "Reporting",
+          "group": "Close",
           "pages": [
-              "features/reporting"
+              "features/pipelines"
           ]
-        },
-        "features/inbox",
-        "features/shortcuts",
-        "features/custom-fields",
-        "features/filtering-views",
+        }
+        ]
+      },
+    {
+      "group": "Email and Collaboration",
+      "pages": [
+        "features/email",
         "features/tasks",
+        "features/notes"
+      ]
+    },
+    {
+      "group": "Inbox and Notifications",
+      "pages": [
+        "features/inbox"
+      ]
+    },
+    {
+      "group": "Reporting",
+      "pages": [
+          "features/reporting"
+      ]
+    },
+    {
+      "group": "Find and Filter",
+      "pages": [
+        "features/filtering-views"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "setup/email-integration",
+        {
+          "group": "Zapier integration",
+          "pages": [
+            "setup/zapier-integration/what-is-zapier",
+            "setup/zapier-integration/how-to-integrate-with-zapier",
+            "setup/zapier-integration/relate-x-zapier-integration-rules"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Other bits",
+      "pages": [
         "features/shortcuts",
         "features/how-to-manage-deal-assignee",
         "features/how-to-manage-expected-close-date",
@@ -126,17 +171,10 @@
     {
       "group": "💻 Setup",
       "pages": [
-        "setup/workspace-setting",
+        "setup/admin",
+        "setup/manage-members",
         "setup/import",
-        "setup/email-integration-google-outlook-etc",
-        {
-          "group": "Zapier Integration",
-          "pages": [
-            "setup/zapier-integration/what-is-zapier",
-            "setup/zapier-integration/how-to-integrate-with-zapier",
-            "setup/zapier-integration/relate-x-zapier-integration-rules"
-          ]
-        },
+        "features/custom-fields",
         "setup/register-google-api-allowlist"
       ]
     },
@@ -185,6 +223,10 @@
     {
       "source": "/features/deal-pipeline",
       "destination": "/features/deals"
+    },
+    {
+      "source": "/setup/email-integration-google-outlook-etc",
+      "destination": "/setup/email-integration"
     }
   ],
   "footerSocials": {
