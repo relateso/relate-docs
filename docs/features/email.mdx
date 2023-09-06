@@ -11,32 +11,103 @@ sidebarTitle: "Email"
 "twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/changelog/task.png"
 ---
 
+## Overview
+You can send and receive emails directly from Relate. All your emails are synced **bi-directionally**, meaning that what you see in your original email service will also appear in Relate, vice versa.
+
 ## Sending a new email
 
-You can use Relate's email feature to send new emails to your customers.
+To start sending (and receiving) emails in Relate, you'll first need to [sync your email account](/setup/email-integration/).
 
-### 1. Send a new email
+There are multiple ways to draft new emails -- the easiest way is by navigating to `Emails`. See below video:
 
-Click `Compose email` button on the top right corner in your Organization detail page to create a new email draft. Once you are ready to send, click `Send` button to send.
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "69.74664679582713%",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://player.vimeo.com/video/861825777?title=1&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    title="Relate Reporting"
+    webkitAllowFullScreen
+    mozallowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  ></iframe>
+</div>
 
-<Warning>
-  {" "}
-  Currently, new emails sent directly from Relate does NOT appear in Relate real
-  time. Rest assured, the email was sent, it just didn't appear right away. If you
-  want to double check whether your email was sent, go to your original email service
-  and check your Sent folder.{" "}
-</Warning>
+The emails section on the left navigation menu allows you to track all of your drafts in one place. You can also create and manage email templates here.
 
-<Tip>
-  {" "}
-  To start sending emails, you must [connect your email](/setup/email-integration/google-outlook-etc)
-  first.{" "}
-</Tip>
+Another way is by navigating to an Organization detail page. Click `Compose email` button to create a new draft.
 
-### 2. Forward, Reply, or Reply All
+### Pop out email drafts
+
+If you want to draft emails while viewing other areas of Relate simultaneously, you can pop out the draft and navigate to your desired location in Relate.
+
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "69.74664679582713%",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://player.vimeo.com/video/861827850?title=1&byline=0&portrait=0&muted=1&autoplay=1&autopause=0&controls=0&loop=1"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    title="Relate Reporting"
+    webkitAllowFullScreen
+    mozallowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  ></iframe>
+</div>
+
+### Reply to/forward emails
+To forward, reply, or reply all to an email, simply open the thread and find the three buttons on the top right corner.
 
 ![reply-email-button](/images/features/reply-email-button.png)
 
-To forward, reply, or reply all to an email, simply open the thread and find the three buttons on the top right corner.
+## Receiving emails
+New emails received will sync immediately and will be displayed in the Organization communication timeline.
 
-![reply-email](/images/features/reply-email.png)
+You should be able to see the email appear both in your [inbox](/features/inbox/) and in your [Organization](/features/organizations/) detail page.
+
+## Frequently Asked Questions (FAQ)
+
+<AccordionGroup>
+	<Accordion title="I don't see the email I sent from Relate. What should I do?">
+	Currently, new emails sent directly from Relate does not appear in Relate real time.
+	
+	**Rest assured, the email was sent**, it just didn't appear right away. If you
+  want to double check whether your email was sent, go to your original email service
+  and check your **Sent folder**.
+  </Accordion>
+  <Accordion title="Why do I see duplicate threads?">
+    Currently, Relate creates separate threads for emails sent to each user. For instance, if someone sends an email to both User A and User B (CC/BCC, or multiple addressees), then Relate will create two threads for each user.
+    
+		When this happens, you can only reply to YOUR thread. This means you will NOT see a reply/forward button in threads owned by other members on your team. 
+		
+Rest assured, this will be merged into a single thread soon.
+  </Accordion>
+  <Accordion title="How come some threads don't have reply button?">
+  It's likely that the thread you're looking at is not your thread.
+  
+  Threads have user names on the right side to indicate who owns them.
+  </Accordion>
+  </AccordionGroup>
