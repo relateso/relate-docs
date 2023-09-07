@@ -1,0 +1,97 @@
+---
+title: "Email sync"
+description: "Relate supports a full, bi-directional email sync."
+sidebarTitle: "Email sync"
+"og:title": "Email sync | Relate Guide"
+"og:description": "Relate supports a full, bi-directional email sync."
+"og:image": ""
+"article:tag": "Setup"
+"twitter:title": "Email sync | Relate Guide"
+"twitter:description": "Relate supports a full, bi-directional email sync."
+"twitter:image": ""
+---
+
+## Overview
+Relate supports a full, bi-directional email sync between Relate and your choice of email service, such as Google Mail, Outlook, etc.
+
+This means that you can send and receive emails directly from Relate, and all emails sent and received from your email service will be synced to Relate.
+
+## Get started
+
+### Connecting your email account
+To connect your email service with Relate, go to the [User connected accounts](https://admin.relate.so/services) page in the Relate Admin.
+
+![Connect email](/images/setup/connect-email.png)
+
+Then, click `Add an Email account`. Enter the email address you want to connect, and select the email service you use (e.g., Google, Office365, Outlook Exchange, etc.).
+
+<Info>
+**1. If you are using Google Workspace, you will be directed to the Google email link page without selecting an email service. (see screenshot below)**
+
+**2. If you select Other (e.g., Yahoo, etc.), please follow the IMAP/SMTP connection procedure.**
+</Info>
+
+Please follow the procedure provided on each email service link page to complete. Then, follow the [Creating Connections for each Workspace](/setup/email-integration#creating-connections).
+
+![googleauth](/images/setup/google-auth.png)
+
+### IMAP/SMTP Connection
+
+<Warning>
+  **If you have already connected your email through Google and Outlook, skip
+  this step and go to [Creating Connections for each Workspace](/setup/email-integration#creating-connections).**
+</Warning>
+
+#### Enter your email address/password
+
+Please enter your email address and password to connect as shown below.
+
+![Sign in](/images/setup/sign-in.png)
+
+#### Entering IMAP/SMTP information
+
+IMAP and SMPT host addresses and Port/SSL numbers have unique values for each email service you use. This information is usually on the Admin page, or in the email service customer center/support article.
+
+In this guide, IMAP/SMTP information of NAVER Works is used.
+
+![IMAP/SMTP](/images/setup/imap-smtp-info.png)
+
+After entering the information, click the **Sign in** button to complete the connection.
+
+If you see `Reauthenticate` button on your Accounts page, the email account is successfully connected.
+
+Now, you need to create a Connection for each Workspace. Proceed to the next section.
+
+<Tip>
+  If Two-factor Authentication (2FA or MFA) is currently set in your email
+  account, temporarily disable it and complete the procedure.
+</Tip>
+
+## Creating connections
+
+To connect your email service to a Workspace, navigate to [Admin](https://admin.relate.so/) > [Integrations](https://admin.relate.so/workspaces/integrations) > [Email](https://admin.relate.so/workspaces/integrations/email).
+
+Select the Workspace you want to connect to, and click the `Connect to workspace button`.
+
+## Advanced
+
+### Changing your email account password will disconnect your email connection
+If you change your email account password, your email connection will be disconnected. If you changed your email account password, you can reconnect your email by following the steps above.
+
+
+### Using Relate with Two-Factor Authentication (2FA/MFA)
+When Two-Factor Authentication (2FA/MFA) is set, you'll need to temporarily disable it before connecting with Relate, and then connect again.
+
+If your email service (e.g., Outlook, O365, iCloud, Yahoo!, etc.) allows you to create an App Password, you can use it instead of your existing password.
+
+Here are links to settiing up App Passwords for each email service:
+- [Microsoft](https://support.microsoft.com/en-us/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944)
+- [Yahoo!](https://help.yahoo.com/kb/learn-generate-password-sln15241.html)
+- [iCloud](https://support.apple.com/en-us/HT204397)
+
+## Frequently Asked Questions (FAQs)
+<AccordionGroup>
+<Accordion title="I've connected my email but I don't see any emails in the app.">
+Try refreshing the app first by using Cmd+Shift+R (Ctrl+Shift+R on Windows). Depending on the amount emails being synced at once, the process can take anywhere from 5 minutes to up to 8 hours.
+</Accordion>
+</AccordionGroup>

@@ -148,7 +148,7 @@
     {
       "group": "Integrations",
       "pages": [
-        "setup/email-integration",
+        "setup/email-sync",
         {
           "group": "Zapier integration",
           "pages": [
@@ -162,7 +162,6 @@
     {
       "group": "Other bits",
       "pages": [
-        "features/shortcuts",
         "features/how-to-manage-deal-assignee",
         "features/how-to-manage-expected-close-date",
         "features/how-to-manage-organization-assignee"
@@ -227,6 +226,10 @@
     {
       "source": "/setup/email-integration-google-outlook-etc",
       "destination": "/setup/email-integration"
+    },
+    {
+      "source": "/setup/email-integration",
+      "destination": "/setup/email-sync"
     }
   ],
   "footerSocials": {
