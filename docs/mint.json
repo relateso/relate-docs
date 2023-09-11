@@ -142,7 +142,8 @@
     {
       "group": "Find and Filter",
       "pages": [
-        "features/filtering-views"
+        "features/filter-sorter",
+        "features/views"
       ]
     },
     {
@@ -230,6 +231,10 @@
     {
       "source": "/setup/email-integration",
       "destination": "/setup/email-sync"
+    },
+    {
+      "source": "/features/filtering-views",
+      "destination": "/features/filter-sorter"
     }
   ],
   "footerSocials": {
