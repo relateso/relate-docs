@@ -26,6 +26,75 @@ The People list contains the following information:
 
 You can download the People list by clicking `Download Emails as CSV` in [People List View](https://app.relate.so/contacts).
 
+## Organization Export
+<Tabs>
+  <Tab title="How to export Organization data">
+    Organization custom field data is currently available as an encrypted .CSV file upon request to [we@relate.so](we@relate.so).
+
+    However, other than Organization custom fields, all other Organization data can be exported with Deal Export guided below.
+  </Tab>
+  <Tab title="How to arrange custom fields>
+    When you open the file from the Relate team, you'll see all the fields right away except for the custom fields. The custom fields are organized in a Delimited format and need to be reformatted separately.
+
+    ![export1](/images/setup/export1.png)
+
+    When you open the .CSV you received from the Relate team, it should look like the one above.
+
+    #### Split values in one column into multiple columns
+
+    First, select (`Ctrl+Space`) the entire column containing the value, then run `Data` > `Text to Columns` from the menu.
+
+    ![export2](/images/setup/export2.png)
+
+    Then select `Delimited` from the modal and press `Next` to proceed.
+
+    ![export3](/images/setup/export3.png)
+
+    For Delimiters, select `Others` and then type double quotes `" `.
+
+    ![export4](/images/setup/export4.png)
+
+    Then press `Finish` to exit.
+
+    The sheet now sorts the values that used to be in one column into multiple columns based on the double quotes (`"`).
+
+    Now remove any columns you don't need.
+  </Tab>
+  <Tab title="Get a desired result based on a reference value from a randomly shuffled array">
+    Before you format a Relate custom field, the name of the custom field is named with a Reference value (for example, `9a23QQ`).
+
+    By looking at the values in the field, you can roughly infer which custom field it refers to, or you can go into the Relate app and see which custom field it is.
+
+    To help us organize our custom fields in order, we'll add a column that looks like this.
+
+    ![export5](/images/setup/export5.png)
+
+    #### Using the Match and Index functions
+
+    ![export8](/images/setup/export8.png)
+
+    You can use the Match function to find the location of the desired value in a specific array, and then use the Index function to get the value at the location found by match in a specific array.
+
+    Using the function below to apply to all Organization rows.
+
+    ```
+    =INDEX($F5:$I5,MATCH(D$1,$F5:$I5,0)+1)
+    ```
+
+    #### Delete all N/A values
+
+    Organizations that don't have custom field values will have a value of `#N/A`. To delete these values in bulk, **first copy the columns > Paste as Values**, then delete them with Find & Replace.
+
+    ![export9](/images/setup/export9.png)
+
+    ### Format date fields
+
+    For the date field, change the cell type to `date type` by changing the cell format (`ctrl+1`).
+
+    ![export10](/images/setup/export10.png)
+  </Tab>
+</Tabs>
+
 ## Deal Export
 If you want to export deal information, you can download from the [Reporting page](https://app.relate.so/reporting).
 
@@ -62,8 +131,3 @@ In the Reporting page, you can create a new Basic Table to add the information y
     }}
   ></iframe>
 </div>
-
-## Organization Export
-This will be supported in a future reporting update. If you need to export Organization data, including Organization Custom Fields, please contact us at [we@relate.so](we@relate.so).
-
-Other than Organization Custom Fields, all other Organization Data can be exported with Deal Export guided above. 
