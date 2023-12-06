@@ -177,6 +177,7 @@
         "setup/admin",
         "setup/manage-members",
         "setup/import",
+        "setup/export",
         "features/custom-fields",
         "setup/register-google-api-allowlist"
       ]

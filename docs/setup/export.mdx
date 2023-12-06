@@ -1,17 +1,17 @@
 ---
 title: "Export"
-description: "Exporting Relate data to CSV"
+description: "Exporting Relate data as CSV"
 sidebarTitle: "Export"
 "og:title": "Export | Relate CRM Guide"
-"og:description": "Exporting Relate data to CSV"
+"og:description": "Exporting Relate data as CSV"
 "article:tag": "Setup"
 "twitter:title": "Export | Relate CRM Guide"
-"twitter:description": "Exporting Relate data to CSV"
+"twitter:description": "Exporting Relate data as CSV"
 ---
 
 ## Overview
 
-Here's how you can export data stored in Relate to a .CSV.
+Here's how you can export data stored in Relate as a .CSV file.
 
 ## People Export
 The easiest way to export customer information in Relate is from the People list. 
@@ -33,7 +33,7 @@ You can download the People list by clicking `Download Emails as CSV` in [People
 
     However, other than Organization custom fields, all other Organization data can be exported with Deal Export guided below.
   </Tab>
-  <Tab title="How to arrange custom fields>
+  <Tab title="How to arrange custom fields">
     When you open the file from the Relate team, you'll see all the fields right away except for the custom fields. The custom fields are organized in a Delimited format and need to be reformatted separately.
 
     ![export1](/images/setup/export1.png)
@@ -77,9 +77,7 @@ You can download the People list by clicking `Download Emails as CSV` in [People
 
     Using the function below to apply to all Organization rows.
 
-    ```
-    =INDEX($F5:$I5,MATCH(D$1,$F5:$I5,0)+1)
-    ```
+    ```=INDEX($F5:$I5,MATCH(D$1,$F5:$I5,0)+1)```
 
     #### Delete all N/A values
 
