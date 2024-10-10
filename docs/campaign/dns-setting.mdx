@@ -1,0 +1,85 @@
+---
+title: "Setting up your domain records"
+description: "We'll walk you through setting up your domain records, which is essential before sending emails with Relate Campaig."
+sidebarTitle: "Setting up your domain records"
+"og:title": "Setting up your domain records | Relate Product Guide"
+"og:description": "We'll walk you through setting up your domain records, which is essential before sending emails with Relate Campaig."
+"og:image": 
+"article:tag": "Product Guide"
+"twitter:title": "Setting up your domain records | Relate Product Guide"
+"twitter:description": "We'll walk you through setting up your domain records, which is essential before sending emails with Relate Campaig."
+"twitter:image": 
+---
+
+Setting up your domain records is crucial for successful email marketing. This process enhances sender credibility and minimizes spam classification. 
+
+You must complete this step before using Relate Campaign to send emails.
+
+## Step 1: Access your domain settings
+
+Go to the Workspace settings page(in the app, click the workspace logo in the upper left corner, then click Settings in the menu that appears, or press Cmd + ,). 
+
+![relate-settings](/images/features/relate-settings.png)
+
+Click Campaigns under the Products section to set up your domain records. 
+
+### What you can find here
+
+![relate-domain-settings](/images/features/relate-domain-settings.png)
+
+**Sender domain**
+It will be displayed at the very top as `senderdomain.com` (relatemail.xyz in the screenshot example).
+
+If you want to change the domain, you can do so in `Update domain` after clicking the settings button on the right. 
+
+**Records**
+You'll see MX records, SPF & DMARC records, and DKIM records, and you can click the clipboard icon to copy and paste the records into your domain zone editor inside your domain registrar, such as Namechep, Google Domains, AWS, GoDaddy, and more.
+
+**Verify records**
+After setting up your records, you can click the `Verify records` button at the bottom to make sure they are set up correctly. 
+
+## Step 2: Set up your records
+
+Copy and paste the MX, SPF & DMARC, and DKIM records to the domain registrar.
+
+<Accordion title="Cloudflare">
+Go to the `DNS` page to add DNS records.
+
+Click `Add record`, select `Type` (TXT, MX, or CNAME), and paste the `Name` and `Value` from the Relate domain settings page.
+
+[Read the guide](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/#create-dns-records)
+
+For CNAME records, you must set your proxy to `DNS Only`.
+</Accordion>
+<Accordion title="Google Domains>
+Google Domains (and most other domain registrars) require you to enter the mail server and priority together into a single line. 
+
+If you get the following error message while setting up your domain, enter it in the following format: `10 feedback-smtp.us-east-1.amazonses.com`
+
+![relate-google-domains](/images/features/relate-google-domains-1.png)
+
+It is normal for Google Domains to automatically add quotes (” ”) to some record names. It does not affect anything.
+</Accordion>
+<Accordion title="Namecheap">
+First, go to the `Advanced DNS` page. 
+
+If you are using automatic Namecheap and Gmail/Gsuite integration, you will need to disable the automatic integration first. Then change to “Custom MX” in “Mail Settings”. 
+
+If your Gsuite record is already verified, you will need to verify the appropriate MX record in [this article](https://support.google.com/a/answer/174125). 
+
+In the `Mail Settings` section, click `Add new record` and paste the provided MX record values from Relate.
+
+![relate-namecheap](/images/features/relate-namecheap-1.png)
+
+In the `Host Records` section, click `Add new record` to add the TXT and CNAME records.
+
+![relate-namecheap](/images/features/relate-namecheap-2.png)
+</Accordion>
+
+## Step 3: Verify your records
+
+Once you've finished setting up your records, you'll need to click the `Verify records` button at the bottom of the Relate domain settings page to confirm that your settings are correct. 
+
+Verifying records can take up to an hour.
+
+When the setup verification is complete, you'll see `Verified` in green next to each record section.
