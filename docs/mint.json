@@ -114,7 +114,7 @@
     {
       "group": "Marketing",
       "pages": [
-        "marketing/campaign",
+        "marketing/campaigns",
         "marketing/dns-records"
       ]
     },
@@ -216,6 +216,13 @@
               "wiki/battle-cards",
               "wiki/mutual-action-plan",
               "wiki/business-case"
+            ]
+          },
+          {
+            "group": "Marketing",
+            "pages": [
+              "wiki/spf",
+              "wiki/dkim"          
             ]
           }
       ]

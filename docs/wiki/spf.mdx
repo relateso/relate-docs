@@ -1,0 +1,64 @@
+---
+title: 'SPF'
+description: 'Discover how SPF protects your domain from spoofing and enhances email deliverability.'
+sidebarTitle: 'SPF'
+'og:title': 'What is SPF? | Relate Startup Wiki'
+'og:description': 'Discover how SPF protects your domain from spoofing and enhances email deliverability.'
+'article:tag': 'Wiki'
+'twitter:title': 'SPF | Relate Startup Wiki'
+'twitter:description': 'Discover how SPF protects your domain from spoofing and enhances email deliverability.'
+---
+
+## Overview
+
+Sender Policy Framework (SPF) is a foundational email authentication method that enables domain owners to specify which servers are authorized to send email on behalf of their domain.
+
+SPF works well alongside DomainKeys Identified Mail ([DKIM](/wiki/dkim)) and Domain-based Message Authentication ([DMARC](/wiki/dmarc)), with DMARC coordinating SPF and DKIM to enforce policies for handling unauthorized emails. Together, these protocols form a strong, layered defense against email-based threats. For anyone managing email communications, SPF is a critical tool for ensuring that emails reach recipients' inboxes while preventing malicious actors from exploiting your domain.
+
+## What is SPF?
+
+SPF is a TXT record added to your DNS settings that lists IP addresses and servers authorized to send emails from that domain. When an email is sent from your domain, the recipient's email server checks the SPF record to verify if the sending server is listed as a permitted sender. 
+
+If the server is not listed in the record, the email may be flagged as suspicious or blocked entirely, reducing the risk of fraudulent emails reaching your recipients. 
+
+## How SPF Works
+
+1. **DNS settings**: Domain owners add an SPF record to their DNS settings, listing all IP addresses and/or servers authorized to send emails from the domain.
+
+2. **SPF check**: When a recipient's email server receives a message, it performs an SPF check by looking up the sending domain's SPF record in the DNS.
+
+3. **Decision process**: If the sending server's IP address or domain matches an entry listed in the SPF record, the email passes the SPF check. If not, the email may be flagged or rejected according to your recipient's security policy.
+
+This process helps recipients determine if an email genuinely comes from the sender's domain, thereby protecting against impersonation.
+
+## Why is SPF Important?
+
+As a vital safeguard for server-based authentication, SPF helps prevent email spoofing—a tactic often used by attackers to impersonate trusted brands. Setting up SPF not only protects your domain from unauthorized use but also enhances the deliverability of your legitimate emails by reducing the risk of them being flagged as spam. By publishing an SPF record, domain owners can indicate which domains are permitted to send emails, allowing receivers to verify the sender's identity and block unauthorized senders.
+
+- **Protects against unauthorized sending**: SPF ensures that only authorized servers can send emails on behalf of your domain. This prevents attackers from using your domain to send phishing emails or spam, reducing the chances of email-based attacks linked to your brand.
+- **Improves email deliverability**: Domains without SPF records risk having their emails flagged as spam, as email servers often treat emails from unauthenticated domains with caution. By setting up SPF, you increase the chances that your legitimate emails reach your recipients' inboxes.
+- **Builds sender reputation**: When your emails consistently pass SPF checks, your domain builds a strong reputation among email providers, leading to better long-term deliverability and fewer emails mistakenly marked as spam.
+
+## How to Set Up SPF Records
+
+### 1. Create an SPF record:
+
+In the DNS settings of your domain, add an SPF record that lists the IP addresses and/or servers permitted to send emails on behalf of your domain. A basic SPF record might look like this:
+
+```
+v=spf1 ip4:192.0.2.0 include:example.com ~all
+```
+
+- Replace `example.com` with the domain(s) of your authorized email servers or providers. To include multiple domains, simply use include: for each domain, like this: `include:example1.com include:example2.com.`
+- Replace `ip4:192.0.2.0` with the IP address you want to allow for sending emails.
+- Use `~all` to indicate a "soft fail" (unauthorized emails may still be accepted but flagged as suspicious). Alternatively, use `-all` for a "hard fail" (reject unauthorized emails).
+
+### 2. Verify your SPF record 
+
+Once added, verify that your SPF record is correctly set up. You can use online tools like [this](https://www.learndmarc.com/?ref=relate.so) to check that your SPF is functional and compatible with your email services. If managing SPF settings feels overwhelming, [Relate Marketing](/marketing/campaigns) can handle it for you.
+
+## Quick Recap
+
+- SPF allows domain owners to specify which mail servers are authorized to send emails on their behalf, thereby protecting against email spoofing.
+- SPF verifies server legitimacy and prevents attackers from exploiting your domain.
+- Relate Marketing simplifies SPF management, handling settings to ensure effective email communications.

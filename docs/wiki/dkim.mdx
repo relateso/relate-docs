@@ -1,0 +1,84 @@
+---
+title: 'DKIM'
+description: 'Ensure the authenticity and integrity of your email communications with DKIM.'
+sidebarTitle: 'DKIM'
+'og:title': 'What is DKIM? | Relate Startup Wiki'
+'og:description': 'Ensure the authenticity and integrity of your email communications with DKIM.'
+'article:tag': 'Wiki'
+'twitter:title': 'DKIM | Relate Startup Wiki'
+'twitter:description': 'Ensure the authenticity and integrity of your email communications with DKIM.'
+---
+
+## Overview
+
+DomainKeys Identified Mail (DKIM) is an email authentication method designed to verify that an email has been sent and authorized by the domain owner, while also ensuring the email content hasn't been altered in transit. By attaching a unique digital signature to each outgoing email, DKIM allows receiving email servers to authenticate the email's origin and integrity.
+
+## What is DKIM?
+
+DKIM is an email security protocol that uses cryptographic signatures to verify the legitimacy of emails sent from your domain. When an email is sent, DKIM adds a digital signature to the email header, created using a private key associated with the sender's domain. The receiving email server can then verify this signature against the public key published in the sender's DNS records.
+
+If the digital signature matches, it confirms that the email has not been tampered with and truly originates from an authorized sender. This authentication helps to protect recipients from fraudulent emails and phishing attacks while building trust in emails sent from your domain.
+
+## How DKIM Works
+
+1. The email provider generates the public key and private key pair.
+2. The domain owner stores the public key in the DKIM record in their DNS settings.
+3. When an email is sent, a unique digital signature is generated and embedded in the email's headers. This signature is based on the email's content and the private key associated with the domain.
+4. The recipient's email server retrieves the public DKIM key from the sender's DNS records to verify the digital signature.
+5. If the signature matches, the email is confirmed as authentic and unaltered. If not, the email may be marked as spam or rejected according to the recipient's security policies.
+
+DKIM's signature-based authentication provides a level of security that complements SPF by confirming both the sender's identity and the integrity of the email content.
+
+## Why is DKIM Important?
+
+Setting up DKIM for your marketing and sales domain provides several benefits that enhance email security, protect brand reputation, and improve email deliverability:
+
+- **Protects against email tampering**: DKIM ensures that the email content has not been altered in transit, protecting recipients from tampered messages that may contain malicious content.
+- **Verifies sender authenticity**: By confirming the sender's identity, DKIM builds trust between the sender and recipient, reducing the likelihood of phishing and spoofing attacks.
+- **Enhances deliverability**: Emails that pass DKIM checks are less likely to be marked as spam, helping legitimate emails reach recipients' inboxes more reliably.
+- **Supports brand reputation**: A domain with consistent DKIM authentication builds a positive reputation with email providers, improving long-term deliverability and trust.
+
+Implementing DKIM is essential for teams that rely on email for customer communication, as it safeguards both the sender's brand and the recipient's security.
+
+## DKIM Compared to SPF and DMARC
+
+While DKIM focuses on authenticating the content and sender identity of an email, [SPF](/wiki/spf) and [DMARC](/wiki/dmarc) provide complementary functions in email security:
+
+- **SPF**: Specifies which servers are allowed to send emails on behalf of a domain, focusing on server-based verification.
+- **DMARC**: Coordinates SPF and DKIM to enforce domain-wide policies for handling unauthenticated emails and enables reporting on authentication results.
+- **DKIM**: Confirms the sender's identity and verifies that the email content hasn't been altered by attaching a digital signature.
+
+Together, SPF, DKIM, and DMARC provide a multi-layered email security solution that effectively reduces spoofing, phishing, and unauthorized use of your domain.
+
+## How to Set Up DKIM Records
+
+To enable DKIM, follow these steps to create and verify your DKIM records.
+
+### 1. Generate the DKIM key pair
+
+DKIM requires a private key (for signing emails) and a public key (for recipient verification). Most email providers or hosting services can generate these keys for you. The private key is stored securely on your email server, while the public key is published in your DNS settings as a TXT record.
+
+### 2. Add the DKIM public key to your domain
+
+Add the public DKIM key to your domain's DNS as a TXT record. The format will look something like this:
+
+```
+default._domainkey.example.com IN TXT "v=DKIM1; k=rsa; p=yourpublickey"
+```
+
+- Replace `example.com` with your domain.
+- Replace `yourpublickey` with the actual public key generated for your domain.
+
+
+### 3. Configure your email server
+
+Ensure that your email server or provider is configured to sign outgoing emails with the private key. Many email providers handle this automatically once DKIM is enabled, but it's essential to confirm that all outgoing emails are being signed.
+
+### 4. Verify your DKIM record
+
+Test your DKIM setup to ensure it's functioning correctly here. [Relate Marketing](/marketing/campaigns) can also verify that the DKIM signature is valid and that your DNS record is properly configured.
+
+## Quick Recap
+- DKIM uses digital signatures to verify that emails are from authorized senders and haven't been altered, helping to prevent phishing and email tampering.
+- DKIM complements [SPF](/wiki/spf) and [DMARC](/wiki/dmarc) by authenticating the email's content and sender, while SPF verifies the sending server and DMARC enforces authentication policies.
+- Relate Marketing can verify the DKIM setup and assist you with reliable email marketing and sales.
