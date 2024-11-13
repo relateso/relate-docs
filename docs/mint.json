@@ -61,11 +61,6 @@
       "url": "integrations"
     },
     {
-      "name": "Playbook",
-      "icon": "map",
-      "url": "playbook"
-    },
-    {
       "name": "Startup Wiki",
       "icon": "book",
       "url": "wiki"
@@ -116,6 +111,13 @@
         }
         ]
       },
+    {
+      "group": "Marketing",
+      "pages": [
+        "marketing/campaign",
+        "marketing/dns-records"
+      ]
+    },
     {
       "group": "Email and Collaboration",
       "pages": [
@@ -182,7 +184,7 @@
     {
       "group": "Integrations",
       "pages": [
-          "integrations/Apollo.io"
+          "integrations/apollo"
       ]
     },
     {
