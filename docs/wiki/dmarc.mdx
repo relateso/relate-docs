@@ -1,0 +1,76 @@
+---
+title: "DMARC"
+description: "Learn about DMARC and why setting it up is essential for successful email marketing and sales"
+sidebarTitle: "DMARC"
+"og:title": "What is DMARC? | Relate Startup Wiki"
+"og:description": "Learn about DMARC and why setting it up is essential for successful email marketing and sales"
+"article:tag": "Wiki"
+"twitter:title": "DMARC | Relate Startup Wiki"
+"twitter:description": "Learn about DMARC and why setting it up is essential for successful email marketing and sales"
+---
+
+## Overview
+
+If you are involved in email marketing or sales, you want to ensure that your campaigns reliably reach recipients' inboxes rather than ending up in the spam folder. Domain-based Message Authentication, Reporting & Conformance (DMARC) is a widely adopted email authentication protocol that helps prevent email spoofing and improve email deliverability. By implementing DMARC, you can protect your domain’s credibility, enhance security, and make sure your emails get to the right audience.
+
+## What is DMARC?
+
+DMARC strengthens email security by preventing unauthorized use of your domain in outgoing emails, protecting both the sender and the recipient from potential email threats.
+
+It incorporates two other email authentication methods called [SPF (Sender Policy Framework)](/wiki/spf) and [DKIM (DomainKeys Identified Mail)](/wiki/dkim) to ensure that emails are sent from legitimate sources and that the message’s authenticity is preserved. Acting as an overarching policy, DMARC guides receiving servers on how to handle emails that fail SPF or DKIM checks.
+
+
+### How DMARC Works
+
+While SPF and DKIM verify the email message’s credibility, DMARC enforces how unauthenticated messages are treated. DMARC records instruct receiving servers to either allow, quarantine, or reject emails that fail authentication, depending on your specified policy.
+
+#### DMARC policy options
+
+- **None**: This is the least restrictive option, where the email receiver simply reports on the DMARC status of the email without taking any action.
+- **Quarantine**: Failing emails are flagged as suspicious and are typically moved to the spam or junk folder.  
+- **Reject**: The most restrictive option, where the email receiver will completely reject the emails that fail.
+
+<Note>It's best to start with the "None" option to see how your emails are performing before gradually moving to a stricter DMARC policy.</Note>
+
+
+## Why is DMARC Important?
+DMARC is an essential tool for marketers seeking to maximize email engagement and keep their emails far away from the spam and promotional folders. Here are some reasons why DMARC is crucial:
+
+- **Prevents brand damage from spoofing**: DMARC helps prevent email spoofing, where bad actors use your domain to send phishing or scam emails. This protects your brand's reputation and ensures your customers can trust the emails they receive from your domain.
+- **Boosts email deliverability**: With DMARC, you can achieve higher deliverability rates, ensuring more legitimate emails reach your recipients' inboxes instead of being marked as spam.
+- **Protects domain reputation**: DMARC safeguards your domain’s credibility, which is crucial for maintaining trust with customers and clients.
+- **Keeps track of reports**: DMARC also provides valuable reporting, allowing you to monitor the health of your email domain and identify any potential issues or unauthorized use of your domain.
+
+Setting up DMARC effectively can help build trust with your recipients, increase the chances of a successful email campaign, and maintain your domain reputation.
+
+
+## How to Set Up DMARC Records
+
+You can set up your DMARC record by visiting your DNS host service provider.
+
+### 1. Set up SPF and DKIM
+Before creating a DMARC record, make sure SPF and DKIM are set up correctly. These two protocols work in conjunction with DMARC to provide a comprehensive email authentication solution.
+
+### 2. Create a DMARC record
+Once SPF and DKIM are in place, create a DMARC record. It is a TXT record added to your domain’s DNS settings. The format of the DMARC record looks like this:
+
+```
+_dmarc.example.com IN TXT "v=DMARC1; p=none; rua=mailto:dmarc-reports@example.com"
+```
+- Replace `example.com` with your domain.
+- Set the policy (`p=none`) to "none," "quarantine," or "reject" depending on your preferred security level. Starting with a “none” policy is recommended because it allows you to monitor activity without sacrificing deliverability.
+- Replace`dmarc-reports@example.com` with the email address where you want to receive DMARC reports. While optional, this is recommended for monitoring purposes.
+
+
+### 3. Verify your DMARC record
+
+Once you've created the DMARC record, you can check the status of your DMARC, SPF, and DKIM configurations [here](https://www.learndmarc.com/?ref=relate.kr). With all settings in place, you can be confident that your domain is safeguarded against email spoofing and that your email deliverability is optimized.
+
+Regularly review and adjust your DMARC policies to ensure consistent email engagement. If you find managing DMARC settings challenging, [Relate Marketing](/marketing/campaigns)can take the load off your shoulders.
+
+## Quick Recap
+
+- DMARC prevents unauthorized use of your domain, making it essential for email marketing and sales.
+- DMARC builds on SPF and DKIM, giving email servers clear instructions on how to handle messages that fail these checks.
+- Begin monitoring with the “None” policy to track email performance without affecting deliverability.
+- Relate Marketing provides tools to verify your DMARC setup, ensuring your domain stays secure and your emails reach their destination.
