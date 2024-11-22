@@ -39,17 +39,17 @@
   },
   "topbarLinks": [
     {
-      "name": "Blog",
-      "url": "https://www.relate.so/blog/"
-    },
-    {
       "name": "Go to Relate",
       "url": "https://www.relate.so/"
+    },
+    {
+      "name": "Log in",
+      "url": "https://admin.relate.so/users/sign_in"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Early Access",
-    "url": "https://relateso.typeform.com/relate"
+    "name": "Get Started",
+    "url": "https://admin.relate.so/users/sign_up"
   },
   "topAnchor": {
     "name": "Relate Guide"
@@ -64,6 +64,11 @@
       "name": "Startup Wiki",
       "icon": "book",
       "url": "wiki"
+    },
+    {
+      "name": "Blog",
+      "icon": "books",
+      "url": "https://www.relate.so/blog/"
     },
     {
       "name": "Changelog",
@@ -82,7 +87,30 @@
         "onboarding",
         "what-is-relate",
         "setup/get-the-app",
-        "learn-the-model"
+        "mobile-view",
+        "learn-the-model",
+        {
+          "group": "Plans",
+          "pages": [
+            "personal-plan",
+            "team-plan"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Platform",
+      "pages": [
+        {
+          "group": "Basics",
+          "pages": [
+            "features/inbox",
+            "features/tasks",
+            "features/notes",
+            "features/email",
+            "features/notifications"
+          ]
+        }
       ]
     },
     {
@@ -184,7 +212,8 @@
     {
       "group": "Integrations",
       "pages": [
-          "integrations/apollo"
+        "integrations/slack",
+        "integrations/apollo"
       ]
     },
     {
