@@ -1,95 +1,114 @@
 ---
 title: "Custom Fields"
-description: "Learn how to use Custom Fields in Relate"
+description: "Learn how to create and manage custom fields in Relate."
 sidebarTitle: "Custom Fields"
 "og:title": "Custom Fields | Relate Product Guide"
-"og:description": "Learn how to use the People feature in Relate."
+"og:description": "Learn how to create and manage custom fields in Relate."
 "article:tag": "Product Guide"
 "twitter:title": "Custom Fields | Relate Product Guide"
-"twitter:description": "Learn how to use the People feature in Relate."
+"twitter:description": "Learn how to create and manage custom fields in Relate."
 ---
 
-## Custom Fields
+## Overview
+
+In Relate, you can create and use custom fields in addition to the default fields. Custom fields help you collect and manage various information about your customers.
+
+## Creating Custom Fields
 
 ![Add Contact Custom Field](/images/features/add-contact-custom-field.png)
 
-As shown in the screenshot above, you can add various types of custom fields to the Lead and Contact lists.
+To create custom fields, first navigate to the settings page in the Relate app. You can create custom fields by going to `Workspace` > `Settings` > `Records`, or use the shortcut `Cmd+,` (macOS) or `Ctrl+,` (Windows) to directly access the settings page.
 
-To add new custom fields, find the '`Manage custom fields`' menu when you scroll your mouse cursor on your Workspace name. You will see Workspace ellipsis (⋅⋅⋅) in the (See screenshot below)
+Relate allows you to create and manage custom fields for 4 types:
 
-![Manage Custom Fields](/images/features/custom-field.png)
+1. Organization
+2. Contacts
+3. Processes
+4. Lists
 
-<Note>
+Organization and Contacts are default Record Types, while Processes and Lists are features that help manage Organizations and Contacts through processes or lists. To create custom fields for Processes and Lists, you must first create a Process or List.
 
-Alternatively, you can go to [https://admin.relate.so/](https://admin.relate.so/) to manage custom fields.
+### Organization/Contacts Custom Fields
 
-</Note>
+![Organization Custom Field](/images/features/organization-custom-field.png)
 
-Below is a screenshot example of managing Custom Fields.
+### Processes/Lists Custom Fields
 
-![Manage Custom Fields in Company](/images/features/manage-custom-fields-in-company.png)
+![Process Custom Field](/images/features/process-custom-field.png)
 
-### Types of Custom Field
+After creating a Process or List, you can create custom fields by clicking the `Custom fields` button.
 
-| **Field Data Type**    | Note                                                                                                                                                                                                              |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Text**               | Supports plain text format. Great for leaving a short, one-line comment.                                                                                                                                          |
-| **Multi-line text**    | Supports more than one line of text. Perfect for leaving long comments.                                                                                                                                           |
-| **Number**             | Number format.                                                                                                                                                                                                    |
-| **Date**               | Date format.                                                                                                                                                                                                      |
-| **Datetime**           | Date and time format.                                                                                                                                                                                             |
-| **Select**             | When entering data, you can select an option from a drop-down. Data is separated by commas (,).<br /><br />If you want to select more than one option, check Accept multiple values when adding the custom field. |
-| **Resource: Users**    | You can select team members in your workspace.<br /><br />It is suitable for designating an owner.                                                                                                                |
-| **Resource: Contacts** | You can select one of the contacts within a lead (or a company).<br /><br />It is suitable for designating the main point of contact for a customer.                                                              |
+## Managing Custom Fields
 
-<Note>
+### Default Fields
 
-You can take advantage of custom fields to store and manage various customer information essential to your team. In the future, we will add more data fields such as Deal, URL, or email address.
+Relate provides default fields for each Record Type. These fields are provided by default when creating custom fields and cannot be deleted.
 
-</Note>
+<AccordionGroup>
+  <Accordion title="Organization">
+    | Name        | Type | Description                                                      |
+    |-------------|------|------------------------------------------------------------------|
+    | Name        | Text | Organization name                                               |
+    | Domain      | Text | Organization's URL domain address, can register more than one                |
+    | Description | Text | Organization description, can be entered in multi-line text format        |
+    | Manager     | User | Organization's manager, can link to users in our workspace |
 
-<Note>
+  </Accordion>
 
-To check Custom Field modifications reflected immediately, relaunch the Relate app or refresh it by pressing Ctrl+Shift+R (macOS: Cmd+Shift+R) if the app is already running.
+  <Accordion title="Contact">
+    | Name        | Type | Description                                                      |
+    |-------------|------|------------------------------------------------------------------|
+    | Name        | Text | Contact's name                                               |
+    | Email       | Text | Contact's email address              |
+    | Title       | Text | Contact's title, can be entered in single-line text format        |
+    | Phone number | Text | Contact's phone number, can be entered in single-line text format        |
+  </Accordion>
 
-</Note>
+  <Accordion title="Processes & Lists">
+    Processes and Lists have no default fields.
+  </Accordion>
+</AccordionGroup>
 
+### Types of Custom Fields
 
-## Deal Custom Field
+| Name     | Note                                                                                    |
+|--------------------|---------------------------------------------------------------------------------------|
+| Text               | Supports regular text format. Good for short, single-line descriptions.                |
+| Multi-line text    | Supports text format with multiple lines. Suitable for longer descriptions.                  |
+| Number             | Numeric format.                                                                        |
+| URL                | URL format.                                                                        |
+| Date               | Can display dates.                                                              |
+| Datetime           | Can display dates and times.                                                       |
+| Select             | Can input options to select from a dropdown during data entry. Can allow multiple selections. |
+| User               | Can link to users in our workspace. Suitable for assigning responsible persons.         | 
 
-![Deal custom field](/images/features/deal-custom-field.png)
+## Use cases for custom fields
 
-As shown in the screenshot above, you can add various types of custom fields on the Deal page.
+By effectively utilizing Custom Fields, you can collect and manage various customer information that your company wants to track. Particularly, you can record information obtained through customer meetings and use it to generate sales opportunities. 
 
-You can find `Manage custom fields` menu when you scroll your mouse cursor on your Workspace name. You will see Workspace ellipsis (⋅⋅⋅) in the Relate app. (See screenshot below)
+For example, creating Custom Fields that align with [BANT](https://www.relate.so/blog/what-is-bant/) or [MEDDIC](https://www.relate.so/blog/what-is-meddic/) frameworks allows you to quickly record information gathered during sales meetings in your CRM.
 
-![Deal custom field](/images/features/manage-custom-fields.png)
+BANT consists of four elements: Budget, Authority, Need, and Timeframe. By creating custom fields for these, you can quickly record information gathered during sales meetings.
 
-Below is the example of setting Custom Fields.
+- Budget: Does this prospect have sufficient budget to purchase our product?
+- Authority: Does this prospect have the authority to make purchase decisions without approval from other stakeholders?
+- Need: What are this prospect's needs? Can our product solve their problems?
+- Timeframe: Is now the right time to implement?
 
-![Deal custom field](/images/features/setting-custom-fields.png)
+You can create custom fields like this:
 
-### Types of Custom Field
+| Field Name | Type | Options |
+| ---------- | ---- | ------- |
+| Budget | Select | `$0`, `<$1K`, `$1K-$10K`, `$10K+` |
+| Authority | Text | Enter decision-making authority information. |
+| Need | Select | `Difficult information gathering`, `Pipeline management`, `Outbound cold email`, `Mass marketing email`, `Sales team productivity issues`, `Other Needs` |
+| Other Needs | Multi-line text | Enter information about other needs |
+| Timeframe | Select | `Needed immediately`, `Within 1-3 months`, `Within 3-6 months`, `After 6 months` |
 
-| Field Data Type    | Note                                                                                                                                                                                                              |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Text               | Supports plain text format. Great for leaving a short, one-line comment.                                                                                                                                          |
-| Multi-line text    | Supports more than one line of text. Perfect for leaving long comments.                                                                                                                                           |
-| Number             | Number format.                                                                                                                                                                                                    |
-| Date               | Date format.                                                                                                                                                                                                      |
-| Datetime           | Date and time format.                                                                                                                                                                                             |
-| Select             | When entering data, you can select an option from a drop-down. Data is separated by commas (,).<br /><br />If you want to select more than one option, check Accept multiple values when adding the custom field. |
-| Resource: Users    | You can select team members in your workspace.<br /><br />It is suitable for designating an owner.                                                                                                                |
-| Resource: Contacts | You can select one of the contacts within a lead (or a company).<br /><br />It is suitable for designating the main point of contact for a customer.                                                              |
+You can also start managing custom fields with settings like these:
 
-<Note>
-
-If you use Custom Field well, you will be able to store and manage various customer information that is essential to your team. In the future, we will add more data fields such as Deal, URL or email address.
-
-</Note>
-
-<Note>
-
-To check Custom Field modifications reflected immediately, relaunch the Relate app or refresh it by pressing Ctrl+Shift+R (macOS: Cmd+Shift+R) if the app is already running.
-
-</Note>
+- Team size: 1-5, 6-10, 11-50, 51-100, 100+
+- Company stage: Startup, SMB, Mid-market, Enterprise
+- Pain point: Composed of pain points that the business solves (multi-select)
+- ICP Fit: Strong, Moderate, Weak
+- Lead type: Outbound, Inbound, Marketing, Product (multi-select)
