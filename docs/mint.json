@@ -108,10 +108,10 @@
             "features/tasks",
             "features/notes",
             "features/email",
-            "features/notifications",
-            "features/AI"
+            "features/notifications"
           ]
-        }
+        },
+        "features/ai-suggestions"
       ]
     },
     {
