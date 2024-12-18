@@ -111,7 +111,8 @@
             "features/notifications"
           ]
         },
-        "features/ai-suggestions"
+        "features/ai-suggestions",
+        "features/keyboard-shortcuts"
       ]
     },
     {
