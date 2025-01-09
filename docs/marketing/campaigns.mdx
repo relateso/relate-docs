@@ -19,31 +19,140 @@ Campaigns is a simple email tool for B2B marketing teams.
 
 You can use Campaigns to send emails to your audience (e.g., users, marketing leads, newsletter subscribers, etc.) to grow your business.
 
-<Info>
-  Campaigns is currently in beta. You can request access by sending an email to we@relate.so.
-</Info>
+Email Deliverability is a top priority for Relate campaigns.
+We make sure all technical setups are in place and assist in ensuring that the emails you send to your customers are delivered safely to their inboxes and not marked as spam.
+
+<Note>
+  Campaigns is currently in beta. If you would like **Early access**, please sign up [here](https://relate.so/forms/owanag3splmfy6zr).
+</Note>
+
+Currently, Campaigns is in beta and includes the following features 
+
+- Set up and verify SPF, DKIM, DMARC, and MX records for reliable email deliverability
+- Custom domains
+- Preview text creation
+- Email editor: Quickly compose and style emails based on Markdown
+- Test sending
+- Send bulk emails to your list
+- Measuring email campaign performance
+
+We'll be adding more features in the future, including automation features. 
 
 ## How it works
+<Note>
+  Before you can use a campaign, you need to register a sending domain. For the process of registering a sending domain, see the [DNS Records Setup Guide](/marketing/dns-records)
+</Note>
 
 ### Create a new campaign
-
+![campaign 1](/images/features/add-new-campaign.png)
 Create a new campaign by clicking the `+ Campaign` button in the Campaigns page.
 
 ### Compose an email
+#### Write preview text
+![campaign 2](/images/features/campaign-preview-text.png)
+Preview text is the one-line description that appears after the subject line in your customer's inbox.
+It's optional, and you can send your campaign without it.
 
-The Campaigns editor supports a full-featured markdown editor, but you can also use the WYSIWYG style buttons to style your email. Our editor lets you write emails just like you would in Notion.
+Depending on whether or not you write the preview text, it will look slightly different in your customer's inbox.
+- Composed: The preview text appears **next to the email subject line**.
+
+(e.g., Relate changelog update for October - Google contacts integration, List&Processes)
+
+- Uncomposed: **The first line of the email content** is displayed next to the email subject.
+
+(e.g., Relate changelog update for October - Hey! Chris here, from the Relate team. We shipped bunch of ...)
+
+#### Compose the email content
+![campaign 3](/images/features/email-editor.png)
+The Campaigns editor supports a full-featured markdown editor, but you can also use the WYSIWYG style buttons to style your email.
+Our editor lets you write emails just like you would in Notion.
 
 Use the `/` button to access the menu. Here, you can add images, videos, buttons, and more to your email.
 
+#### Set email footer content
+In a Relate campaign, every email is sent with a footer by default.
+The footer should contain the following information
+1. How and why the subscriber received this email
+2. Your company name
+3. Your company address
+4. An Unsubscribe button: Subscribers can unsubscribe and unsubscribe themselves
+
+![campaign 4](/images/features/email-footer.png)
+Currently, Relate requires you to enter your company name and company address in free-form.
+Typically, the order is Company name > Company address. See the example above.
+
+#### How to remove the `Powered by Relate` button
+`Powered by Relate` can only be removed from paid plans and the Enterprise Plan.
+You can change [plans and start a free trial here](https://admin.relate.so/workspaces/settings/plans).
+
 ### Specify sender email address and name
+![campaign 5](/images/features/sender-identification.png)
 
-In the right panel, you can specify the sender email address and name.
+#### Specify the sending email address/name
+Before you send an email, you need to set the email address and name of the sender, and the email address for receiving replies.
+
+#### Select an email audience
+Because Relate sends campaigns based on a contact list, you need to create a contact list in advance.
+You can learn the basics of creating a list in [How to create a list](https://www.relate.so/changelog/lists-and-processes).
+
+If you want to quickly add a customer list you already have to Relate, you can do so in the following ways
+![campaign 6](/images/features/campaign-import-csv.png)
+1. After you create a List, select `+ Contact` > `+ Import from CSV`.
+2. Upload the customer CSV file that you currently have. You can learn more about how to import a CSV file in our [import guide](setup/import).
+
+### Send an email to recipients
+Once you've created your contact list, select the list in the `Recipients` section to add it to your audience, and the email will be sent to all the contacts in the list.
+
+Once you've selected the list you want to send the email to, select whether you want to send it immediately (Now) or schedule it (Later), then press the `Send` or `Schedule` button in the top right corner.
+
+#### Test send
+If you want to test your email first to make sure that it went out as intended when you actually send it, you can send a test email to yourself or a team member by tapping `Test send` in the top right corner.
+
+<Info>
+Unsubscribe is not available in test sends where there is no contact, but it is working well in actual sends. If you have any questions, please contact we@relate.so.
+</Info>
 
 
-### Add a template
+## Campaign metrics
+![campaign 7](/images/features/campaign-metrics.png)
 
-You can add a template by clicking the `+ Template` button in the Campaigns page.
+You can measure the overall performance of each campaign and the performance of individual contacts, and the metrics available in the beta include
 
-### Add a list
+- Number of emails sent
+- Overall open rate for the campaign, including unsubscribes
+- Number of clicks per link (URL)
+- Status, opens, clicks, and unsubscribes by recipient
 
-You can add a list by clicking the `+ List` button in the Campaigns page.
+### Track clicks by link
+If you've added links to your emails, you can see a table of clicks by link in the Metrics tab.
+![campaign 8](/images/features/campaign-link-metrics.png)
+- **Links**: Number the links and give them names, such as Links 1, 2, 3. Use the same in the Recipients table below (e.g. Link 1 clicks).
+- **URL**: This is a shortened version of the link you added to the email. If you're curious about the full link, you can hover over the link to see it.
+- **Total clicks**: This is the number of clicks, including duplicates. If one customer opened your email and clicked 5 times, all 5 clicks will be reflected.
+- **Unique clicks**: The number of clicks that do not include duplicates. If a single customer opens your email 5 times, it will be reflected as 1.
+
+### Filters and additional actions with recipient-specific metrics
+![campaign 9](/images/features/campaign-recipients-metrics.png)
+In the Recipients table, you can see the status of each recipient, the number of opens, clicks per link, and whether they have unsubscribed. You can use this to filter and then take further actions.
+
+- Add to sequence
+- Add to list: Create a new list to send another campaign
+- Add to process
+
+## Relate Marketing Pricing
+<Note>
+  Check out [Relate Marketing's pricing plans page](https://www.relate.so/pricing/marketing)
+</Note>
+
+### What is an Active Contact?
+An active contact is a contact that you have sent a campaign to within a 30-day period.
+For example, if you have 1,000 contacts registered in Relate and you've sent to 100 people through Relate Campaigns in the last 30 days, then you have 100 active contacts.
+
+The reason Relate distinguishes between Contacts and Active Contacts is to ensure fair billing policies.
+With other email services, if you have a lot of Contacts in your workspace, you'll always pay for them, regardless of how many people you actually communicate with.
+
+Relate solves this problem by making sure that even if you have a lot of contacts in your workspace, you're only charged based on the number of people you actually communicate with.
+
+So, in Relate, you can have an unlimited number of contacts and send an unlimited number of emails, and you'll only be charged for the number of people you actually send to.
+
+Active contact calculations are automatically shown within the Relate app.
