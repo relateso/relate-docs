@@ -131,6 +131,7 @@
     {
       "group": "Processes",
       "pages": [
+        "process/process",
         "process/default",
         {
           "group": "Sales Process",

@@ -1,0 +1,84 @@
+---
+title: "What is Processes?"
+description: "Easier to manage not just sales, but investments, recruiting, and more."
+sidebarTitle: "What is Processes?"
+"og:title": "Processes | Relate Product Guide"
+"og:description": "Easier to manage not just sales, but investments, recruiting, and more."
+"og:image": ""
+"article:tag": "Product Guide"
+"twitter:title": "Processes | Relate Product Guide"
+"twitter:description": "Easier to manage not just sales, but investments, recruiting, and more."
+"twitter:image": ""
+---
+
+![process 01](/images/features/process-process.png)
+## Overview
+Processes is a feature that lets you organize different workflows, including sales.
+
+Each [Entry](/process/process#1-entry) represents a sales opportunity for the associated Organization/Contact.
+You don't make a sale just once, so an Organization/Contact can have multiple processes.
+
+Additionally, templates make creating processes easier and faster.
+Here are the process templates currently available in Relate (click on the template name to go to the guide).
+- [Default process](/process/default)
+- [Sales process](/process/sales)
+- [Simple sales process](/process/simple-sales)
+- [Other process](/process/other): Fundraising, Recruiting
+
+## Basics
+### 1. What is Entry?
+In a process, an **Entry** is the data that goes into the process,
+and the information in Organization/Contact is managed as one entry within the process.
+This means that in the board view of the process, you can see that a card is one entry.
+![process 02](/images/features/process-entry.png)
+They are called and managed as another form of Entry because they have information specific to each process (e.g., Assignee, Value, Status, etc.)
+in addition to Organization/Contact information.
+
+### 2. Explore the Processes page
+![process 03](/images/features/default-board.png)
+When you create a process, the status will be displayed in the form of a Kanban board divided into columns, as shown in the photo.
+If you add Organization/Contact to a process, it will be displayed in card format, and you can freely change the status by dragging and dropping.
+
+If you want to view it in list format, you can click the `List` button at the top.
+
+Adding Organization/Contact to a process is the same as adding it to a list.
+And, creating custom fields that apply only to that process is the same as adding custom fields to a list. You can find more information on how to do this in the [Lists guide](/features/lists).
+
+![process 04](/images/features/default-org-detail.png)
+In addition to the list, you can add them to a process in two other ways.
+1. From the Organization detail page > Process tab, add them to an already created process via the `+ Add to process` button (see photo above)
+2. From the Organization/People page, select them and add them via the `Add to process` button at the bottom
+
+Finally, you can put an Organization/Contact into multiple processes to manage them separately.
+
+### 3. Setting up the process
+After going to the Settings page, select Process and you can see that the settings page appears in the order of General / Custom fields / Statuses.
+
+#### General
+![process 05](/images/features/default-general.png)
+The General page is where you manage general information about your processes.
+This is where you can set the Name that appears in the sidebar, archive/delete processes, and more.
+
+![process 06](/images/features/default-identifier.png)
+1. Entry Labels are roles that you label using words other than organization/contact.
+For example, for a process that manages Prospects, you might label the entry "Opportunity".
+
+2. Identifier is the identifier for each process, separated by `Identifier + number` (e.g., Deal-1).
+Since you can change the identifier to a different name than the process title, you can create processes with the same name but different identifiers to manage them.
+
+#### Custom fields
+This is where you create and manage custom fields that apply only to that process.
+For example, if you only need information when you're doing outbound, you can set up and manage custom fields in a process for outbound.
+
+Creating custom fields is the same as creating custom fields in Organization/Contact. You can find more information in the [Custom fields guide](/features/custom-fields).
+
+#### Statuses
+![process 07](/images/features/default-statuses.png)
+This is where you create and manage the statuses used by the process to manage progress.
+
+You can add them via `+ Add list status`, and you can't delete them if they already have an entry (card).
+
+There are three states of Status.
+- `Active`: Indicates that something is **in progress**, and if a step will not be completed in either state (Success/Failure), you can use Active status.
+- `Won`: Indicates a situation where **a completed step has been successfully finalized**. For example, becoming a customer of a product, completing a talent acquisition, etc.
+- `Lost`: Indicates a situation where **a completed step ended with a bad outcome**. This could be a situation where a person did not become a customer of the product, a hire ended without being hired, etc.
