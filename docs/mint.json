@@ -123,23 +123,24 @@
       ]
     },
     {
-      "group": "Deals & Pipelines",
+      "group": "Lists",
       "pages": [
-        "features/deals",
+        "features/lists"
+      ]
+    },
+    {
+      "group": "Processes",
+      "pages": [
+        "process/default",
         {
-          "group": "Prospect",
+          "group": "Sales Process",
           "pages": [
-              "features/prospect",
-              "features/prospect-status"
+              "process/sales",
+              "process/simple-sales"
           ]
         },
-        {
-          "group": "Close",
-          "pages": [
-              "features/pipelines"
-          ]
-        }
-        ]
+        "process/other"
+      ]
       },
     {
       "group": "Marketing",
