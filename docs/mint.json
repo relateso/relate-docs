@@ -145,7 +145,8 @@
       "group": "Marketing",
       "pages": [
         "marketing/campaigns",
-        "marketing/dns-records"
+        "marketing/dns-records",
+        "marketing/forms"
       ]
     },
     {
