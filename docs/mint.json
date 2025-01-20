@@ -131,16 +131,16 @@
     {
       "group": "Processes",
       "pages": [
-        "process/process",
-        "process/default",
+        "features/processes",
+        "features/default-processes",
         {
-          "group": "Sales Process",
+          "group": "Sales Processes",
           "pages": [
-              "process/sales",
-              "process/simple-sales"
+              "features/sales-processes",
+              "features/simple-sales-processes"
           ]
         },
-        "process/other"
+        "features/other-processes"
       ]
       },
     {
