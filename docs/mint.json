@@ -112,7 +112,8 @@
           ]
         },
         "features/ai-suggestions",
-        "features/shortcuts"
+        "features/shortcuts",
+        "features/data-enrichment"
       ]
     },
     {
