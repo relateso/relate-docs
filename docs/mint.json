@@ -144,6 +144,12 @@
       ]
       },
     {
+      "group": "Documents",
+      "pages": [
+          "docs/relate-docs"
+      ]
+    },
+    {
       "group": "Marketing",
       "pages": [
         "marketing/campaigns",
