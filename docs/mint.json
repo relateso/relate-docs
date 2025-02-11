@@ -123,24 +123,32 @@
       ]
     },
     {
-      "group": "Deals & Pipelines",
+      "group": "Lists",
       "pages": [
-        "features/deals",
+        "features/lists"
+      ]
+    },
+    {
+      "group": "Processes",
+      "pages": [
+        "features/processes",
+        "features/default-processes",
         {
-          "group": "Prospect",
+          "group": "Sales Processes",
           "pages": [
-              "features/prospect",
-              "features/prospect-status"
+              "features/sales-processes",
+              "features/simple-sales-processes"
           ]
         },
-        {
-          "group": "Close",
-          "pages": [
-              "features/pipelines"
-          ]
-        }
-        ]
+        "features/other-processes"
+      ]
       },
+    {
+      "group": "Documents",
+      "pages": [
+          "docs/relate-docs"
+      ]
+    },
     {
       "group": "Marketing",
       "pages": [

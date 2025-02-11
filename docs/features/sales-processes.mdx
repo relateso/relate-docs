@@ -1,0 +1,144 @@
+---
+title: "Sales Process"
+description: "Separate Prospects and Pipeline so you can manage your deals in detail, from potential leads to closed deals."
+sidebarTitle: "Sales Process"
+"og:title": "Sales Process | Relate Documentation"
+"og:description": "Separate Prospects and Pipeline so you can manage your deals in detail, from potential leads to closed deals."
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs-kr/main/docs/images/sales-sales.png"
+"article:tag": "Product Guide"
+"twitter:title": "Sales Process | Relate Documentation"
+"twitter:description": "Separate Prospects and Pipeline so you can manage your deals in detail, from potential leads to closed deals."
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs-kr/main/docs/images/sales-sales.png"
+---
+
+![sales 01](/images/features/sales-sales.png)
+## Overview
+The Sales process is a template designed to help you iteratively manage the sales process from potential lead to closing a deal.
+
+It is divided into two sections, Prospects/Pipeline, where Prospects manages prospects through Prospect status, and Pipeline manages customers who have actually become sales opportunities.
+
+Both processes also provide Contact as a custom field so that you can specify the contacts you need for each sales process separately.
+
+Each process can be managed separately as well as linked to each other. You can see how to connect them below in [Connecting Prospects and Pipeline](/features/sales-processes#connecting-prospects-and-pipeline).
+
+<Note>
+    You can learn more about using processes in [Processes](/features/processes).
+</Note>
+
+<Info>
+    If you want to change the status and custom fields provided by this template,
+    
+    you can find instructions in [Processes > 3. Setting up the process](/features/processes#3-setting-up-the-process) and the [Custom Fields Guide](/features/custom-fields).
+</Info>
+
+## Prospect
+![sales 02](/images/features/sales-prospects-board.png)
+
+Prospect is the section where you manage prospects before they become pipelined.
+You can communicate with them, qualify them, and move them into the sales pipeline.
+This section is typically used by someone with the [SDR](https://www.relate.so/docs/wiki/sales-roles#sales-development-representative-sdr-and-business-development-representative-bdr).
+
+Within Relate, prospects are managed utilizing Prospect status, which specifies the status of a prospect within the Prospect process.
+
+### What is Prospect status?
+Prospect status is an internal team definition and representation of the relationship with a prospect.
+By looking at Prospect status, sales reps can quickly understand the organization's relationship with our team and determine what needs to be done.
+
+![sales 03](/images/features/sales-prospects-status.png)
+
+There are five different prospect statuses in Relate. Each team may manage them slightly differently, but here's how we define and manage prospect statuses.
+- **Potential**: All prospects that have been deemed sales-ready and require a sales rep to confirm fit
+- **Working**: Prospects on the Potential list that are currently being prospected
+- **Nurturing**: Prospects that are a good fit, but for various reasons are difficult to sell to right away, but may be a sales opportunity at some point in the future
+- **Qualified**: Prospects that have been proven to be a sales opportunity through prospecting
+- **Bad Fit**: Prospects that are not a good fit.
+
+### How to utilize Prospect status
+![sales 04](/images/features/sales-prospects-view.png)
+When you apply the Sales process template, it creates Prospects, which in turn creates three view lists: Potential, Working, and Nurturing.
+In each list, you can see all deals with a Prospect status of Potential, Working, or Nurturing.
+
+#### Potential
+**Any prospect that has been deemed sales-ready and needs to be fit by a sales rep**
+
+Any [SDR/BDR](https://www.relate.so/docs/wiki/sales-roles) that needs to be prospect-qualified, or any newly added prospects from the Potential list.
+From there, you can select the ones you want to prospect this week or this cycle, and change the Prospect status to Working.
+
+When you change the Prospect status from Potential to Working, it will automatically move to the Working list.
+
+#### Working
+**Prospects in your Potential list that you're currently prospecting**
+
+Working refers to the number of prospects that your sales team is currently prospecting.
+Especially if you've been in sales for a while, you'll naturally have a lot of prospects in your Potential list, and it's hard to keep track of who's prospecting to which prospects.
+
+![sales 05](/images/features/sales-prospects-working.png)
+You can prospect each prospect in your Working list via [cold email](https://www.relate.so/blog/how-to-run-a-cold-email-campaign/), [cold call](https://www.relate.so/blog/how-to-cold-call/), etc.
+In Prospects, select an organization that is in the working stage, or click the `Open` button next to the organization name to bring up the detail page, where you can create a note, write an email, or add or edit customer information.
+
+#### Nurturing
+**Prospects who are a good fit but are difficult to sell to right away for a variety of reasons, but may have a sales opportunity at some point in the future**
+
+Nurture means managing prospects that will become sales opportunities in the future.
+
+Sometimes a prospect is a good fit but can't afford to buy your product right now, for example, because their budget is tight or they're still engaged with a competing product.
+In this case, you should manage them by changing their Prospect status to Nurturing.
+
+You should send them product updates, customer case studies, webinars, blog posts, and other materials periodically, and engage in conversations to figure out when you can resume sales efforts.
+
+If their situation changes and they're ready to buy, you can change their status to Qualified and manage them in the pipeline.
+
+#### Qualified
+**Leads that are deemed ready to buy and move into full-scale sales activities**
+
+Among the many sales opportunities and prospects, SDR/BDR or sales reps prospecting can turn those that are deemed ready to buy into Qualified, which means they are ready to make a sale and should be nurtured with high priority.
+
+![sales 06](/images/features/sales-prospects-qualified.png)
+When you change a prospect's status to Qualified, you can associate a process to automatically move them to the very first stage of the pipeline.
+You can see how to connect them below in [Connecting Prospects and Pipeline](/features/sales-processes#connecting-prospects-and-pipeline).
+
+It's a sales best practice to only change the status of qualified sales opportunities to Qualified after prospecting and manage them in the pipeline: Prospect for those that aren't fully qualified yet, and Pipeline for those that are.
+
+By only adding qualified sales opportunities to the pipeline, your sales team can get a more accurate picture of what percentage of all sales opportunities are successfully closing (Win Rate).
+
+#### Bad Fit
+**Prospects that aren't a good fit**
+
+As SDRs/BDRs prospect, some prospects are not a good fit for your product at all.
+
+In these cases, we recommend changing the prospect status to Bad Fit and not engaging in any further sales activity.
+This prevents resources from being wasted on closing bad-fit prospects.
+
+### Managing deals in the pipeline
+Managing deals in the pipeline is simple. Simply drag deals from one stage (Status) to another. You can also use filters and sorting to find a specific set of deals.
+
+We also assign a sales rep from our team to each deal to add a layer of accountability and make it easier to track sales goals.
+
+### Pipeline Statuses
+By default, Relate provides the following pipeline statuses.
+- Qualified
+- Meeting scheduled
+- Closing
+- Closed Won
+- Closed Lost
+
+Pipeline stages can be modified, added, or deleted. You can manage their status by going to Settings > Processes > Statuses.
+You can find more information about Status and how to manage it in [Processes > 3. Setting up the process](/features/processes#statuses).
+
+<Tip>
+    In general, we don't recommend adding stages to your pipeline to track detailed sales activities, such as "first contact," "follow-up," and so on.
+    Pipeline stages should represent meaningful milestones that progress until each deal closes.
+    
+    Instead, detailed sales activities can be tracked on the Organization page. You can also utilize the Task feature on the Org page.
+</Tip>
+
+### Connecting Prospects and Pipeline
+You can connect and manage Prospects and Pipeline in Settings > Process > General > Connected lists.
+Connected lists are based on the process you're currently in, and you'll set the next list you want to connect to it.
+![sales 08](/images/features/sales-connected-next.png)
+Next to the list, you can click `Add connection` to choose which status from the process you're in to send to which status from another process.
+
+You can also connect multiple processes to one process.
+However, you cannot select a status that is already connected elsewhere as the starting point, nor can you select a status that is already connected as the destination.
+
+This is primarily used to move someone from Prospects to the first stage of the pipeline when they are qualified, so that they can continue their sales from there.
