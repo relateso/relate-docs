@@ -20,11 +20,11 @@ Learn how to import .CSV data into Relate.
 
 **TL;DR**
 
-Go to the [Admin Page](https://admin.relate.so/), select `Import Data` from the left menu bar, and then click `Import Organizations` or `Import Deals`.
+Go to the [Admin Page](https://admin.relate.so/), select `Import` from the left menu bar, and then click `Import Organizations/Deals/Lists/Processes`.
 
 ![Relate Data](/images/setup/import_menu1.png)
 
-When importing customer information into Relate, you can import organizations and people from Import Organizations and deals from Import Deals.
+When importing customer information into Relate, you can import organizations and people from Import Organizations/Lists and deals from Import Deals.
 
 </Check>
 
@@ -73,17 +73,21 @@ Deal:
 
 ## How to import
 
-Go to the [admin page](https://admin.relate.so/), select Import data from the left menu bar, and then click `Import Organizations` or `Import Deals`.
+Go to the [admin page](https://admin.relate.so/), select Import from the left menu bar, and then click type of Import (Organizations, Lists, Deals, and Processes) you want to import.
 
 ![Relate Data](/images/setup/import_menu1.png)
 
-### Step 1. Gettting started
+### Step 1. Getting started
 
-<Tip>If you already have a .CSV file ready for import, you can skip to Step 2.</Tip>
+<Tip>
+If you already have a .CSV file ready for import, you can skip to Step 2.
+</Tip>
 
 If you don't you can download a sample .CSV file that already has the default fields as well as sample custom fields like `Linkedin`, `Segment`, and `Tools`.
 
-<Warning>Note that sample custom fields in the sample .CSV file are just *samples*! **You'll need to create your own set of custom fields if you're planning to import additional fields.**</Warning>
+<Warning>
+Note that sample custom fields in the sample .CSV file are just *samples*! **You'll need to create your own set of custom fields if you're planning to import additional fields.**
+</Warning>
 
 Once you have a .CSV file ready to import, proceed to Step 2.
 
@@ -121,6 +125,26 @@ Proceed to next step once you have matched all of the columns.
 Once you click the `Import Data` button you should see a confirmation. Confirm the import and you should be able to see the screen below.
 
 ![successful Relate Data](/images/setup/import_menu7.png)
+
+## Import Lists
+![list import 1](/images/setup/import-list-csv.png)
+For Contact list, you can import a CSV file directly from a contact list you've already created without going through the Admin page.
+
+Enter the contact list and select the `+Contact` button > Import from CSV.
+
+![list import 2](/images/setup/import-list-options.png)
+At this point, a modal called Import options will pop up, allowing you to choose the following (currently required, but will become optional in the future)
+1. **Link to an existing organization with the email domain**: Check the Contact's email domain and link to the organization if it matches the domain of an existing organization.
+2. **Create an organization with the email domain**: If no organization exists with the Contact's email domain, create an organization based on the email domain.
+
+The rest of the process is the same as a traditional import, so you can start at [Step 1](/setup/import#step-1-getting-started) and follow the same steps.
+
+<Tip>
+There are three things to note about the List import process
+1. New organizations and contacts in the .CSV file will be created immediately.
+2. If existing organizations and contacts are in the imported .CSV file, the existing data will be found and added to the list to avoid creating duplicates.
+3. **Importing a .CSV file with updated information in the existing data will not automatically update it with the newly created information.**
+</Tip>
 
 ## Importing LinkedIn connections
 
