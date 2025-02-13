@@ -83,3 +83,17 @@ After setting up records, click `Verify records` at the bottom of the Relate dom
 Verification can take up to 1 hour.
 
 When complete, each record section will show a green `Verified` status.
+
+### Solving Partially verified of SPF and DMARC records
+![campaign-record](/images/features/campaign-record-partially.png)
+There are cases where SPF and DMARC records are displayed as `Partially verified` even though you have followed the steps above to set up the records.
+
+In this case, the record setting is not complete, so please follow the steps below to check the record setting.
+
+First, use the [DNS CHECKER](https://dnschecker.org/all-dns-records-of-domain.php?query=_dmarc.relate.so&rtype=TXT&dns=google) site to resolve to TXT type with **_dmarc.domain** (e.g. _dmarc.relate.so).
+
+Copy the guide code provided here verbatim, make sure it works in Relate, and correct any deviations from the guide code.
+
+For example, p=none; but you didn't include a semicolon (;), which caused an error.
+
+If this doesn't work, please contact us at we@relate.so or via the Contact Us button in the bottom right corner of the app.
