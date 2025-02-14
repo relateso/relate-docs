@@ -18,15 +18,15 @@ You can now let your prospects and customers book meetings with you in seconds v
 
 ## Getting Started
 
-### 1/ Google/Outlook Integration Check
+### 1. Google/Outlook Integration Check
 Before using Relate Meetings, you must check whether Google/Outlook is integrated. This is because Relate cannot create a meeting scheduler if the emails exchanged between the customer and Google/Outlook are not synced to the calendar. 
 
 The specific email integration process can be found at [this link](https://www.relate.so/docs/setup/email-sync#3). 
 
-### 2/ Default Settings
+### 2. Default Settings
 After connecting your calendar, go to the in-app settings page (cmd + , or ctrl + ,) and go to Meetings in the bottom left corner. 
 
-**2-1 Select Calendar**
+#### 2-1. Select Calendar
 ![cal-setting1](/images/features/cal-settings1.png)
 
 First, select which of the linked calendars you want to add the schedule that was created through Relate Meetings to. 
@@ -35,7 +35,24 @@ First, select which of the linked calendars you want to add the schedule that wa
 
 To avoid double bookings, select a calendar to check for conflicts.
 
-**2-2 Manage Availability**
+#### 2-2. Manage Availability
+Availability is about setting the available time slots for each user (account).
+
+To set the available times, press + Availability, then enter a name, and a window will pop up where you can set the times.
+![cal-setting3](/images/features/cal-availability-setting.png)
+Use the toggle button to select whether to allow meetings by day of the week.
+
+If the toggle button is on, set the time range for meetings to be scheduled on that day of the week. You can also set the time zone by city in Timezone on the right.
+
+When you're done, select Save to save your settings.
+
+If you turned on the Set to Default setting, the availability will be set as the default and will be automatically assigned and displayed when creating a meeting scheduler.
+
+![cal-setting4](/images/features/cal-settings3.png)
+You don't necessarily have to have only one availability, you can create and manage multiple availability as needed.
+
+Depending on the nature of your meeting, you can create different availabilities and then select the desired availability when creating a meeting schedule.
+
 ![cal-setting3](/images/features/cal-settings3.png)
 
 Next, you can set your availability. You can also set the time zone in the Timezone field on the right. 
@@ -43,7 +60,7 @@ Next, you can set your availability. You can also set the time zone in the Timez
 The availability set here is the default availability for each account. It will be updated in the future so that you can create and manage various availability. 
  
 
-**2-3 Configuring Conferencing Apps**
+#### 2-3. Configuring Conferencing Apps
 ![cal-setting4](/images/features/cal-settings4.png)
 
 Finally, you can select which app to use for a video conferencing.
@@ -66,20 +83,33 @@ Assignment can be selected appropriately according to the type of meeting schedu
 - Round Robin: This calendar rotates between multiple hosts each time a prospect schedules a meeting. Each host can get equal number of meetings, or you can maximize availability.
 - Managed Event: This can be used for a personal calendar for 1:1 meetings. 
 
+<Note>
+**Cautions for selecting a Managed Event**
+
+If you created a meeting scheduler with Managed Event, it shows meeting links for all assigned hosts.
+
+This is because if another team member copies and shares a link from a Managed Event meeting scheduler created by another team member, it will be an invalid URL.
+![cal-managed](/images/features/cal-managed-event.png)
+For example, a Managed Event meeting scheduler link created by Chris is only valid when copied by Chris, and cannot be accessed normally if copied by Won.
+
+Therefore, if you want multiple people to share a single Managed Event, you need to assign the people you want to share it with and copy their links.
+</Note>
+
 ### Event Setup
 ![cal-event-setup](/images/features/cal-event-setup.png)
 
 The Event Setup page allows you to make the following settings. 
 - Set the title, description, and slug of the meeting scheduler
 - Meeting duration (You can also allow the person scheduling the meeting to set the meeting duration.)
-- Meeting location (Conferencing, in-persong, phone, etc.)
+- Meeting location (Conferencing, in-person, phone, etc.)
 
 ### Availability
 ![cal-availability](/images/features/cal-availability.png)
 
 On this page, you can select one of the Availability settings you made on the Settings page. 
 
-In the current version, only Default Schedule can be used. 
+On this page, you can select one of the Availability that you set on the Settings page.
+The Availability you set to Default is set as the default. If you want to change it, press the dropdown to select the desired Availability.  
 
 ### Assignment
 ![cal-assignment](/images/features/cal-assignment.png)
