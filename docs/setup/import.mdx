@@ -1,7 +1,7 @@
 ---
 title: "Import data"
 description: "Learn how to import data into Relate"
-sidebarTitle: "Import"
+sidebarTitle: "Import data"
 "og:title": "How to import data into Relate | Relate Documentation"
 "og:description": "Learn how to import data into Relate"
 "og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
@@ -16,80 +16,139 @@ sidebarTitle: "Import"
 ## Overview
 Learn how to import .CSV data into Relate.
 
-<Check>
+**Basic importing instructions can be found in the guide you are currently viewing.**
 
-**TL;DR**
+For List/Process and Linkedin import instructions, please navigate to the cards below.
 
-Go to the [Admin Page](https://admin.relate.so/), select `Import` from the left menu bar, and then click `Import Organizations/Deals/Lists/Processes`.
+<CardGroup cols={2}>
+      <Card
+            title="List/Process Import"
+            icon="list"
+            iconType="duotone"
+            href="/setup/list-import"
+            color="#3B82F6"
+      >
+      </Card>
+      <Card
+            title="LinkedIn Import"
+            icon="download"
+            color="#3B82F6"
+            iconType="duotone"
+            href="/setup/linkedin-import">
+      </Card>
+</CardGroup>
 
-![Relate Data](/images/setup/import_menu1.png)
+<Note>
+  If you have a large amount of data, then you might want to try importing some of your customer data as a test first.
+  
+  - If it all goes in successfully, then import the rest of your data in the same way.
+  - If any data fails to import, then check the reason why, fix the remaining customer data, and try importing again.
+</Note>
 
-When importing customer information into Relate, you can import organizations and people from Import Organizations/Lists and deals from Import Deals.
-
-</Check>
+<Info>
+  Deal will be integrated with Process in the first half of the year, so the import guide doesn't mention how to import Deal separately. The basic method is the same as Process.
+</Info>
 
 ## What you need to know before importing customer data
 
-### Customer data types
+### 1. Import data types
 
-There are three types of customer data in Relate.
+There are four types of import type in Relate.
 
 - [Organization](/features/organizations)
-- [Person](/features/people)
-- [Deal](/features/deals)
+- [People (Contact)](/features/people)
+- [Process](/features/processes)
+- [List](/features/lists)
 
-![Relate Data](/images/setup/org_person_deal.png)
+![Relate Data](/images/setup/list-import-org.png)
 
-You must have an Organization before adding a Person and a Deal because both Person and Deal are under Organization.
+When categorizing customer information within Relate, Organization is the default, with People falling within Organization.
 
-### Default Data Field
+Process and List are a series of deal closing processes and customer lists that you create using Organization and Contact.
 
-The default data fields for Organization, Person, and Deal are the following.
+### 2. Data Field
 
-Organization:
+Organization, People, Process, and List have data fields that are specific to their nature by default.
 
-- **Organization Name (Required)**
-- Website
-- Description
-- Assignee
+They have default fields that are required to be filled in.
+1. **Organization**: **Organization name** must be entered.
+2. **People**: You must enter either **Contact name or Contact Email**.
+3. Process / List: Check the [Entry](/features/processes#1-entry) type (Organization, Contact) of the process and list and follow 1 or 2.
 
-Person:
+Below you'll find a quick overview of what other default fields are available.
 
-- **Person Name (Required)**
-- Title
-- Email
-- Phone
+<Accordion title="Organization">
+  - **Organization name (Required)**
+  - Domain (Website): If you have a Contact that belongs to an Organization, it will automatically populate with their email domain if you don't create a separate domain for them.
+  - Description
+  - Manager
+</Accordion>
 
-Deal:
+<Accordion title="People">
+  - Contact name
+  - Email
+  - Title
+  - Phone number
+</Accordion>
 
-- **Organization (Required)**
-- Person
-- Value
-- Prospect Status
-- Pipeline (Only if you have more than 2 pipelines)
-- Pipeline Stage
-- Assignee
-- Notes
+<Accordion title="Process">
+  By default, processes have different default fields depending on whether the [Entry](/features/processes#1-entry) type is Organization or Contact.
+  
+  Therefore, we introduce the default fields that the process itself has.
+  - Value
+  - Status
+  - Assignee
+  - Contact
+</Accordion>
+
+<Accordion title="List">
+  Other than the default fields for Organization and Contact, which are data types for lists, lists do not have their own default fields.
+</Accordion>
+
+### 3. Set up your custom fields
+![import-custom](/images/setup/import-custom-field.png)
+The first thing you need to do **before you start importing is to set up and verify your custom fields.**
+By default, if you have information that you want to import other than the default fields provided by Relate, you must create custom fields before importing.
+
+If information comes in without a field, Relate will not create the field and import the information. Therefore, if you try to import without creating a custom field, the import of the file will fail.
+
+You can follow the instructions in the [Custom Fields Guide](/features/custom-fields) to create your custom fields first, then launch the Import menu.
 
 ## How to import
 
-Go to the [admin page](https://admin.relate.so/), select Import from the left menu bar, and then click type of Import (Organizations, Lists, Deals, and Processes) you want to import.
+Go to the [Admin page](https://admin.relate.so/), select Import from the left menu bar, and then click type of Import (Organizations, Lists and Processes) you want to import.
 
 ![Relate Data](/images/setup/import_menu1.png)
 
-### Step 1. Getting started
+If you want to register a contact, you can choose one of the two methods below.
+1. [Import Organizations](/setup/import#import-organizations-contact): This is mainly used when you **register an Organization and a Contact together** (Organization name required)
+2. [Import Lists](/setup/list-import): This is mainly used when you want to **register Contacts as a list**. However, you need to create the contact list you want to import in Relate beforehand. (Organization name not required)
 
-<Tip>
-If you already have a .CSV file ready for import, you can skip to Step 2.
-</Tip>
+### Step 1. Create a .CSV file
+You can download a sample .CSV file with default fields via `Download example` and use it to prepare your file for import. 
 
-If you don't you can download a sample .CSV file that already has the default fields as well as sample custom fields like `Linkedin`, `Segment`, and `Tools`.
+If you already have a .CSV file ready to import, you can proceed directly to [Step 2](/setup/import#step-2).
 
 <Warning>
-Note that sample custom fields in the sample .CSV file are just *samples*! **You'll need to create your own set of custom fields if you're planning to import additional fields.**
+Note that sample custom fields in the sample .CSV file are just *samples*!
+You'll need to create your own set of custom fields if you're planning to import additional fields. [Custom fields guide](/features/custom-fields)
 </Warning>
 
-Once you have a .CSV file ready to import, proceed to Step 2.
+#### Creating a file to co-create Contacts with Import Organizations
+Here's how to import Organizations and also import Contacts that belong to those organizations.
+![import](/images/setup/import-organizations-contact.png)
+
+1. First, create a header with the data fields you want to include in the Organization.
+2. Also, fill in the fields for Contact that you want to include, which must be either name or email.
+3. Enter all of the information for the Organization and the information for the Contact that you want to include in the first line, excluding the header.
+4. Next, for the Contact that will be in that organization, complete only the Organization name and then fill in the Contact information.
+5. Continue to create Organization name-Contact, and repeat steps 2-3 if you want to add another Organization and the Contacts that belong to it. (See line 6 in the photo.)
+
+The most important thing to remember in this process is that **you only need to fill out all of the information for the Organization you want to import the first time.**
+
+And, **from the second Contact you create in the Organization, you only need to fill out the Organization name.**
+
+This is because even if you create multiple copies of the same Organization, only the first Organization data will be imported.
 
 ### Step 2. Upload file
 
@@ -130,69 +189,36 @@ Once you click the `Import Data` button you should see a confirmation. Confirm t
 ![list import 1](/images/setup/import-list-csv.png)
 For Contact list, you can import a CSV file directly from a contact list you've already created without going through the Admin page.
 
-Enter the contact list and select the `+Contact` button > Import from CSV.
-
-![list import 2](/images/setup/import-list-options.png)
-At this point, a modal called Import options will pop up, allowing you to choose the following (currently required, but will become optional in the future)
-1. **Link to an existing organization with the email domain**: Check the Contact's email domain and link to the organization if it matches the domain of an existing organization.
-2. **Create an organization with the email domain**: If no organization exists with the Contact's email domain, create an organization based on the email domain.
-
-The rest of the process is the same as a traditional import, so you can start at [Step 1](/setup/import#step-1-getting-started) and follow the same steps.
-
-<Tip>
-There are three things to note about the List import process
-1. New organizations and contacts in the .CSV file will be created immediately.
-2. If existing organizations and contacts are in the imported .CSV file, the existing data will be found and added to the list to avoid creating duplicates.
-3. **Importing a .CSV file with updated information in the existing data will not automatically update it with the newly created information.**
-</Tip>
-
-## Importing LinkedIn connections
-
-Relate lets you import your LinkedIn connections. Currently, due to the LinkedIn API environment, there is no automatic way to transfer or sync contact data. 
-
-However, you can export all your contacts at once and then import them into Relate. After that, you can periodically sync the data.
-
-### 1. Export your LinkedIn connections
-
-You can also refer to LinkedIn's [official help documentation](https://www.linkedin.com/help/recruiter/answer/a566336/export-connections-from-linkedin).
-
-To export LinkedIn connections:
-
-1. Click the  **Me** icon at the top of your LinkedIn homepage.
-2. Select **Settings & Privacy** from the dropdown.
-3. Click **Data privacy** on the left pane.
-4. Under the **How LinkedIn uses your data** section, click **Get a copy of your data**.
-5. Select **Want something in particular? Select the data files you’re most interested in**.
-6. Select **Connections**.
-7. Click **Request archive**.
-8. Enter your password and click **Done**.
-9. You'll receive an email to your **Primary Email address** which will include a link where you can download your list of connections.
-
-**Notes:**
-- It might take more than 15-20 minutes to get your download link via email depending on the size of the export.
-- **When you’re exporting your connection data, you may notice that some of the email addresses are missing. You will only see email addresses for connections who have allowed their connections to see or download their email address.**
-- The CSV and vCard formats don't support all characters. As a result, languages with extended character sets (such as Chinese, Japanese, or Hebrew) aren’t supported.
-- You currently can't export a list of your contacts that aren’t 1st-degree connections.
-
-### 2. Import data into Relate
-
-Once you have downloaded your LinkedIn connection data, you can proceed to import them into Relate.
-
-<Warning>
-**Make sure to check which workspace you are importing your LinkedIn connections data into.**
-</Warning>
-
-1. Go to the [Import data page](https://admin.relate.so/workspaces/import_data) in Relate's Admin Console page.
-2. Click **Import LinkedIn with CSV file**
-3. Map each field with the corresponding field in Relate (e.g., First Name, Last Name, Company)
-4. Complete the Import process.
-5. Check your [Relate app](https://app.relate.so/) to see the imported contacts
-
-### Check whether your import is successful
-Go to your [workspace](https://web.relate.so/) and check whether your import is successful. Sometimes, you might need to revert -- while we do not have a self-revert feature, feel free to reach out to our team via messenger located on the bottom left corner of the app.
-
 ## Frequently Asked Questions
 
-<Accordion title="How do I import custom fields?">
-  To import with custom fields, you must add [Custom Field](/features/custom-fields) before you import.
+<Accordion title="CSV file is broken when importing. How can I fix it?">
+  You can open the file, save it as XLSX instead of CSV, and reimport it as follows.
+  
+  1. In Microsoft Excel, on the Data tab, click Get Data (Power Query)
+  ![export1](/images/setup/export-issue-1.png)
+
+  2. click Text/CSV and select the file with the broken Korean characters
+  ![export2](/images/setup/export-issue-2.png)
+
+  3. select UTF8 and click Load
+  ![export3](/images/setup/export-issue-3.png)
+</Accordion>
+
+<Accordion title="I'd like to know why my import failed. How can I find out?">
+  When an import fails, you can see the following message: **Download .csv with rows that were not imported**.
+  ![rejected-row 1](/images/setup/import-reject.png)
+
+  This sentence will give you a reject file, which will also contain the reason for the reject. You can see this in the column called error in that file.
+  ![rejected-row 2](/images/setup/import-rejected-row.png)
+</Accordion>
+
+<Accordion title="Why do imports usually fail and how can I fix them?">
+  There are two main reasons why imports fail.
+
+  First, **duplicate fields with unique values**. In Relate, Organization name, Contact email, and Domain cannot have duplicate values in any case.
+  
+  For example, if two different organizations, Relate (@example.so) and Pixelic (@example.so), have the same domain, the import will fail due to a duplicate import violation.
+  This is especially true for domains, which are automatically generated based on emails without you having to enter them.
+  
+  Second, if you **imported an invalid email** - for example, if the email contains special characters other than @, or is from an invalid email account.
 </Accordion>
