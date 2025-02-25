@@ -1,0 +1,43 @@
+---
+title: "List/Process Import"
+description: "Learn how to import data into List&Process"
+sidebarTitle: "List/Process Import"
+"og:title": "List/Process Import | Relate Product Guide"
+"og:description": "Learn how to import data into List&Process"
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs-kr/main/docs/images/setup/list-import-main.png"
+"article:tag": "Setup"
+"twitter:title": "List/Process Import | Relate Product Guide"
+"twitter:description": "Learn how to import data into List&Process"
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs-kr/main/docs/images/setup/list-import-main.png"
+---
+![list import 0](/images/setup/list-import-main.png)
+
+## Overview
+This section introduces how to import your existing customer data into List and Process.
+
+You can find the basic importing method on the Admin page in the [Import Guide](/setup/import).
+
+For Lists/Processes, you can also import from within the Relate web/app, so we'll show you how to do it below.
+
+## Importing from lists/processes
+For lists and processes, importing from within the web/app works the same way.
+
+Currently, only Contact lists support in-app web/app importing.
+
+![list import 1](/images/setup/import-list-csv.png)
+For Contact list, you can import a CSV file directly from a contact list you've already created without going through the Admin page.
+Enter the contact list and select the `+Contact` button > Import from CSV.
+
+![list import 2](/images/setup/import-list-options.png)
+At this point, a modal called Import options will pop up, allowing you to choose the following (currently required, but will become optional in the future)
+1. **Link to an existing organization with the email domain**: Check the Contact's email domain and link to the organization if it matches the domain of an existing organization.
+2. **Create an organization with the email domain**: If no organization exists with the Contact's email domain, create an organization based on the email domain.
+
+The rest of the process is the same as a traditional import, so you can start at [Import data > How to import](setup/import#how-to-import) and follow the same steps.
+
+<Tip>
+There are three things to note about the List import process
+1. New organizations and contacts in the .CSV file will be created immediately.
+2. If existing organizations and contacts are in the imported .CSV file, the existing data will be found and added to the list to avoid creating duplicates.
+3. **Importing a .CSV file with updated information in the existing data will not automatically update it with the newly created information.**
+</Tip>

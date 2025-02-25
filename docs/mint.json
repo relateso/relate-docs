@@ -215,7 +215,14 @@
       "pages": [
         "setup/admin",
         "setup/manage-members",
-        "setup/import",
+        {
+          "group": "Import",
+          "pages": [
+            "setup/import",
+            "setup/list-import",
+            "setup/linkedin-import"
+          ]
+        },
         "setup/export",
         "features/custom-fields",
         "setup/register-google-api-allowlist"
