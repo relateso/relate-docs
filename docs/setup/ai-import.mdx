@@ -1,0 +1,370 @@
+---
+title: "AI Import"
+description: "Learn how to quickly import your data with AI Import"
+sidebarTitle: "AI Import"
+"og:title": "AI Import | Relate Documentation"
+"og:description": "Learn how to use AI Import in Relate"
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
+"twitter:title": "AI Import | Relate Documentation"
+"twitter:description": "Learn how to use AI Import in Relate"
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
+---
+
+## Overview
+
+AI Import imports Contacts/Organizations into Relate using a CSV/Excel file.
+
+Relate AI automatically detects the meaning of each column and maps the data to the appropriate fields.
+You do not need to manually map columns or create custom fields in advance.
+
+
+## What you need to know before importing customer data
+
+<Accordion title="1. Import data types">
+  Relate supports four data types for import.
+  - [Organizations](/features/organizations)
+  - [Contacts](/features/people)
+  - [Processes](/features/processes)
+  - [Lists](/features/lists)
+
+  ![Relate Data](/images/setup/list-import-org.png)
+
+  **Organizations are the primary data type** in Relate, and Contacts are always associated with an Organization.
+
+  Process and List are a series of deal closing processes and customer lists that you create using Organizations and Contacts.
+</Accordion>
+
+<Accordion title="2. Data Fields">
+  Each data type has its own default fields.
+
+  Some fields are required:
+
+  1. Organizations: **Organization name** is required.
+  2. Contacts: **Contact name** or **Email** is required.
+  3. Processes / Lists: Follow the requirement based on the selected [Entry](/features/processes#1-entry) type (Organizations, Contacts) of the process/list and follow 1 or 2.
+  
+  Below you’ll find a quick overview of default fields for each data type.
+  <Accordion title="Organizations">
+    - **Organization name (Required)**
+    - Domain (Website): If not provided, the domain is automatically populated using the email domain of associated Contacts.
+    - Description
+    - Manager
+  </Accordion>
+
+  <Accordion title="Contacts">
+    - Contact name
+    - Email
+    - Title
+    - Phone number
+  </Accordion>
+
+  <Accordion title="Processes">
+    By default, processes have different default fields depending on whether the [Entry](/features/processes#1-entry) type is Organization or Contact.
+      
+    Below are the default fields specific to Processes.
+    - Value
+    - Status
+    - Assignee (assignee email is required)
+    - Contact
+
+
+  </Accordion>
+
+  <Accordion title="Lists">
+    Lists do not have additional default fields beyond Organization and Contact fields.
+  </Accordion>
+</Accordion>
+
+
+<Accordion title="3. Custom fields">
+
+  Custom fields are fields **created in addition to Relate’s default fields.**
+
+  During AI Import, Relate AI analyzes each column in the file.
+  If a column cannot be mapped to an existing field, **a new custom field is automatically created and mapped.**
+
+  You do not need to create custom fields before importing.
+
+  <Note>
+    [**Review and edit AI mapping results**](#column-mapping-change)
+      
+    If you need to adjust the AI-generated mappings, you can change a column to a different field or create a new field and map it directly.
+  </Note>
+</Accordion>
+
+
+<br />
+## How to import data using AI Import
+
+### Step 1. Upload your file
+
+- Open the Relate app and select `Workspace settings` from the top-left menu.
+<img src="/images/setup/AI%20import%20ss/ws.jpeg" alt="Workspace settings" width="300" style={{ display: "block", margin: "4px 0 12px 32px", boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)", borderRadius: "8px" }} />
+
+- Select `Import(2)` from the left sidebar, and click `Import contacts` in the top-right corner.
+  <img
+    src="/images/setup/AI%20import%20ss/all.eng.jpeg"
+    alt="Upload file"
+    style={{
+      display: "block",
+      margin: "12px auto 0",
+      boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+      borderRadius: "8px"
+    }}
+  />
+
+- Click `Select file` and upload a CSV or Excel file.
+
+
+### Step 2. Select duplicate handling options
+
+After uploading the file, select how to handle duplicate data.
+  <img
+    src="/images/setup/AI%20import%20ss/duplicate.png"
+    alt="Duplicate handling"
+    width="240"
+    style={{
+      display: "block",
+      margin: "0 auto",
+      boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+      borderRadius: "8px"
+    }}
+  />
+
+- `Overwrite with new values`
+
+  Even if existing Contacts/Organizations already have values, all fields are updated using the values from the imported file.
+
+- `Only fill empty fields`
+
+  Existing values are preserved, and only empty fields are filled.
+
+
+Import data based on your purpose by selecting one of the cases below.
+
+<Accordion title="🔹 Case 1. Importing data into Relate for the first time">
+  **This applies if:**  
+  ➡️ You are using Relate for the first time   
+  ➡️ There is little or no existing data, or existing data is not important
+
+  **Recommended options**  
+    ✅ `Overwrite with new values`  
+    ✅ `Only fill empty fields`
+
+  <Note>
+    For an initial import, both options produce the same result.
+  </Note>
+</Accordion>
+
+<Accordion title="🔹 Case 2. Updating existing data with the latest information">
+  **This applies if:**  
+  ➡️ Contacts/Organizations already exist in Relate     
+  ➡️ You want to broadly update existing data using the latest Excel file or external data
+
+  **Recommended option**  
+    ✅ `Overwrite with new values`
+    <Note>
+      When this option is selected, all fields are updated using values from the imported file, even if existing values are present.
+    </Note>
+</Accordion>
+
+<Accordion title="🔹 Case 3. Keeping existing data and filling in missing information">
+  **This applies if:**  
+  ➡️ Existing data is highly reliable   
+  ➡️ You only want to fill empty fields or supplement newly added information   
+  ➡️ You want to add new data without modifying existing values
+
+  **Recommended option**  
+    ✅ `Only fill empty fields`
+    <Note>
+      When this option is selected, existing values are preserved and only empty fields are filled using the imported data.
+    </Note>
+
+</Accordion>
+
+After selecting a duplicate handling option, click `Next` in the top-right corner to start AI mapping.
+
+
+### Step 3. Review AI mapping results
+
+On the next screen, Relate AI analyzes the meaning of each column and displays the automatically mapped results.
+<img
+  src="/images/setup/AI%20import%20ss/1.eng.jpeg"
+  alt="1"
+  style={{
+    display: "block",
+    margin: "12px auto 0",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+    borderRadius: "8px"
+  }}
+/>
+
+<Tip>
+  Field types are divided into Contact Fields and Organization Fields.
+  <div style={{ display: "grid", gap: "4px" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <img src="/images/setup/AI%20import%20ss/contact_icon.png" alt="Contact Field" width="30" />
+      <span style={{ fontWeight: 600 }}>Contact Field:</span>
+      <span style={{ whiteSpace: "nowrap" }}>Columns selected as Contact Fields are imported as **Contacts**.</span>
+    </div>
+    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+      <img src="/images/setup/AI%20import%20ss/org_icon.png" alt="Organization Field" width="30" />
+      <span style={{ fontWeight: 600, whiteSpace: "nowrap" }}>Organization Field:</span>
+      <span style={{ whiteSpace: "nowrap" }}>Columns selected as Organization Fields are imported as **Organizations**.</span>
+    </div>
+  </div>
+</Tip>
+
+
+<span id="column-mapping-change" style={{ scrollMarginTop: "120px" }}></span>
+#### Change column mapping
+- When you click the field mapped to each column, a list of available fields is displayed. You can select a different field from the list to change the column mapping.
+
+
+
+- If there is no suitable field to map, you can click `Add a custom field` in the top-right corner to create a new field and map it immediately.
+     
+    <img
+      src="/images/setup/AI%20import%20ss/add-eng.png"
+      alt="add custom field"
+      width="320"
+      style={{ display: "block", margin: "0 auto" }}
+    />
+
+
+### Step 4. Run the import
+
+- After reviewing the mapping results, click the `Import` button in the top-right corner.
+
+- When the import is complete, you are redirected to the result page.
+
+
+<br />
+<br />
+## View import results
+After the import is complete, the result page shows an overview of data that was **created, updated, or failed**.
+
+<img
+  src="/images/setup/AI%20import%20ss/import-result.png"
+  alt="import-result"
+  style={{
+    display: "block",
+    margin: "0 auto",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+    borderRadius: "8px"
+  }}
+/>
+
+> #### Contact import results
+The left side of the top section shows a summary of Contact import results.
+- Contacts found: Number of contacts detected during the import process
+
+- **created**: Number of newly created contacts
+
+- **updated**: Number of existing contacts that were updated
+
+- **failed**: Number of contacts that failed to import
+<span style={{ display: "block", height: "6px" }} />
+> #### Organization import results
+The right side of the top section shows a summary of Organization import results.
+
+- Organizations found: Number of organizations detected during the import process
+
+- **created**: Number of newly created organizations
+
+<Note>
+  **When organization information is included in the import file**
+
+  Existing organizations are automatically matched.
+  A new organization is created only when no matching organization is found.
+</Note>
+<span style={{ display: "block", height: "6px" }} />
+> #### Review failed records
+
+If there are rows that failed to import, you can review the reason in the `Failed Records` section at the bottom of the result page.
+
+<img
+  src="/images/setup/AI%20import%20ss/failed.png"
+  alt="failed records"
+  style={{
+    display: "block",
+    margin: "0 auto",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+    borderRadius: "8px"
+  }}
+/>
+
+Each failed row displays the following information:
+
+- Row: Row number in the original file
+
+- Error: Reason the import failed
+
+- Data: Original data for the row
+
+Common failure reasons include:
+
+⛔️ `Invalid email format`: The email format is invalid
+
+⛔️ `Duplicate email in import`: The same email appears more than once in the import file
+
+⛔️ `Email or name is required`: Both contact email and contact name are missing or invalid
+<span style={{ display: "block", height: "6px" }} />
+> #### Reprocessing failed records
+
+Click `Download CSV` on the right side of the Failed Records section to download a CSV file containing only failed rows.
+
+After fixing the errors in the file, run AI Import again to import the missing data.
+
+
+<br />
+<br />
+## Important notes before importing
+
+- **Review AI mapping results**: Before running the import or on the result page, verify that AI-mapped fields match your intended data.
+
+- **Start with a small test import**: If this is your first time using AI Import, run a test import with a small dataset before importing all data.
+
+- **Back up the original file**: Before importing, back up your original CSV/Excel file. This is especially important when using the Overwrite option, as it allows you to restore data if needed.
+
+
+<br />
+## Frequently asked questions (FAQ)
+<Accordion title="Korean characters are broken when importing a CSV file. How can I fix this?">
+  Open the file and save it as an XLSX file instead of CSV using the steps below.
+  
+  **1. In Microsoft Excel, go to the Data tab and click Get Data (Power Query)**
+  <img src="/images/setup/AI%20import%20ss/export1.png" alt="export1" width="360" />
+    
+  **2. Click Text/CSV and select the file with broken characters**
+  <img src="/images/setup/AI%20import%20ss/export2.png" alt="export2" width="360" />
+
+  **3. Select UTF-8 and click Load**
+  <img src="/images/setup/AI%20import%20ss/export3.png" alt="export3" width="360" />
+</Accordion>
+
+<Accordion title="What are the most common reasons for import failures, and how can I resolve them?">
+  There are two main reasons import failures occur.
+
+  1. **Duplicate unique fields**  
+  In Relate, organization name, contact email, and domain must be unique.  
+  For example, if two different organizations, Relate (@example.so) and Pixelic (@example.so), share the same domain, the import fails due to duplication.
+  Note that domains can be automatically generated from email addresses, even if not explicitly provided.
+
+  <span style={{ display: "block", height: "6px" }} />
+  2. **Invalid email addresses**  
+  This includes email addresses with invalid formats or special characters other than `@` (for example, test@ or abc.com).
+
+  <span style={{ display: "block", height: "6px" }} />
+  Failed rows can be reviewed in the Failed Records section, and re-imported after fixing errors.
+</Accordion>
+
+<Accordion title="How is AI Import different from the previous import method?">
+  With the previous import method, users had to manually create custom fields and map columns before importing.
+
+  AI Import allows Relate AI to automatically understand and map column data without any prior field setup.
+</Accordion>
+
+<Accordion title="Why were Organizations created when I only imported Contacts?">
+  If organization or company information exists in the import file, Organizations are automatically created and linked to Contacts.
+</Accordion>
