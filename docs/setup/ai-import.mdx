@@ -1,18 +1,18 @@
 ---
-title: "AI Import"
-description: "Learn how to quickly import your data with AI Import"
-sidebarTitle: "AI Import"
-"og:title": "AI Import | Relate Documentation"
-"og:description": "Learn how to use AI Import in Relate"
+title: "Import data"
+description: "Learn how to quickly import your data with AI"
+sidebarTitle: "Import data"
+"og:title": "Import data | Relate Documentation"
+"og:description": "Learn how to quickly import your data with AI"
 "og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
-"twitter:title": "AI Import | Relate Documentation"
-"twitter:description": "Learn how to use AI Import in Relate"
+"twitter:title": "Import data | Relate Documentation"
+"twitter:description": "Learn how to quickly import your data with AI"
 "twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/setup/import.png"
 ---
 
 ## Overview
 
-AI Import imports Contacts/Organizations into Relate using a CSV/Excel file.
+You can import your existing customer data into Relate by uploading a CSV or Excel file.  
 
 Relate AI automatically detects the meaning of each column and maps the data to the appropriate fields.
 You do not need to manually map columns or create custom fields in advance.
@@ -29,9 +29,9 @@ You do not need to manually map columns or create custom fields in advance.
 
   ![Relate Data](/images/setup/list-import-org.png)
 
-  **Organizations are the primary data type** in Relate, and Contacts are always associated with an Organization.
+  **Organizations are the primary data type** in Relate, and Contacts are always associated with Organizations.
 
-  Process and List are a series of deal closing processes and customer lists that you create using Organizations and Contacts.
+  Processes and Lists are a series of deal closing processes and customer lists that you create using Organizations and Contacts.
 </Accordion>
 
 <Accordion title="2. Data Fields">
@@ -41,12 +41,12 @@ You do not need to manually map columns or create custom fields in advance.
 
   1. Organizations: **Organization name** is required.
   2. Contacts: **Contact name** or **Email** is required.
-  3. Processes / Lists: Follow the requirement based on the selected [Entry](/features/processes#1-entry) type (Organizations, Contacts) of the process/list and follow 1 or 2.
-  
+  3. Processes / Lists: Check the [Entry](/features/processes#1-entry) type (Organizations or Contacts) of the selected process/list, and proceed with step 1 or 2.
+    
   Below you’ll find a quick overview of default fields for each data type.
   <Accordion title="Organizations">
     - **Organization name (Required)**
-    - Domain (Website): If not provided, the domain is automatically populated using the email domain of associated Contacts.
+    - Domain (Website): If not provided, the domain is automatically populated using the email domain of associated contacts.
     - Description
     - Manager
   </Accordion>
@@ -71,7 +71,7 @@ You do not need to manually map columns or create custom fields in advance.
   </Accordion>
 
   <Accordion title="Lists">
-    Lists do not have additional default fields beyond Organization and Contact fields.
+    Lists do not have additional default fields beyond Organizations and Contacts fields.
   </Accordion>
 </Accordion>
 
@@ -80,7 +80,7 @@ You do not need to manually map columns or create custom fields in advance.
 
   Custom fields are fields **created in addition to Relate’s default fields.**
 
-  During AI Import, Relate AI analyzes each column in the file.
+  During  import, Relate AI analyzes each column in the file.
   If a column cannot be mapped to an existing field, **a new custom field is automatically created and mapped.**
 
   You do not need to create custom fields before importing.
@@ -94,14 +94,14 @@ You do not need to manually map columns or create custom fields in advance.
 
 
 <br />
-## How to import data using AI Import
+## How to import your data
 
 ### Step 1. Upload your file
 
 - Open the Relate app and select `Workspace settings` from the top-left menu.
 <img src="/images/setup/AI%20import%20ss/ws.jpeg" alt="Workspace settings" width="300" style={{ display: "block", margin: "4px 0 12px 32px", boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)", borderRadius: "8px" }} />
 
-- Select `Import(2)` from the left sidebar, and click `Import contacts` in the top-right corner.
+- Select `Import` from the left sidebar, and click `Import contacts` in the top-right corner.
   <img
     src="/images/setup/AI%20import%20ss/all.eng.jpeg"
     alt="Upload file"
@@ -159,7 +159,7 @@ Import data based on your purpose by selecting one of the cases below.
 <Accordion title="🔹 Case 2. Updating existing data with the latest information">
   **This applies if:**  
   ➡️ Contacts/Organizations already exist in Relate     
-  ➡️ You want to broadly update existing data using the latest Excel file or external data
+  ➡️ You want to broadly update existing data using the latest CSV file or external data
 
   **Recommended option**  
     ✅ `Overwrite with new values`
@@ -265,6 +265,7 @@ The left side of the top section shows a summary of Contact import results.
 
 - **failed**: Number of contacts that failed to import
 <span style={{ display: "block", height: "6px" }} />
+
 > #### Organization import results
 The right side of the top section shows a summary of Organization import results.
 
@@ -279,6 +280,7 @@ The right side of the top section shows a summary of Organization import results
   A new organization is created only when no matching organization is found.
 </Note>
 <span style={{ display: "block", height: "6px" }} />
+
 > #### Review failed records
 
 If there are rows that failed to import, you can review the reason in the `Failed Records` section at the bottom of the result page.
@@ -314,7 +316,58 @@ Common failure reasons include:
 
 Click `Download CSV` on the right side of the Failed Records section to download a CSV file containing only failed rows.
 
-After fixing the errors in the file, run AI Import again to import the missing data.
+After fixing the errors in the file, run the import again to import the missing data.
+
+
+
+## Import directly into Processes or Lists
+
+If you want to upload contacts or organizations and import them directly into a specific process or list, you can start the import from that process or list.
+
+
+**Step 1. Select or create a process/list**
+
+Select an existing process or list, or create a new one.
+
+<img
+  src="/images/setup/AI%20import%20ss/makeprocess.png"
+  alt="Select or create a process or list"
+  width="320"
+  style={{
+    display: "block",
+    margin: "12px auto 16px",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+    borderRadius: "8px"
+  }}
+/>
+
+Each list has a single entry type (either Contact or Organization), so be sure to select a list that matches the type of data you want to import.
+
+
+**Step 2. Select CSV import**
+
+From the process or list you want to import into, click `+ New contact` or `+ New organization` at the top.
+
+<img
+  src="/images/setup/AI%20import%20ss/importfromcsv.png"
+  alt="Import from CSV option"
+  width="320"
+  style={{
+    display: "block",
+    margin: "12px auto 16px",
+    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.16)",
+    borderRadius: "8px"
+  }}
+/>
+
+Select `Import from CSV` to move to the import screen.
+
+**Step 3. Run the import**
+
+The rest of the process follows the same import steps described earlier.  
+Once the import is complete, each row will be created as a single entry and added directly to the selected process or list.
+
+
 
 
 <br />
@@ -323,7 +376,7 @@ After fixing the errors in the file, run AI Import again to import the missing d
 
 - **Review AI mapping results**: Before running the import or on the result page, verify that AI-mapped fields match your intended data.
 
-- **Start with a small test import**: If this is your first time using AI Import, run a test import with a small dataset before importing all data.
+- **Start with a small test import**: If this is your first time importing data, run a test import with a small dataset before importing all data.
 
 - **Back up the original file**: Before importing, back up your original CSV/Excel file. This is especially important when using the Overwrite option, as it allows you to restore data if needed.
 
@@ -359,10 +412,10 @@ After fixing the errors in the file, run AI Import again to import the missing d
   Failed rows can be reviewed in the Failed Records section, and re-imported after fixing errors.
 </Accordion>
 
-<Accordion title="How is AI Import different from the previous import method?">
+<Accordion title="How is the current import process different from the previous one?">
   With the previous import method, users had to manually create custom fields and map columns before importing.
-
-  AI Import allows Relate AI to automatically understand and map column data without any prior field setup.
+    
+  With the current import process, Relate AI automatically understands and maps column data, so no prior field setup is required.
 </Accordion>
 
 <Accordion title="Why were Organizations created when I only imported Contacts?">
