@@ -52,7 +52,7 @@
     "url": "https://admin.relate.so/users/sign_up"
   },
   "topAnchor": {
-    "name": "Relate Guide"
+    "name": "Product Guide"
   },
   "anchors": [
     {
@@ -82,7 +82,7 @@
       "pages": ["intro"]
     },
     {
-      "group": "Start guide",
+      "group": "Getting Started",
       "pages": [
         "onboarding",
         "what-is-relate",
