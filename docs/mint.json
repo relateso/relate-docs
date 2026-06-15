@@ -117,6 +117,12 @@
       ]
     },
     {
+      "group": "AI",
+      "pages": [
+        "ai/relate-mcp"
+      ]
+    },
+    {
       "group": "Organizations & People",
       "pages": [
         "features/organizations",

@@ -1,0 +1,242 @@
+---
+title: "Relate MCP"
+description: "Connect AI agents like Claude Code and Codex to Relate MCP to query and manage your CRM data in natural language."
+sidebarTitle: "Relate MCP"
+"og:title": "Relate MCP | Relate Product Guide"
+"og:description": "Connect AI agents like Claude Code and Codex to Relate MCP to query and manage your CRM data in natural language."
+"article:tag": "Product Guide"
+"twitter:title": "Relate MCP | Relate Product Guide"
+"twitter:description": "Connect AI agents like Claude Code and Codex to Relate MCP to query and manage your CRM data in natural language."
+---
+
+## Overview
+
+MCP (Model Context Protocol) is a standard protocol that lets AI agents like Claude and ChatGPT connect securely to external tools and data.
+
+Relate provides an MCP server, so when you connect an MCP-capable AI agent such as Claude Code or Codex to Relate, you can **query CRM data and create/update contacts, deals, notes, campaigns, and more — all in natural language**. Without writing any code, you can hand requests like "summarize the companies I met with last week" or "add a note to this company" straight to the AI.
+
+The Relate MCP server address is:
+
+```
+https://app.relate.so/mcp
+```
+
+<Note>
+  Access through MCP follows the permissions of the connected workspace and user account. In other words, the AI agent can only access data that you can already see in Relate.
+</Note>
+
+## 1. How to connect
+
+### Create an MCP token
+
+To connect to Relate MCP, you first need an MCP token (authentication token).
+
+1. Log in to Relate, then go to **Workspace Settings > MCP** for the workspace you want to connect.
+2. Click **`Generate new token`** to issue a new token.
+3. The token starts with `rk_`. For security it is shown only once right after creation, so copy it and store it somewhere safe.
+
+{/* TODO replace screenshot: Workspace Settings > MCP screen + `Generate new token` button → /images/ai/relate-mcp/token-generate.png */}
+<Frame caption="Generate a new token in Workspace Settings > MCP">
+  ![Relate MCP token generation screen](/images/ai/relate-mcp/token-generate.png)
+</Frame>
+
+<Warning>
+  An MCP token is a secret key that can access your workspace data. Keep it from being exposed, and if you suspect it has leaked, revoke it immediately and generate a new one.
+</Warning>
+
+Use the issued token to connect Relate MCP to the AI agent you use.
+
+<AccordionGroup>
+  <Accordion title="Connect Claude Code" icon="message-bot">
+    In Claude Code (desktop app), you connect to Relate MCP through a custom connector and authenticate via OAuth.
+
+    1. In Claude Code, go to **Customize > Connectors**.
+    2. Select **Add `Custom Connector`**.
+    3. Enter the following address in the MCP server URL field:
+
+       ```
+       https://app.relate.so/mcp
+       ```
+
+       {/* TODO replace screenshot: Customize > Connectors > add Custom Connector + server URL input screen → /images/ai/relate-mcp/claude-custom-connector.png */}
+       <Frame caption="Add a Custom Connector in Customize > Connectors">
+         ![Claude Code custom connector screen](/images/ai/relate-mcp/claude-custom-connector.png)
+       </Frame>
+
+    4. After adding the connector, you are taken to the Relate **OAuth authorization screen**. Log in with your Relate account and grant access to complete the connection.
+
+       {/* TODO replace screenshot: Relate OAuth authorization/consent screen → /images/ai/relate-mcp/claude-oauth.png */}
+       <Frame caption="Relate OAuth authorization screen">
+         ![Relate OAuth authorization screen](/images/ai/relate-mcp/claude-oauth.png)
+       </Frame>
+
+    5. Once connected, you can use Relate tools in your conversations with Claude.
+
+    <Note>
+      When connecting Claude Code via OAuth, you don't need to enter the MCP token separately — authentication is completed simply by logging in to Relate.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Connect Codex" icon="terminal">
+    In the Codex CLI, you register the MCP server in the config file (`~/.codex/config.toml`) and pass the issued token via an **HTTP header (Authorization)**.
+
+    Open `~/.codex/config.toml` and add the Relate MCP server as shown below.
+
+    ```toml
+    [mcp_servers.relate]
+    url = "https://app.relate.so/mcp"
+    http_headers = { Authorization = "Bearer rk_paste_your_issued_MCP_token_here" }
+    ```
+
+    Save the config and restart Codex, and the Relate MCP tools will load.
+
+    <Note>
+      Setup may differ slightly across Codex versions and other MCP clients. If you run into connection issues, reach out via [we@relate.so](mailto:we@relate.so) or Intercom chat.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+## 2. What you can do with MCP
+
+Once Relate MCP is connected, you can perform the following through an AI agent in natural language. (As of June 15, 2026)
+
+<AccordionGroup>
+  <Accordion title="Contacts" icon="user">
+    - Search contacts by name, email, phone number, or field conditions, and view details
+    - Create and update contacts, and bulk-import from a spreadsheet
+    - Add to / remove from the denylist (sending block list)
+  </Accordion>
+
+  <Accordion title="Organizations" icon="building">
+    - Search organizations by name or domain, and view details
+    - Create and update organizations
+  </Accordion>
+
+  <Accordion title="Deals / Entries" icon="handshake">
+    - Search and view deals (entries) within a specific list/process
+    - Create deals; update status, assignee, value, and field values; delete
+  </Accordion>
+
+  <Accordion title="Notes" icon="note-sticky">
+    - Search across all notes by body content
+    - List notes attached to a specific contact, organization, or deal
+    - Create notes on contacts and organizations
+  </Accordion>
+
+  <Accordion title="Lists" icon="list">
+    - List, create, and rename lists
+    - Add contacts to a list
+    - Summarize a list's campaign deliverability (sendable / blocked breakdown)
+  </Accordion>
+
+  <Accordion title="Email" icon="envelope">
+    - Search email threads for a contact or organization and view message content
+    - Send email immediately on your own behalf
+  </Accordion>
+
+  <Accordion title="Campaigns & Sequences" icon="paper-plane">
+    - Search, view, create, update, and deliver broadcast campaigns, and check statistics
+    - View and create email sequences; add/edit steps; enroll contacts
+    - View AI campaigns / AI email templates and check recipients and engagement
+  </Accordion>
+
+  <Accordion title="Sender Identity" icon="at">
+    - List the sender identities (sending domains) in the workspace
+    - Connect a sending domain and check/re-verify DNS records (MX, SPF, DMARC, DKIM) and verification status
+  </Accordion>
+
+  <Accordion title="Relate Notetaker" icon="microphone">
+    - Search completed meeting notetaker records (transcripts and summaries)
+    - List records scoped to a contact/organization/calendar event, and retrieve the full transcript and summary
+  </Accordion>
+
+  <Accordion title="Reports & Workspace" icon="chart-line">
+    - Sales pipeline funnel and conversion-rate report by process
+    - Recent email-activity report for an AI plan
+    - Workspace info (lists, statuses, custom fields, team members, sending limits, etc.)
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  The available MCP tools are continuously being added and improved. You can check the exact list of tools available in your connected environment from your AI agent's tool list (e.g. in Claude Code).
+</Note>
+
+## 3. Examples
+
+Try asking your AI agent in natural language, like the examples below.
+
+<AccordionGroup>
+  <Accordion title="Customer research & meeting prep" icon="magnifying-glass">
+    > "For company A that I'm meeting tomorrow, summarize the notes, deal history, and recent email threads in Relate."
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-research.png */}
+    <Frame caption="Customer research & meeting prep example">
+      ![Customer research example](/images/ai/relate-mcp/example-research.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Meeting follow-up" icon="microphone">
+    > "Pull up the notetaker summary from the company B meeting that just ended, write up the key points as a note, and create follow-up tasks if needed."
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-followup.png */}
+    <Frame caption="Meeting follow-up example">
+      ![Meeting follow-up example](/images/ai/relate-mcp/example-followup.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Data entry automation" icon="file-import">
+    > "Import the 100 leads in this Excel file into Relate and group them into the 'Q2 Inbound' list."
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-import.png */}
+    <Frame caption="Data entry automation example">
+      ![Data entry automation example](/images/ai/relate-mcp/example-import.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Pipeline review" icon="handshake">
+    > "Find the in-progress deals this quarter that haven't been updated in over two weeks, and organize them by assignee."
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-pipeline.png */}
+    <Frame caption="Pipeline review example">
+      ![Pipeline review example](/images/ai/relate-mcp/example-pipeline.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Sales report" icon="chart-line">
+    > "Show me the stage-by-stage conversion rate report for our main sales process."
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-report.png */}
+    <Frame caption="Sales report example">
+      ![Sales report example](/images/ai/relate-mcp/example-report.png)
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Campaign / sequence operations" icon="paper-plane">
+    From cleaning up a list to drafting a campaign, checking deliverability, and designing a sequence — you can carry the whole thing through in a single conversation.
+
+    **1. Review the target list**
+
+    > "How many people are in the 'Q2 Inbound Leads' list, and how many of them can receive a campaign? Break out who is excluded due to denylist, unsubscribe, or missing email."
+
+    **2. Draft the campaign**
+
+    > "Draft a new-feature announcement campaign for that list. Give me 3 subject-line options plus a body draft, and set the sender to one of our workspace's sending domains."
+
+    **3. Design a follow-up sequence**
+
+    > "Create a 2-step follow-up sequence with a 3-day gap, targeting people who opened the campaign. Make step 1 a meeting proposal and step 2 a reminder tone."
+
+    <Tip>
+      Actions that actually send are designed to ask for your confirmation before the AI executes them. We recommend letting the AI handle drafting and review, and sending only after you confirm it yourself.
+    </Tip>
+
+    {/* TODO replace screenshot: AI agent response to the prompt above → /images/ai/relate-mcp/example-campaign.png */}
+    <Frame caption="Campaign / sequence operations example">
+      ![Campaign operations example](/images/ai/relate-mcp/example-campaign.png)
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+  For questions about Relate MCP or to share how you're using it, let us know via [we@relate.so](mailto:we@relate.so) or Intercom chat :)
+</Note>
