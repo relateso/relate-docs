@@ -1,0 +1,23 @@
+#!/bin/sh
+# Shared pre-commit reminder — keep docs/updates.mdx (What's New) in sync.
+# Never blocks the commit; only prints a notice (exit 0).
+changed_docs=$(git diff --cached --name-only --diff-filter=ACM \
+  | grep -E '^docs/.*\.mdx$' | grep -v -E '^docs/updates\.mdx$')
+if [ -n "$changed_docs" ]; then
+  if ! git diff --cached --name-only | grep -q -E '^docs/updates\.mdx$'; then
+    printf '\033[33m'
+    echo "────────────────────────────────────────────────────────"
+    echo "📝  Docs changed but docs/updates.mdx was not touched."
+    echo "    If this is a notable change, add a line to the update log:"
+    echo ""
+    echo "    <Update label=\"$(date +%Y-%m-%d)\" tags={[\"Update\"]}>"
+    echo "      ## Title"
+    echo "      Details"
+    echo "    </Update>"
+    echo ""
+    echo "    (Not needed? Just commit — this never blocks.)"
+    echo "────────────────────────────────────────────────────────"
+    printf '\033[0m'
+  fi
+fi
+exit 0
