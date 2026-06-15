@@ -240,8 +240,7 @@
           ]
         },
         "setup/export",
-        "features/custom-fields",
-        "setup/register-google-api-allowlist"
+        "features/custom-fields"
       ]
     },
     {
