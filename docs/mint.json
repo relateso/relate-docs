@@ -217,6 +217,25 @@
       ]
     },
     {
+      "group": "API",
+      "pages": [
+        "api/introduction",
+        {
+          "group": "Resources",
+          "pages": [
+            "api/contacts",
+            "api/organizations",
+            "api/notes",
+            "api/custom-fields",
+            "api/lists",
+            "api/entries",
+            "api/calendar-events",
+            "api/recordings"
+          ]
+        }
+      ]
+    },
+    {
       "group": "Other bits",
       "pages": [
         "features/connect",

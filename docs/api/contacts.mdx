@@ -1,0 +1,73 @@
+---
+title: "Contacts"
+description: "Read, create, update, and delete contacts via the Relate API."
+sidebarTitle: "Contacts"
+"og:title": "Contacts | Relate API"
+"og:description": "Read, create, update, and delete contacts via the Relate API."
+"article:tag": "API"
+"twitter:title": "Contacts | Relate API"
+"twitter:description": "Read, create, update, and delete contacts via the Relate API."
+---
+
+Read, create, update, and delete contacts.
+
+## List all contacts
+
+```bash
+curl https://api.relate.so/v1/contacts \
+  -H "Authorization: Bearer {api_key}"
+```
+
+## Retrieve a contact
+
+```bash
+curl https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+You can also look up a contact by email.
+
+```bash
+curl -X GET "https://api.relate.so/v1/contacts?email=email@email.com" \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Accept: application/json"
+```
+
+## Create a contact
+
+```bash
+curl https://api.relate.so/v1/contacts \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"organization_id":"...","first_name":"Paul","last_name":"Atreides","emails":["paul@atreid.es"]}'
+```
+
+- `first_name`, or at least one valid address in `emails`, is required.
+- If `organization_id` is passed as `"auto"`, the contact is matched to an existing organization by *email domain*, or a new organization with that domain is created if none is found.
+- If `organization_id` is omitted, the contact is created without an organization.
+
+## Update a contact
+
+```bash
+curl -X PATCH https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"emails":["usul@arrak.is"],"custom_fields":[{"name":"House","value":"Atreides"}]}'
+```
+
+## Delete contact emails
+
+```bash
+curl -X DELETE https://api.relate.so/v1/contacts/:contact_id/emails \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"emails":["usul@arrak.is"]}'
+```
+
+## Delete a contact
+
+```bash
+curl -X DELETE https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}"
+```
+

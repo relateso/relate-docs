@@ -1,0 +1,56 @@
+---
+title: "Notes"
+description: "Read, create, update, and delete notes via the Relate API."
+sidebarTitle: "Notes"
+"og:title": "Notes | Relate API"
+"og:description": "Read, create, update, and delete notes via the Relate API."
+"article:tag": "API"
+"twitter:title": "Notes | Relate API"
+"twitter:description": "Read, create, update, and delete notes via the Relate API."
+---
+
+Read, create, update, and delete notes.
+
+## List all notes
+
+```bash
+curl https://api.relate.so/v1/notes \
+  -H "Authorization: Bearer {api_key}"
+```
+
+## Retrieve a note
+
+```bash
+curl https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+## Create a note
+
+```bash
+curl https://api.relate.so/v1/notes \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"organization_id":"...","deal_id":"...","body":"this is a note"}'
+```
+
+- `organization_id` and `body` are required.
+
+## Update a note
+
+```bash
+curl -X PATCH https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"body":"this is an edited note"}'
+```
+
+- Only `deal_id` and `body` can be updated.
+
+## Delete a note
+
+```bash
+curl -X DELETE https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}"
+```
+

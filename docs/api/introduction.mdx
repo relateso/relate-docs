@@ -1,0 +1,60 @@
+---
+title: "Introduction"
+description: "Authentication, base URL, and pagination basics for the Relate Public API."
+sidebarTitle: "Introduction"
+"og:title": "Introduction | Relate API"
+"og:description": "Authentication, base URL, and pagination basics for the Relate Public API."
+"article:tag": "API"
+"twitter:title": "Introduction | Relate API"
+"twitter:description": "Authentication, base URL, and pagination basics for the Relate Public API."
+---
+
+The Relate Public API lets you work with your workspace's CRM data — contacts, organizations, notes, deals, lists, and more — programmatically.
+
+## Base URL
+
+All endpoints are relative to the following base URL.
+
+```
+https://api.relate.so/v1
+```
+
+## Authorization
+
+Every request must include your API key as a Bearer token in the `Authorization` header.
+
+```bash
+curl https://api.relate.so/v1/.. \
+  -H "Authorization: Bearer {API key}"
+```
+
+<Note>
+  An API key is a secret that can access your workspace data. Keep it from being exposed.
+</Note>
+
+### Getting an API key
+
+For API key issuance, pricing, and usage questions, please reach out to the **Relate team** at [we@relate.so](mailto:we@relate.so) or via in-app chat.
+
+## Pagination
+
+All "list" API methods support offset-based pagination through the `first` and `after` parameters. For example, to get 30 items after the 20th, include `?first=30&after=20` in the request. If omitted, `first` defaults to 25 and `after` to 0.
+
+**List response format:**
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "end_cursor": 25,
+    "has_next_page": true,
+    "total_count": 123
+  }
+}
+```
+
+Resources in `"data"` are sorted by `updated_at` timestamp (unless otherwise noted), with the most recently updated resources appearing first.
+
+### Filtering updated resources
+
+All "list" API methods also support filtering resources updated since a given timestamp. Include `?updated_after={unix timestamp}` in the request.
