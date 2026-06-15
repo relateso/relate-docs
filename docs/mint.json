@@ -78,6 +78,10 @@
   ],
   "navigation": [
     {
+      "group": "What's New",
+      "pages": ["updates"]
+    },
+    {
       "group": "Home",
       "pages": ["intro"]
     },
