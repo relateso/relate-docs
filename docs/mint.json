@@ -155,9 +155,9 @@
       ]
       },
     {
-      "group": "Engage",
+      "group": "Relate Sequence",
       "pages": [
-        "engage/relate-engage"
+        "engage/relate-sequence"
       ]
     },
     {
@@ -312,6 +312,10 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/engage/relate-engage",
+      "destination": "/engage/relate-sequence"
+    },
     {
       "source": "/introduction",
       "destination": "/intro"
