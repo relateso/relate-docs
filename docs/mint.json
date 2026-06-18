@@ -103,6 +103,13 @@
       ]
     },
     {
+      "group": "Importing Contacts",
+      "pages": [
+        "setup/google-contacts",
+        "setup/ai-import"
+      ]
+    },
+    {
       "group": "Platform",
       "pages": [
         {
