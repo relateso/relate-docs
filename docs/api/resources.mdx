@@ -1,0 +1,697 @@
+---
+title: "Resources"
+description: "Contacts, organizations, notes, custom fields, lists, entries, calendar events, and recordings endpoints of the Relate API, all on one page."
+sidebarTitle: "Resources"
+"og:title": "Resources | Relate API"
+"og:description": "Contacts, organizations, notes, custom fields, lists, entries, calendar events, and recordings endpoints of the Relate API, all on one page."
+"article:tag": "API"
+"twitter:title": "Resources | Relate API"
+"twitter:description": "Contacts, organizations, notes, custom fields, lists, entries, calendar events, and recordings endpoints of the Relate API, all on one page."
+"og:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/og-image-docs.png"
+"twitter:image": "https://raw.githubusercontent.com/relateso/relate-docs/main/docs/images/og-image-docs.png"
+---
+
+This page gathers every Relate API resource endpoint in one place. For common topics such as authentication, base URL, and pagination, see the [Introduction](/api/introduction).
+
+- [Contacts](#contacts)
+- [Organizations](#organizations)
+- [Notes](#notes)
+- [Custom Fields](#custom-fields)
+- [Lists & Processes](#lists)
+- [Entries](#entries)
+- [Calendar Events](#calendar-events)
+- [Recordings](#recordings)
+
+<a id="contacts" />
+
+## Contacts
+
+Read, create, update, and delete contacts.
+
+### List all contacts
+
+```bash
+curl https://api.relate.so/v1/contacts \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Retrieve a contact
+
+```bash
+curl https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+You can also look up a contact by email.
+
+```bash
+curl -X GET "https://api.relate.so/v1/contacts?email=email@email.com" \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Accept: application/json"
+```
+
+Or by phone number. The number is normalized the same way it is stored, so any common format — `+821012345678`, `01012345678`, `010-1234-5678` — matches the same contact.
+
+```bash
+curl -X GET "https://api.relate.so/v1/contacts?phone_number=01012345678" \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Accept: application/json"
+```
+
+### Create a contact
+
+```bash
+curl https://api.relate.so/v1/contacts \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"organization_id":"...","first_name":"Paul","last_name":"Atreides","emails":["paul@atreid.es"]}'
+```
+
+- `first_name`, or at least one valid address in `emails`, is required.
+- If `organization_id` is passed as `"auto"`, the contact is matched to an existing organization by *email domain*, or a new organization with that domain is created if none is found.
+- If `organization_id` is omitted, the contact is created without an organization.
+
+### Update a contact
+
+```bash
+curl -X PATCH https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"emails":["usul@arrak.is"],"custom_fields":[{"name":"House","value":"Atreides"}]}'
+```
+
+### Delete contact emails
+
+```bash
+curl -X DELETE https://api.relate.so/v1/contacts/:contact_id/emails \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"emails":["usul@arrak.is"]}'
+```
+
+### Delete a contact
+
+```bash
+curl -X DELETE https://api.relate.so/v1/contacts/:contact_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="organizations" />
+
+## Organizations
+
+Read, create, update, and delete organizations.
+
+### List all organizations
+
+```bash
+curl https://api.relate.so/v1/organizations \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Retrieve an organization
+
+```bash
+curl https://api.relate.so/v1/organizations/:organization_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Create an organization
+
+```bash
+curl https://api.relate.so/v1/organizations \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Relate","domains":["relate.so"]}'
+```
+
+- `name`, or at least one valid URL in `domains`, is required.
+
+### Update an organization
+
+```bash
+curl -X PATCH https://api.relate.so/v1/organizations/:organization_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Relate","domains":["relate.so","relate.kr"],"custom_fields":[{"name":"Category","value":"Startup"}]}'
+```
+
+### Delete organization domains
+
+```bash
+curl -X DELETE https://api.relate.so/v1/organizations/:organization_id/domains \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"domains":["relate.kr"]}'
+```
+
+### Delete an organization
+
+```bash
+curl -X DELETE https://api.relate.so/v1/organizations/:organization_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="notes" />
+
+## Notes
+
+Read, create, update, and delete notes.
+
+### List all notes
+
+```bash
+curl https://api.relate.so/v1/notes \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Retrieve a note
+
+```bash
+curl https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Create a note
+
+```bash
+curl https://api.relate.so/v1/notes \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"organization_id":"...","deal_id":"...","body":"this is a note"}'
+```
+
+- `organization_id` and `body` are required.
+
+### Update a note
+
+```bash
+curl -X PATCH https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"body":"this is an edited note"}'
+```
+
+- Only `deal_id` and `body` can be updated.
+
+### Delete a note
+
+```bash
+curl -X DELETE https://api.relate.so/v1/notes/:note_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="custom-fields" />
+
+## Custom Fields
+
+Read, create, update, and delete custom fields.
+
+### List all custom fields
+
+```bash
+curl https://api.relate.so/v1/custom_fields \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Retrieve a custom field
+
+```bash
+curl https://api.relate.so/v1/custom_fields/:custom_field_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Create a custom field
+
+```bash
+curl https://api.relate.so/v1/custom_fields \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"field","model":"organization","data_type":"select","options":["one","two"],"accepts_multiple_values":false}'
+```
+
+- `name` and `model` are required.
+- `model` must be one of `"organization"`, `"contact"`, `"deal"`.
+- `data_type` must be one of `"text"`, `"textarea"`, `"url"`, `"number"`, `"date"`, `"datetime"`, `"select"`, `"user"`, `"contact"`. (Defaults to `"text"` if omitted.)
+- `options` is required if `data_type` is `"select"`.
+- `accepts_multiple_values` is required if `data_type` is one of `"select"`, `"user"`, `"contact"`.
+
+### Update a custom field
+
+```bash
+curl -X PATCH https://api.relate.so/v1/custom_fields/:custom_field_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"field2","options":["one","two","three"]}'
+```
+
+- Only `name` and `options` can be updated.
+
+### Delete a custom field
+
+```bash
+curl -X DELETE https://api.relate.so/v1/custom_fields/:custom_field_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="lists" />
+
+## Lists & Processes
+
+Read, create, update, and delete lists and processes. The `process` flag distinguishes a regular list (`false`) from a process (`true`).
+
+### List all lists & processes
+
+```bash
+curl https://api.relate.so/v1/lists \
+  -H "Authorization: Bearer {api_key}"
+```
+
+```json
+{
+    "data": [
+        {
+            "id": "QbkUlo",
+            "name": "test list",
+            "process": false,
+            "entry_type": "Organization",
+            "fields": [
+                { "name": "test field", "data_type": "text" }
+            ],
+            "created_at": "2025-04-29T22:47:39.635Z",
+            "updated_at": "2025-04-29T22:47:39.635Z",
+            "archived_at": null
+        },
+        {
+            "id": "Jm9UpJ",
+            "name": "test process",
+            "identifier": "TEST PROCE",
+            "process": true,
+            "duplicates_allowed": true,
+            "entry_type": "Organization",
+            "entry_label": "Organization",
+            "status_label": "Status",
+            "statuses": [
+                { "name": "Started", "type": "active" },
+                { "name": "In Progress", "type": "active" },
+                { "name": "Completed", "type": "won" },
+                { "name": "Canceled", "type": "lost" }
+            ],
+            "fields": [
+                { "name": "test field", "data_type": "text" }
+            ],
+            "created_at": "2025-04-29T22:47:28.540Z",
+            "updated_at": "2025-04-29T22:47:28.540Z",
+            "archived_at": null
+        }
+    ],
+    "pagination": { "end_cursor": 2, "has_next_page": false, "total_count": 2 }
+}
+```
+
+### Retrieve a list or process
+
+```bash
+curl https://api.relate.so/v1/lists/:list_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+Regular list response:
+
+```json
+{
+    "id": "QbkUlo",
+    "name": "test list",
+    "process": false,
+    "entry_type": "Organization",
+    "fields": [ { "name": "test field", "data_type": "text" } ],
+    "created_at": "2025-04-29T22:47:39.635Z",
+    "updated_at": "2025-04-29T22:47:39.635Z",
+    "archived_at": null
+}
+```
+
+Process response:
+
+```json
+{
+    "id": "Jm9UpJ",
+    "name": "test process",
+    "identifier": "TEST PROCE",
+    "process": true,
+    "duplicates_allowed": true,
+    "entry_type": "Organization",
+    "entry_label": "Organization",
+    "status_label": "Status",
+    "statuses": [
+        { "name": "Started", "type": "active" },
+        { "name": "In Progress", "type": "active" },
+        { "name": "Completed", "type": "won" },
+        { "name": "Canceled", "type": "lost" }
+    ],
+    "fields": [ { "name": "test field", "data_type": "text" } ],
+    "created_at": "2025-04-29T22:47:28.540Z",
+    "updated_at": "2025-04-29T22:47:28.540Z",
+    "archived_at": null
+}
+```
+
+### Create a list
+
+```bash
+curl -X POST https://api.relate.so/v1/lists \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "...",
+    "process": false,
+    "entry_type": "Contact",
+    "fields": [
+      { "name": "...", "data_type": "select", "accepts_multiple_values": false, "options": ["option1", "option2", "option3"] },
+      { "name": "...", "data_type": "textarea" }
+    ]
+  }'
+```
+
+- `name` (required): Name of the list
+- `process` (required): Whether this is a process (`true`) or a regular list (`false`)
+- `entry_type` (required): Type of entries. Must be `"Contact"` or `"Organization"`
+- `fields` (optional): Array of custom field definitions for entries
+    - `name` (required): Name of the field
+    - `data_type` (required): One of `text`, `textarea`, `url`, `number`, `date`, `datetime`, `select`, `user`, `contact`
+    - `accepts_multiple_values` (required for `select`/`user`/`contact`): Whether multiple values are allowed
+    - `options` (required for `select`): Array of selectable options
+
+### Create a process
+
+```bash
+curl -X POST https://api.relate.so/v1/lists \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "...",
+    "process": true,
+    "entry_type": "Contact",
+    "identifier": "...",
+    "duplicates_allowed": false,
+    "entry_label": "...",
+    "status_label": "...",
+    "statuses": [
+      { "name": "...", "type": "active" },
+      { "name": "...", "type": "active" },
+      { "name": "...", "type": "done" }
+    ],
+    "fields": [
+      { "name": "...", "data_type": "select", "accepts_multiple_values": false, "options": ["option1", "option2", "option3"] },
+      { "name": "...", "data_type": "date" }
+    ]
+  }'
+```
+
+- `name` (required): Name of the process
+- `process` (required): Must be `true` to indicate this is a process
+- `entry_type` (required): Type of entries. Must be `"Contact"` or `"Organization"`
+- `identifier` (required): Field used to uniquely identify entries (e.g. `"DEAL"`)
+- `duplicates_allowed` (required): Whether multiple entries with the same identifier are allowed
+- `statuses` (optional): Array of status stages. Each must include:
+    - `name` (required): Label for the stage (e.g. `"Onboarding"`)
+    - `type` (required): One of `active`, `won`, `lost`
+- `entry_label` (optional): Custom label for an individual entry (e.g. `"Lead"`, `"Candidate"`)
+- `status_label` (optional): Custom label for the status field (e.g. `"Stage"`, `"Status"`)
+- `fields` (optional): Array of additional custom fields (same format as Create a list)
+
+### Update a list or process
+
+```bash
+curl -X PATCH https://api.relate.so/v1/lists/:list_id \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "...",
+    "identifier": "...",
+    "duplicates_allowed": false,
+    "entry_label": "...",
+    "status_label": "...",
+    "statuses": [
+      { "name": "...", "type": "active" },
+      { "name": "...", "type": "done" }
+    ],
+    "fields": [
+      { "name": "...", "data_type": "date" }
+    ]
+  }'
+```
+
+- `entry_type` and `process` cannot be updated.
+
+### Delete a list or process
+
+```bash
+curl -X DELETE https://api.relate.so/v1/lists/:list_id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="entries" />
+
+## Entries
+
+An **entry** is an individual item that belongs to a **list or process** (see [Lists & Processes](#lists)). Every entry endpoint lives under a `:list_id` — the ID of the parent list or process that the entry belongs to.
+
+### List all entries in a list/process
+
+```bash
+curl https://api.relate.so/v1/lists/:list_id/entries \
+  -H "Authorization: Bearer {api_key}"
+```
+
+Regular list entry response:
+
+```json
+{
+    "data": [
+        {
+            "id": "gkhb8Y",
+            "key": null,
+            "list_id": "QbkUlo",
+            "entryable_id": "GEF751",
+            "entryable_type": "Organization",
+            "contact_id": null,
+            "list_fields": {
+                "vBASJR": { "name": "test field", "data_type": "text", "value": "test value" }
+            },
+            "created_at": "2025-04-29T22:53:34.396Z",
+            "updated_at": "2025-04-29T22:54:48.439Z"
+        }
+    ],
+    "pagination": { "end_cursor": 1, "has_next_page": false, "total_count": 1 }
+}
+```
+
+Process entry response:
+
+```json
+{
+    "data": [
+        {
+            "id": "QrhZvA",
+            "key": "TEST PROCE-1",
+            "list_id": "Jm9UpJ",
+            "entryable_id": "GEF751",
+            "entryable_type": "Organization",
+            "status": "Started",
+            "assignee": null,
+            "contact_id": null,
+            "one_time_value_cents": 0,
+            "recurring_value_cents": 0,
+            "recurring_value_period": "annual",
+            "list_fields": {
+                "w9DSqo": { "name": "test field", "data_type": "text", "value": "test value" }
+            },
+            "closed_at": null,
+            "next_entry_id": null,
+            "created_at": "2025-04-29T22:52:52.818Z",
+            "updated_at": "2025-04-29T22:54:58.809Z"
+        }
+    ],
+    "pagination": { "end_cursor": 1, "has_next_page": false, "total_count": 1 }
+}
+```
+
+### Retrieve an entry
+
+```bash
+curl https://api.relate.so/v1/lists/:list_id/entries/:id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+### Create an entry
+
+```bash
+curl -X POST https://api.relate.so/v1/lists/:list_id/entries \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "entryable_id": "...",
+    "entryable_type": "Contact",
+    "status": "...",
+    "assignee_email": "...",
+    "one_time_value_cents": 0,
+    "recurring_value_cents": 0,
+    "recurring_value_period": "monthly",
+    "contact_id": "...",
+    "list_fields": [
+      { "name": "...", "value": "..." },
+      { "name": "...", "value": ["option1", "option2"] }
+    ]
+  }'
+```
+
+- `entryable_id` (required): ID of the associated resource (`Contact` or `Organization`)
+- `entryable_type` (required): Either `"Contact"` or `"Organization"`
+- `status` (required for processes only): Name of the list status to assign (must exist in the process)
+- `assignee_email`: Email of the user to assign the entry to
+- `one_time_value_cents` (required for processes only): One-time value in cents
+- `recurring_value_cents` (required for processes only): Recurring value in cents
+- `recurring_value_period` (required for processes only): One of `monthly`, `annual`, `one_time`
+- `contact_id` (optional): ID of the contact associated with the organization
+- `list_fields` (optional): Custom fields defined in the list
+    - `name`: Name of the field
+    - `value`: Single value or array (if the field accepts multiple values)
+
+### Update an entry
+
+```bash
+curl -X PATCH https://api.relate.so/v1/lists/:list_id/entries/:id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+- `entryable_id` and `entryable_type` cannot be updated.
+
+### Delete an entry
+
+```bash
+curl -X DELETE https://api.relate.so/v1/lists/:list_id/entries/:id \
+  -H "Authorization: Bearer {api_key}"
+```
+
+<a id="calendar-events" />
+
+## Calendar Events
+
+Calendar events are synced from Google / Outlook calendars. These endpoints are **read-only**, and only meetings with at least one completed recording are exposed.
+
+### List all calendar events
+
+```bash
+curl "https://api.relate.so/v1/calendar_events" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+```json
+{
+  "data": [
+    {
+      "id": "DoASO0",
+      "title": "Sample Meeting",
+      "start_at": "2026-05-16T11:00:00.000+09:00",
+      "end_at": "2026-05-16T12:00:00.000+09:00",
+      "conference_link": "https://us02web.zoom.us/j/0000000000",
+      "conference_type": "Zoom",
+      "attendees": [
+        { "email": "alice@example.com" },
+        { "email": "bob@example.com" }
+      ],
+      "recordings": [
+        {
+          "id": "K3xQzR",
+          "status": "done",
+          "started_at": "2026-05-16T02:00:00.000Z",
+          "ended_at": "2026-05-16T03:00:00.000Z",
+          "audio_duration": null
+        }
+      ],
+      "created_at": "2026-05-10T00:00:00.000Z",
+      "updated_at": "2026-05-16T03:00:00.000Z"
+    }
+  ],
+  "pagination": { "end_cursor": 25, "has_next_page": true, "total_count": 134 }
+}
+```
+
+Results are sorted by meeting start time, latest first.
+
+- `first` (optional): Page size, default 25
+- `after` (optional): Offset. Pass the `pagination.end_cursor` from the previous response
+- `updated_after` (optional): Unix timestamp. Only meetings updated after this time
+- `starts_after` (optional): Unix timestamp. Only meetings starting at or after this time
+- `starts_before` (optional): Unix timestamp. Only meetings starting before this time
+- `contact_id` (optional): Contact hashid. Only meetings that include this contact as an attendee
+- `organization_id` (optional): Organization hashid. Only meetings that include a contact from this organization as an attendee
+
+### Retrieve a calendar event
+
+```bash
+curl "https://api.relate.so/v1/calendar_events/HASHID" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+The detail response includes summary info for attached recordings (the `recordings` array). Detailed fields such as summary / transcript are fetched separately via the [Retrieve a recording](#recordings) API.
+
+<a id="recordings" />
+
+## Recordings
+
+Recordings are generated automatically when Relate Notetaker joins a meeting. This endpoint is **read-only**, and no list endpoint is provided (recording lists are exposed via the `recordings` array in the [Calendar Events](#calendar-events) response).
+
+### Retrieve a recording
+
+```bash
+curl "https://api.relate.so/v1/recordings/HASHID" \
+  -H "Authorization: Bearer YOUR_API_TOKEN"
+```
+
+```json
+{
+  "data": {
+    "id": "K3xQzR",
+    "calendar_event_id": "DoASO0",
+    "status": "done",
+    "started_at": "2026-05-16T02:00:00.000Z",
+    "ended_at": "2026-05-16T03:00:00.000Z",
+    "audio_duration": null,
+    "summary": {
+      "summary": "A short summary of the entire meeting.",
+      "topics": [
+        { "title": "Topic title 1", "content": "Details about this topic." },
+        { "title": "Topic title 2", "content": "Details about this topic." }
+      ],
+      "action_items": [
+        "Owner A: follow-up task 1",
+        "Owner B: follow-up task 2"
+      ],
+      "detected_language": "en"
+    },
+    "transcript": [
+      {
+        "participant": { "name": "Alice" },
+        "words": [
+          {
+            "text": "Hello, let's start today's meeting.",
+            "start_timestamp": { "relative": 0.0 },
+            "end_timestamp": { "relative": 3.2 }
+          }
+        ],
+        "language_code": "en"
+      }
+    ],
+    "created_at": "2026-05-16T02:00:00.000Z",
+    "updated_at": "2026-05-16T03:05:00.000Z"
+  }
+}
+```
+
+If `status` is not `done`, `summary` and `transcript` are returned as `null`. They are filled in as shown above once processing completes.
+
+<Note>
+  The keys in the `summary` object may vary depending on the workspace's summary settings (the example reflects the default).
+</Note>
