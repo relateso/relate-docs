@@ -154,6 +154,37 @@ You can customize the questions asked on the booking page.
 
 You can also configure advanced settings, such as prevent scheduling with standard email services such as gmail.com or require email confirmation to schedule a meeting. 
 
+## Prefilling the booking link
+Append query parameters to your booking link to open the booking form with fields **already filled in**. This is handy when you embed the link in an outbound email or sequence with merge tags, so each recipient gets a link pre-filled with their email, name, and more.
+
+Example:
+
+```
+https://relate.so/cal/workspaces/relate/arthur?email=jane@example.com&name=Jane%20Doe
+```
+
+The built-in parameters are:
+
+| Parameter (identifier) | Field |
+| --- | --- |
+| `name` (or `firstName` / `lastName`) | Name |
+| `email` | Email |
+| `attendeePhoneNumber` | Phone number |
+| `notes` | Additional notes |
+| `guests` | Guests (repeat `&guests=` for multiple) |
+| `location` | Location |
+| `rescheduleReason` | Reschedule reason |
+
+Beyond these built-in fields, any **input you add under Advanced (booking questions)** can also be prefilled by using that field's **identifier** as the parameter. For example, if you added a field with the identifier `company`, pass `?company=Relate`.
+
+<Tip>
+  **Lock a prefilled value** — When editing a field under Advanced, enable the *disable input when prefilled (read-only)* option so values filled in via query parameters are locked and can't be changed by the booker. Useful for fixing details you already know, such as email or name.
+</Tip>
+
+<Note>
+  Values containing spaces, non-ASCII characters, or `@` may need to be URL-encoded.
+</Note>
+
 ## Relate Meetings with the team
 If you would like a demo of Relate Meetings, please schedule a meeting with the Relate team.
 
