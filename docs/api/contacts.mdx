@@ -35,6 +35,14 @@ curl -X GET "https://api.relate.so/v1/contacts?email=email@email.com" \
   -H "Accept: application/json"
 ```
 
+Or by phone number. The number is normalized the same way it is stored, so any common format — `+821012345678`, `01012345678`, `010-1234-5678` — matches the same contact.
+
+```bash
+curl -X GET "https://api.relate.so/v1/contacts?phone_number=01012345678" \
+  -H "Authorization: Bearer {api_key}" \
+  -H "Accept: application/json"
+```
+
 ## Create a contact
 
 ```bash
