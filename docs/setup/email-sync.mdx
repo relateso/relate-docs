@@ -12,86 +12,136 @@ sidebarTitle: "Email sync"
 ---
 
 ## Overview
-Relate supports a full, bi-directional email sync between Relate and your choice of email service, such as Google Mail, Outlook, etc.
 
-This means that you can send and receive emails directly from Relate, and all emails sent and received from your email service will be synced to Relate.
+Relate supports a full, **bi-directional email sync** between Relate and your email service (Google Mail, Outlook, etc.). This means you can send and receive emails directly from Relate, and all emails sent and received from your email service are synced to Relate.
 
-## Get started
+## Choosing a connection method
 
-### Connecting your email account
-To connect your email service with Relate, go to the [User connected accounts](https://admin.relate.so/services) page in the Relate Admin.
+All email connections start from the [Integrations](https://admin.relate.so/services) page in the Relate Admin. Depending on your email service, connect using one of the three methods below.
 
-![Connect email](/images/setup/connect-email.png)
+![Integrations page](/images/setup/integrations-services.png)
 
-Then, click `Add an Email account`. Enter the email address you want to connect, and select the email service you use (e.g., Google, Office365, Outlook Exchange, etc.).
+<CardGroup cols={3}>
+  <Card title="Gmail" icon="google" href="#connect-gmail">
+    Connect a Google / Google Workspace account via OAuth.
+  </Card>
+  <Card title="Outlook" icon="microsoft" href="#connect-outlook">
+    Connect an Outlook / Office365 account. (Admin approval may be required.)
+  </Card>
+  <Card title="IMAP / SMTP" icon="envelope" href="#connect-via-imap">
+    Connect any other email service (Yahoo, self-hosted, etc.) via IMAP/SMTP.
+  </Card>
+</CardGroup>
 
 <Info>
-**1. If you are using Google Workspace, you will be directed to the Google email link page without selecting an email service. (see screenshot below)**
-
-**2. If you select Other (e.g., Yahoo, etc.), please follow the IMAP/SMTP connection procedure.**
+  Regardless of the method, once the account is connected you must complete the final **[Creating connections](#creating-connections)** step so the email actually syncs in your Workspace.
 </Info>
 
-Please follow the procedure provided on each email service link page to complete. Then, follow the [Creating Connections for each Workspace](/setup/email-sync#creating-connections).
+<Tip>
+  If Two-factor Authentication (2FA/MFA) is set on your email account, temporarily disable it or use an App Password before connecting. See the [FAQ](#frequently-asked-questions) for details.
+</Tip>
 
-![googleauth](/images/setup/google-auth.png)
+## Connect Gmail
 
-### IMAP/SMTP Connection
+On the [Integrations](https://admin.relate.so/services) page, select the **Google** card.
+
+Follow the prompts to sign in with your Google account and grant permissions to complete the connection.
+
+![Google auth](/images/setup/google-auth.png)
+
+Once connected, the account appears under **Connected accounts**, where you can toggle **Emails · Contacts · Calendars** individually.
+
+![Connected Google account](/images/setup/email-connected.png)
+
+Now proceed to [Creating connections](#creating-connections).
+
+## Connect Outlook
+
+On the [Integrations](https://admin.relate.so/services) page, select the **MS (Outlook)** card.
+
+Follow the prompts to sign in with your Microsoft (Office365 / Outlook) account and grant permissions to complete the connection.
+
+Once connected, proceed to [Creating connections](#creating-connections).
+
+<AccordionGroup>
+  <Accordion title="If Office365 requires admin approval" icon="user-shield">
+    When connecting an Office365 account, your organization's admin may need to approve the app. Follow the steps below.
+
+    1. Sign in to [Office365](http://www.microsoft.com/) with an admin account.
+    2. Go to **More > Admin > Show all > Settings > Org settings**.
+    3. Select **User consent to apps** and check whether it is enabled. If disabled, enable it and save.
+    4. Retry the Office365 connection. When the **Permissions requested** screen appears, select `Accept` to finish.
+  </Accordion>
+</AccordionGroup>
+
+## Connect via IMAP
+
+Email services other than Gmail and Outlook (Yahoo, self-hosted, etc.) connect directly via IMAP/SMTP.
 
 <Warning>
-  **If you have already connected your email through Google and Outlook, skip
-  this step and go to [Creating Connections for each Workspace](/setup/email-sync#creating-connections).**
+  If you have already connected through Google or Outlook, skip this step and go to [Creating connections](#creating-connections).
 </Warning>
 
-#### Enter your email address/password
+### 1. Start the IMAP connection
 
-Please enter your email address and password to connect as shown below.
+On the [Integrations](https://admin.relate.so/services) page, select the **IMAP** card, then click **`Connect`**.
 
-![Sign in](/images/setup/sign-in.png)
+![Start the IMAP connection](/images/setup/imap-connect.png)
 
-#### Entering IMAP/SMTP information
+### 2. Select the provider
 
-IMAP and SMPT host addresses and Port/SSL numbers have unique values for each email service you use. This information is usually on the Admin page, or in the email service customer center/support article.
+When the login screen appears, click **`View all providers`** at the bottom and choose **IMAP** from the provider list.
 
-In this guide, IMAP/SMTP information of NAVER Works is used.
+![Provider select](/images/setup/email-provider-select.png)
 
-![IMAP/SMTP](/images/setup/imap-smtp-info.png)
+![Choose IMAP from the provider list](/images/setup/email-provider-list.png)
 
-After entering the information, click the **Sign in** button to complete the connection.
+### 3. Enter your credentials and IMAP/SMTP server info
 
-If you see `Reauthenticate` button on your Accounts page, the email account is successfully connected.
+On the IMAP login screen, enter your **email address and password**. Then expand **`Server Information`** and enter the **IMAP Host / SMTP Host** and their **Port** (defaults: IMAP `993`, SMTP `587`), and click **`Next`**.
 
-Now, you need to create a Connection for each Workspace. Proceed to the next section.
+![Enter IMAP/SMTP information](/images/setup/imap-smtp-form.png)
 
 <Tip>
-  If Two-factor Authentication (2FA or MFA) is currently set in your email
-  account, temporarily disable it and complete the procedure.
+  After entering your email address, click **`Autodetect Settings`** to auto-fill the server info when possible. If auto-detection fails or the values are wrong, enter the server values manually. Check **`Different SMTP credentials`** if your outgoing server uses separate login details.
+</Tip>
+
+IMAP/SMTP host addresses and Port/SSL values differ per email service. This information is usually found on your email service's **admin page or customer support articles**.
+
+Once the status changes to **Connected** on the Relate page, the account is connected. Now proceed to [Creating connections](#creating-connections).
+
+<Tip>
+  If Two-factor Authentication (2FA/MFA) is set on your email account, temporarily disable it before completing the procedure.
 </Tip>
 
 ## Creating connections
 
-To connect your email service to a Workspace, navigate to [Admin](https://admin.relate.so/) > [Integrations](https://admin.relate.so/workspaces/integrations) > [Email](https://admin.relate.so/workspaces/integrations/email).
+After connecting your email account, connect it to a Workspace so the sync actually begins.
 
-Select the Workspace you want to connect to, and click the `Connect to workspace button`.
+![Creating connections](/images/setup/creating-connections-workspaces.png)
 
-## Advanced
+Go to the [Admin](https://admin.relate.so/) page of the Workspace you want to connect, navigate to [Integrations](https://admin.relate.so/workspaces/integrations) > [Email](https://admin.relate.so/workspaces/integrations/email), and click the `Connect to workspace` button.
 
-### Changing your email account password will disconnect your email connection
-If you change your email account password, your email connection will be disconnected. If you changed your email account password, you can reconnect your email by following the steps above.
+## Frequently Asked Questions
 
-
-### Using Relate with Two-Factor Authentication (2FA/MFA)
-When Two-Factor Authentication (2FA/MFA) is set, you'll need to temporarily disable it before connecting with Relate, and then connect again.
-
-If your email service (e.g., Outlook, O365, iCloud, Yahoo!, etc.) allows you to create an App Password, you can use it instead of your existing password.
-
-Here are links to settiing up App Passwords for each email service:
-- [Microsoft](https://support.microsoft.com/en-us/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944)
-- [Yahoo!](https://help.yahoo.com/kb/learn-generate-password-sln15241.html)
-- [iCloud](https://support.apple.com/en-us/HT204397)
-
-## Frequently Asked Questions (FAQs)
 <AccordionGroup>
-<Accordion title="I've connected my email but I don't see any emails in the app.">
-Try refreshing the app first by using Cmd+Shift+R (Ctrl+Shift+R on Windows). Depending on the amount emails being synced at once, the process can take anywhere from 5 minutes to up to 8 hours.
-</Accordion>
+  <Accordion title="I've connected my email but I don't see any emails in the app.">
+    Try refreshing the app first with Cmd+Shift+R (Ctrl+Shift+R on Windows). Depending on the amount of email being synced at once, the process can take anywhere from 5 minutes to up to 8 hours.
+  </Accordion>
+
+  <Accordion title="Changing my email password disconnected the integration.">
+    Changing your email account password disconnects the email connection. In that case, reconnect your email by following the connection steps above.
+  </Accordion>
+
+  <Accordion title="I use Two-factor Authentication (2FA/MFA) — how do I connect?">
+    When 2FA/MFA is set, temporarily disable it before connecting with Relate, then connect again.
+
+    If your email service (Outlook, O365, iCloud, Yahoo!, etc.) supports App Passwords, you can use an App Password instead of your regular password.
+
+    Links to set up App Passwords for each email service:
+
+    - [Microsoft](https://support.microsoft.com/en-us/account-billing/using-app-passwords-with-apps-that-don-t-support-two-step-verification-5896ed9b-4263-e681-128a-a6f2979a7944)
+    - [Yahoo!](https://help.yahoo.com/kb/learn-generate-password-sln15241.html)
+    - [iCloud](https://support.apple.com/en-us/HT204397)
+  </Accordion>
 </AccordionGroup>
