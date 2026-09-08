@@ -1,0 +1,46 @@
+---
+title: "Connect via IMAP/SMTP"
+hidden: true
+description: "Connect email services other than Gmail and Outlook (Yahoo, self-hosted, etc.) via IMAP/SMTP."
+sidebarTitle: "Connect via IMAP/SMTP"
+---
+
+## Connect via IMAP
+
+Email services other than Gmail and Outlook (Yahoo, self-hosted, etc.) connect directly via IMAP/SMTP.
+
+<Warning>
+  If you have already connected through Google or Outlook, skip this step and go to [Creating connections](/setup/email-sync#creating-connections).
+</Warning>
+
+### 1. Start the IMAP connection
+
+On the [Integrations](https://admin.relate.so/services) page, select the **IMAP** card, then click **`Connect`**.
+
+![Start the IMAP connection](/images/setup/imap-connect.png)
+
+### 2. Select the provider
+
+When the login screen appears, click **`View all providers`** at the bottom and choose **IMAP** from the provider list.
+
+![Provider select](/images/setup/email-provider-select.png)
+
+![Choose IMAP from the provider list](/images/setup/email-provider-list.png)
+
+### 3. Enter your credentials and IMAP/SMTP server info
+
+On the IMAP login screen, enter your **email address and password**. Then expand **`Server Information`** and enter the **IMAP Host / SMTP Host** and their **Port** (defaults: IMAP `993`, SMTP `587`), and click **`Next`**.
+
+![Enter IMAP/SMTP information](/images/setup/imap-smtp-form.png)
+
+<Tip>
+  After entering your email address, click **`Autodetect Settings`** to auto-fill the server info when possible. If auto-detection fails or the values are wrong, enter the server values manually. Check **`Different SMTP credentials`** if your outgoing server uses separate login details.
+</Tip>
+
+IMAP/SMTP host addresses and Port/SSL values differ per email service. This information is usually found on your email service's **admin page or customer support articles**.
+
+Once the status changes to **Connected** on the Relate page, the account is connected. Now proceed to [Creating connections](/setup/email-sync#creating-connections).
+
+<Tip>
+  If Two-factor Authentication (2FA/MFA) is set on your email account, temporarily disable it before completing the procedure.
+</Tip>

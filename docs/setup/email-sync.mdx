@@ -17,19 +17,16 @@ Relate supports a full, **bi-directional email sync** between Relate and your em
 
 ## Choosing a connection method
 
-All email connections start from the [Integrations](https://admin.relate.so/services) page in the Relate Admin. Depending on your email service, connect using one of the three methods below.
+All email connections start from the [Integrations](https://admin.relate.so/services) page in the Relate Admin. Depending on your email service, connect using one of the methods below.
 
 ![Integrations page](/images/setup/integrations-services.png)
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="Gmail" icon="google" href="#connect-gmail">
     Connect a Google / Google Workspace account via OAuth.
   </Card>
   <Card title="Outlook" icon="microsoft" href="#connect-outlook">
     Connect an Outlook / Office365 account. (Admin approval may be required.)
-  </Card>
-  <Card title="IMAP / SMTP" icon="envelope" href="#connect-via-imap">
-    Connect any other email service (Yahoo, self-hosted, etc.) via IMAP/SMTP.
   </Card>
 </CardGroup>
 
@@ -73,46 +70,6 @@ Once connected, proceed to [Creating connections](#creating-connections).
     4. Retry the Office365 connection. When the **Permissions requested** screen appears, select `Accept` to finish.
   </Accordion>
 </AccordionGroup>
-
-## Connect via IMAP
-
-Email services other than Gmail and Outlook (Yahoo, self-hosted, etc.) connect directly via IMAP/SMTP.
-
-<Warning>
-  If you have already connected through Google or Outlook, skip this step and go to [Creating connections](#creating-connections).
-</Warning>
-
-### 1. Start the IMAP connection
-
-On the [Integrations](https://admin.relate.so/services) page, select the **IMAP** card, then click **`Connect`**.
-
-![Start the IMAP connection](/images/setup/imap-connect.png)
-
-### 2. Select the provider
-
-When the login screen appears, click **`View all providers`** at the bottom and choose **IMAP** from the provider list.
-
-![Provider select](/images/setup/email-provider-select.png)
-
-![Choose IMAP from the provider list](/images/setup/email-provider-list.png)
-
-### 3. Enter your credentials and IMAP/SMTP server info
-
-On the IMAP login screen, enter your **email address and password**. Then expand **`Server Information`** and enter the **IMAP Host / SMTP Host** and their **Port** (defaults: IMAP `993`, SMTP `587`), and click **`Next`**.
-
-![Enter IMAP/SMTP information](/images/setup/imap-smtp-form.png)
-
-<Tip>
-  After entering your email address, click **`Autodetect Settings`** to auto-fill the server info when possible. If auto-detection fails or the values are wrong, enter the server values manually. Check **`Different SMTP credentials`** if your outgoing server uses separate login details.
-</Tip>
-
-IMAP/SMTP host addresses and Port/SSL values differ per email service. This information is usually found on your email service's **admin page or customer support articles**.
-
-Once the status changes to **Connected** on the Relate page, the account is connected. Now proceed to [Creating connections](#creating-connections).
-
-<Tip>
-  If Two-factor Authentication (2FA/MFA) is set on your email account, temporarily disable it before completing the procedure.
-</Tip>
 
 ## Creating connections
 
